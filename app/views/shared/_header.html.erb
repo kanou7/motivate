@@ -1,0 +1,26 @@
+<%# CSS・・・assets/stylesheets/shared/header.css %>
+<header class="header">
+  <div class="header-left">
+    <h1 class="header-ttl"><a href="#">Motivate</a></h1>
+  </div>
+  <div class="header-right">
+    <nav class="header-nav">
+      <ul class="header-list">
+
+        <% if user_signed_in? %>
+          <li>
+            <%= link_to "ホーム", "#" %>
+            <%= link_to "プロフィール", "#" %>
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to "ホーム", "#" %>
+            <%= link_to "ログイン", new_user_session_path, class: "post" %>
+            <%= link_to "新規登録", new_user_registration_path, class: "post" %>
+          </li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>
