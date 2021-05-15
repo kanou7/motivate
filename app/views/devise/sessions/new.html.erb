@@ -1,4 +1,5 @@
-<h2>Log in</h2>
+<%= render "shared/header" %>
+<h2 class="registration-ttl">ログイン</h2>
 
 <%= form_with model: @user, url: user_session_path, class: 'registration-main', local: true do |f| %>
 
@@ -8,24 +9,32 @@
   </div>
 
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.label :email, "メールアドレス" %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", :class => 'registration-field' %>
   </div>
 
   <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+    <%= f.label :password, "パスワード" %><br />
+    <%= f.password_field :password, autocomplete: "current-password", :class => 'registration-field' %>
   </div>
 
   <% if devise_mapping.rememberable? %>
     <div class="field">
       <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+      <%= f.label :remember_me, "次回から自動でログイン" %>
     </div>
   <% end %>
 
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "ログインする", :class => 'registration-submit' %>
   </div>
 
 <% end %>
+
+<div class="gest-submit">
+  <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, class: 'gest-submitLink', method: :post %>
+</div>
+
+<div class="registration-rogin">
+  新規登録の方は<%= link_to "こちら", new_user_registration_path, class: "post" %>
+</div>

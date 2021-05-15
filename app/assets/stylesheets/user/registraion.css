@@ -1,0 +1,52 @@
+.registration-ttl {
+  text-align: center;
+  margin-top: 70px;
+  margin-bottom: 40px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.registration-main {
+  width: 400px;
+  margin: 0 auto;
+}
+
+.field .registration-label {
+  margin-bottom: 10px;
+}
+
+.field .registration-field {
+  width: 400px;
+  height: 35px;
+  padding: 0 5px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+.actions {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.actions .registration-submit {
+  border: none;
+  border-radius: 100px;
+  background-color: var(--main-color);
+  color: #fff;
+  padding: 15px 88px;
+  cursor: pointer;
+}
+
+.actions .registration-submit:hover {
+  transition: 0.5s;
+  opacity: 0.8;
+}
+
+.registration-rogin {
+  text-align: center;
+  margin-top: 30px;
+}
+/*# sourceMappingURL=registraion.css.map */
