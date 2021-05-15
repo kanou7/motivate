@@ -14,9 +14,22 @@
  *= require_self
  */
 
+ :root {
+  --main-bg-color: #f5e8e296;
+  --main-text-color: #A0A0AC;
+  --main-color: #da8155;
+}
+
+ body {
+   font-family: 'ヒラギノ角ゴシック','Hiragino Sans',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic','Droid Sans',sans-serif;
+   background-color: var(--main-bg-color);
+   color: var(--main-text-color);
+   padding-bottom: 100px;
+ }
+
  a {
   text-decoration: none;
-  color: white;
+  color: var(--main-color);
 }
 
 
