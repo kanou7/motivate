@@ -15,6 +15,10 @@
   margin-bottom: 10px;
 }
 
+.field span {
+  color: #e94343;
+}
+
 .field .registration-field {
   width: 400px;
   height: 35px;
