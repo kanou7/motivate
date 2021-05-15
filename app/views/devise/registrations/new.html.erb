@@ -3,7 +3,9 @@
 
 <%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
 
-  <%= render 'shared/error_messages', model: f.object %>
+  <div class="flash-message">
+    <%= render 'shared/error_messages', model: f.object %>
+  </div>
 
   <div class="field">
     <%= f.label :name, "名前（6文字以下）", {class: 'registration-label'} %><span>※必須</span><br />
@@ -31,7 +33,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :status, "現在の状態、心境", {class: 'registration-label'} %><br />
+    <%= f.label :status, "乗り越えたい現在の状態、心境", {class: 'registration-label'} %><br />
     <%= f.collection_select(:status_id, Status.all, :id, :name, {}, {class:"registration-field choice"}) %>
   </div>
 

@@ -1,0 +1,7 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        name: 名前
+        job_id: 職業、状況
+        status_id: 乗り越えたい状態、心境

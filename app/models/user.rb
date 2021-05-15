@@ -8,8 +8,6 @@ class User < ApplicationRecord
 
   with_options presence: true do
     validates :name
-    validates :job_id, numericality: { other_than: 1 }
+    validates :job_id, numericality: { other_than: 1, message: 'を選択してください' }
   end
-
-  validates :status_id, numericality: { other_than: 1 }
 end
