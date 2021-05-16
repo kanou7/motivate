@@ -11,10 +11,18 @@
   margin: 0 auto;
 }
 
+.registration-error {
+  margin-bottom: 20px;
+}
+
 .field {
 
   .registration-label {
     margin-bottom: 10px;
+  }
+
+  span {
+    color: rgb(233, 67, 67);
   }
 
   .registration-field {

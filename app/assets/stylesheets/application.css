@@ -32,5 +32,17 @@
   color: var(--main-color);
 }
 
+.flash-message {
+  background-color: var(--main-color);
+  font-size: 16px;
+  color: #fff;
+  width: 310px;
+  border-radius: 5px;
+  text-align: center;
+  position: absolute;
+  top: 70px;
+  right: 30px;
+}
+
 
 
