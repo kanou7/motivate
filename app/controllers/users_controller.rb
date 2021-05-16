@@ -9,4 +9,8 @@ class UsersController < ApplicationController
     sign_in user
     redirect_to root_path, notice: 'ゲストユーザーとしてログインしました。'
   end
+
+  def show
+    @user = User.find((params[:id]))
+  end
 end

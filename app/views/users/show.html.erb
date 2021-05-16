@@ -1,0 +1,30 @@
+<%= render "shared/header" %>
+
+<div class="profiles">
+
+  <div class="profile-top">
+    <img src="/app/assets/images/sample1.png" alt="myimg" class="profile-image">
+  </div>
+
+  <div class="profile-main">
+    <div class="profile-mainTop">
+      <div class="profile-info">
+        <span class="profile-name"><%= @user.name %></span>
+        <%= link_to "プロフィールの編集", "#", method: :get, class: "profile-edit" %>
+      </div>
+      <div class="profile-job">
+        職業、状況：<%= @user.job.name %>
+      </div>
+    </div>
+    <div class="profile-mainBottom">
+      <%= @user.profile %>
+    </div>
+  </div>
+
+  <div class="profile-bottom">
+    <div class="profile-tweets">
+      投稿一覧
+    </div>
+  </div>
+
+</div>
