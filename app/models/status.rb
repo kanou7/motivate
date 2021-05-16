@@ -24,7 +24,6 @@ class Status < ActiveHash::Base
     { id: 22, name: 'その他' }
   ]
 
-    include ActiveHash::Associations
-    has_many :users
-
+  include ActiveHash::Associations
+  has_many :users
 end

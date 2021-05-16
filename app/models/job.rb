@@ -38,7 +38,6 @@ class Job < ActiveHash::Base
     { id: 36, name: 'その他' }
   ]
 
-    include ActiveHash::Associations
-    has_many :users
-
+  include ActiveHash::Associations
+  has_many :users
 end
