@@ -1,0 +1,38 @@
+<%= render "shared/header" %>
+
+<div class="profiles">
+  <%= form_with(model: @user, local: true) do |f| %>
+
+    <div class="flash-message">
+      <%= render 'shared/error_messages', model: f.object %>
+    </div>
+
+    <div class="profile-top">
+      <%= f.file_field :image, class:"profile-image", placeholder:"画像" %>
+    </div>
+
+    <div class="profile-main">
+      <div class="profile-mainTop">
+        <div class="profile-info">
+          <%= f.text_area :name, class:"profile-name", placeholder:"名前（必須 6文字まで)", maxlength:"6" %>
+        </div>
+        <div class="profile-job">
+          職業、状況：<%= f.collection_select(:job_id, Job.all, :id, :name, {}, {class:"select-box"}) %>
+        </div>
+        <div class="profile-job">
+          状態：<%= f.collection_select(:status_id, Status.all, :id, :name, {}, {class:"select-box"}) %>
+        </div>
+      </div>
+      <div class="profile-mainBottom">
+        <%= f.text_area :text, class:"profile-text", placeholder:"自身のプロフィール" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="profile-bottom">
+    <div class="profile-tweets">
+      投稿一覧
+    </div>
+  </div>
+
+</div>
