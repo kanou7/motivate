@@ -25,6 +25,12 @@
     border: 1px solid var(--main-color);
     border-radius: 100px;
     padding: 5px 10px;
+    transition: 0.5s;
+
+    &:hover {
+      background-color: var(--main-color);
+      color: #fff;
+    }
   }
 }
 
