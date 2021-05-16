@@ -3,13 +3,13 @@
 <div class="profiles">
 
   <div class="profile-top">
-    <img src="app/assets/images/sample1.png" alt="myimg" class="profile-image">
+    <img src="/app/assets/images/sample1.png" alt="myimg" class="profile-image">
   </div>
 
   <div class="profile-main">
     <div class="profile-mainTop">
       <div class="profile-info">
-        <%= @user.name %>
+        <span class="profile-name"><%= @user.name %></span>
         <%= link_to "プロフィールの編集", "#", method: :get, class: "profile-edit" %>
       </div>
       <div class="profile-job">
@@ -22,7 +22,9 @@
   </div>
 
   <div class="profile-bottom">
-    投稿一覧
+    <div class="profile-tweets">
+      投稿一覧
+    </div>
   </div>
 
 </div>

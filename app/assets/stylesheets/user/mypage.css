@@ -1,0 +1,50 @@
+.profiles {
+  padding-top: 70px;
+}
+
+.profile-top {
+  text-align: center;
+}
+
+.profile-main {
+  background-color: #fff;
+  width: 400px;
+  margin: 30px auto 0;
+  padding: 30px;
+}
+
+.profile-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile-info .profile-name {
+  font-size: 24px;
+}
+
+.profile-info .profile-edit {
+  border: 1px solid var(--main-color);
+  border-radius: 100px;
+  padding: 5px 10px;
+}
+
+.profile-job {
+  margin-top: 20px;
+}
+
+.profile-mainBottom {
+  margin-top: 20px;
+}
+
+.profile-bottom {
+  margin: 30px auto 0;
+  background-color: #fff;
+  padding: 10px;
+  width: 300px;
+  border-radius: 5px;
+}
+
+.profile-tweets {
+  text-align: center;
+}
+/*# sourceMappingURL=mypage.css.map */
