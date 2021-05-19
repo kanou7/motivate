@@ -3,17 +3,21 @@
 <div class="profiles">
 
   <div class="profile-top">
-    <img src="/app/assets/images/sample1.png" alt="myimg" class="profile-image">
+    <% if @user.image.attached? %>
+        <%= image_tag @user.image.variant(resize: '150x150'), class: 'profile-image' %>
+      <% else %>
+        <i class="fas fa-camera profile-image"></i>
+      <% end %>
   </div>
 
   <div class="profile-main">
     <div class="profile-mainTop">
       <div class="profile-info">
         <span class="profile-name"><%= @user.name %></span>
-        <%= link_to "プロフィールの編集", "#", method: :get, class: "profile-edit" %>
+        <%= link_to "プロフィールの編集", edit_user_registration_path(current_user.id), method: :get, class: "profile-edit" %>
       </div>
       <div class="profile-job">
-        職業、状況：<%= @user.job.name %>
+        職業,状況：<%= @user.job.name %>
       </div>
     </div>
     <div class="profile-mainBottom">

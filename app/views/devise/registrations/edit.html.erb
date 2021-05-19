@@ -1,43 +1,45 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<%= render "shared/header" %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+<div class="profiles edit-profiles">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <div class="flash-message">
+      <%= render 'shared/error_messages', model: f.object %>
+    </div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <div class="profile-top">
+      <label for="user_image" class="user-image">
+      <% if @user.image.attached? %>
+        <%= image_tag @user.image.variant(resize: '150x150'), class: 'profile-image' %>
+      <% else %>
+        <i class="fas fa-camera"></i>
+      <% end %>
+      </label>
+      <%= f.file_field :image, class:"hidden" %>
+    </div>
+
+    <div class="profile-main">
+      <div class="profile-mainTop">
+        <p>名前</p>
+        <div class="profile-info">
+          <%= f.text_area :name, class:"profile-name edit-input", placeholder:"名前（必須 6文字まで)", maxlength:"6" %>
+        </div>
+        <div class="profile-job">
+          職業、状況<br><%= f.collection_select(:job_id, Job.all, :id, :name, {}, {class:"select-box edit-input"}) %>
+        </div>
+        <div class="profile-job">
+          状態<br><%= f.collection_select(:status_id, Status.all, :id, :name, {}, {class:"select-box edit-input"}) %>
+        </div>
+      </div>
+      <div class="profile-mainBottom">
+        <p>プロフィール</p>
+        <%= f.text_area :profile, class:"profile-text edit-input", placeholder:"自身のプロフィール" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+    </div>
+
+    <div class="profile-editBtn">
+      <%= f.submit "編集する" ,class:"edit-btn btn" %>
+    </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+</div>
