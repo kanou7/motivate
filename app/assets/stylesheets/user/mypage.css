@@ -13,6 +13,15 @@
   border-radius: 1000px;
 }
 
+.profile-top .profile-camera {
+  font-size: 60px;
+  transition: 0.5;
+}
+
+.profile-top .profile-camera:hover {
+  opacity: 0.8;
+}
+
 .profile-main {
   background-color: #fff;
   width: 400px;

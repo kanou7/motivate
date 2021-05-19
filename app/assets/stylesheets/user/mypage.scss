@@ -10,7 +10,15 @@
     height: 150px;
     width: 150px;
     border-radius: 1000px;
+  }
 
+  .profile-camera {
+    font-size: 60px;
+    transition: 0.5;
+
+    &:hover {
+      opacity: 0.8;
+    }
   }
 }
 

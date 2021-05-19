@@ -12,7 +12,7 @@
       <% if @user.image.attached? %>
         <%= image_tag @user.image.variant(resize: '150x150'), class: 'profile-image' %>
       <% else %>
-        <i class="fas fa-camera"></i>
+        <i class="fas fa-camera profile-camera"></i>
       <% end %>
       </label>
       <%= f.file_field :image, class:"hidden" %>
