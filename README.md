@@ -8,6 +8,8 @@
 | email                      | string | null: false, unique: true |
 | encrypted_password         | string | null: false               |
 | profile                    | text   | null: false               |
+| job_id                     | integer| null: false               |
+| status_id                  | integer|                           |
 
 ### Association
 
@@ -20,6 +22,8 @@
 | ------------- | ---------- | ------------------------------ |
 | title         | string     | null: false                    |
 | text          | text       | null: false                    |
+| job_id        | integer    | null: false                    |
+| status        | integer    | null: false                    |
 | user          | references | null: false, foreign_key: true |
 
 ### Association

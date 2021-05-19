@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     registrations: "users/registrations"
   }
   resources :users, only: [:show]
-  root to: 'tweets#index'
   post '/users/guest_sign_in', to: 'users#guest_sign_in'
+  root to: 'tweets#index'
+  resources :tweets, only: [:index, :new, :create]
 end
