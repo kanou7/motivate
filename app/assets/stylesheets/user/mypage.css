@@ -6,6 +6,13 @@
   text-align: center;
 }
 
+.profile-top .profile-image {
+  background-color: #fff;
+  height: 150px;
+  width: 150px;
+  border-radius: 1000px;
+}
+
 .profile-main {
   background-color: #fff;
   width: 400px;
@@ -20,6 +27,7 @@
 
 .profile-info .profile-name {
   font-size: 24px;
+  font-weight: bold;
 }
 
 .profile-info .profile-edit {
@@ -35,10 +43,12 @@
 }
 
 .profile-job {
+  font-size: 18px;
   margin-top: 20px;
 }
 
 .profile-mainBottom {
+  font-size: 16px;
   margin-top: 20px;
 }
 
@@ -52,5 +62,38 @@
 
 .profile-tweets {
   text-align: center;
+}
+
+/*========================================================
+# edit
+========================================================*/
+.edit-profiles .profile-main {
+  background-color: transparent;
+}
+
+.edit-profiles .user-image:hover {
+  cursor: pointer;
+}
+
+.edit-profiles .edit-input {
+  width: 100%;
+  border: none;
+  padding: 2px 5px;
+}
+
+.edit-profiles .profile-name {
+  font-size: 16px;
+  font-weight: normal;
+  height: 25px;
+}
+
+.edit-profiles .profile-editBtn {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.edit-profiles .profile-editBtn .edit-btn {
+  background-color: var(--main-color);
+  color: #fff;
 }
 /*# sourceMappingURL=mypage.css.map */

@@ -12,7 +12,7 @@
             <%= link_to root_path, class: "home header-item" do %>
               <i class="fas fa-home"></i>ホーム
             <% end %>
-            <%= link_to "/users/#{current_user.id}", class: "post header-item" do %>
+            <%= link_to user_path(current_user), class: "post header-item" do %>
               <i class="fas fa-user"></i>プロフィール
             <% end %>
             <%= link_to destroy_user_session_path, class: "logout header-item", method: :delete do %>
