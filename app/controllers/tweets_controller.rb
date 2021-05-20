@@ -1,4 +1,5 @@
 class TweetsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create]
   before_action :move_to_index, except: [:index, :show]
 
   def index
