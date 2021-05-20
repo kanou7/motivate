@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :tweet do
-    title {'テスト'}
-    text {'テストテストテスト'}
+    title { 'テスト' }
+    text { 'テストテストテスト' }
     job_id { 2 }
     status_id { 2 }
     association :user

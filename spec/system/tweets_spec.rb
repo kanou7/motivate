@@ -5,7 +5,7 @@ RSpec.describe 'ツイート投稿', type: :system do
     @user = FactoryBot.create(:user)
     @tweet = FactoryBot.build(:tweet)
   end
-  context 'ツイート投稿ができるとき'do
+  context 'ツイート投稿ができるとき' do
     it 'ログインしたユーザーは新規投稿できる' do
       # ログインする
       visit new_user_session_path
@@ -23,16 +23,16 @@ RSpec.describe 'ツイート投稿', type: :system do
       select '学生', from: 'tweet[job_id]'
       select '中退', from: 'tweet[status_id]'
       # 送信するとTweetモデルのカウントが1上がることを確認する
-      expect{
+      expect do
         find('input[name="commit"]').click
-      }.to change { Tweet.count }.by(1)
+      end.to change { Tweet.count }.by(1)
       # トップページに遷移することを確認する
       expect(current_path).to eq(root_path)
       # トップページには先ほど投稿した内容のツイートが存在することを確認する（画像）
       # トップページには先ほど投稿した内容のツイートが存在することを確認する（テキスト）
     end
   end
-  context 'ツイート投稿ができないとき'do
+  context 'ツイート投稿ができないとき' do
     it 'ログインしていないと新規投稿ページに遷移できない' do
       # トップページに遷移する
       # 新規投稿ページへのボタンがないことを確認する

@@ -21,32 +21,32 @@ RSpec.describe Tweet, type: :model do
       it 'titleが空では登録できない' do
         @tweet.title = ''
         @tweet.valid?
-        expect(@tweet.errors.full_messages).to include "作品名を入力してください"
+        expect(@tweet.errors.full_messages).to include '作品名を入力してください'
       end
       it 'textが空では登録できない' do
         @tweet.text = ''
         @tweet.valid?
-        expect(@tweet.errors.full_messages).to include "説明文を入力してください"
+        expect(@tweet.errors.full_messages).to include '説明文を入力してください'
       end
       it 'job_idが空では登録できない' do
         @tweet.job_id = ''
         @tweet.valid?
-        expect(@tweet.errors.full_messages).to include "どんな職業、状況の人に見て欲しいかを入力してください"
+        expect(@tweet.errors.full_messages).to include 'どんな職業、状況の人に見て欲しいかを入力してください'
       end
       it 'status_idが空では登録できない' do
         @tweet.status_id = ''
         @tweet.valid?
-        expect(@tweet.errors.full_messages).to include "どんな状態、心境の人に見て欲しいかを入力してください"
+        expect(@tweet.errors.full_messages).to include 'どんな状態、心境の人に見て欲しいかを入力してください'
       end
       it 'job_idは1では登録できない' do
         @tweet.status_id = 1
         @tweet.valid?
-        expect(@tweet.errors.full_messages).to include "どんな状態、心境の人に見て欲しいかを選択してください"
+        expect(@tweet.errors.full_messages).to include 'どんな状態、心境の人に見て欲しいかを選択してください'
       end
       it 'status_idは1では登録できない' do
         @tweet.status_id = 1
         @tweet.valid?
-        expect(@tweet.errors.full_messages).to include "どんな状態、心境の人に見て欲しいかを選択してください"
+        expect(@tweet.errors.full_messages).to include 'どんな状態、心境の人に見て欲しいかを選択してください'
       end
     end
   end
