@@ -48,6 +48,19 @@
   opacity: 0.8;
 }
 
+.container {
+  width: 400px;
+  margin: 0 auto;
+}
+
+.sub-title {
+  text-align: center;
+  margin-top: 70px;
+  margin-bottom: 40px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
 .flash-message {
   background-color: var(--main-color);
   font-size: 16px;
@@ -58,6 +71,53 @@
   position: absolute;
   top: 70px;
   right: 30px;
+}
+
+/* 入力フォーム */
+
+.field .motivate-label {
+  margin-bottom: 10px;
+}
+
+.field span {
+  color: #e94343;
+  margin-left: 10px;
+}
+
+.field .motivate-field, .field .select-box {
+  width: 400px;
+  height: 35px;
+  padding: 0 5px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+.field .motivate-camera {
+  font-size: 100px;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background-color: #fff;
+  width: 100%;
+  padding: 100px 0;
+  border-radius: 5px;
+}
+
+.field .motivate-camera:hover {
+  cursor: pointer;
+}
+
+.field .text-field {
+  height: 200px;
+}
+
+.main-submit {
+  background-color: var(--main-color);
+  color: #fff;
 }
 
 

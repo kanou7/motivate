@@ -3,6 +3,7 @@ class User < ApplicationRecord
   belongs_to :job
   belongs_to :status
   has_one_attached :image
+  has_many :tweets
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
