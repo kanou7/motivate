@@ -37,6 +37,8 @@
   </ul>
 </div>
 
-<%= link_to new_tweet_path, class: "tweet-btn" do %>
-  <i class="fas fa-edit"></i>
-<% end %>
+<% if user_signed_in? %>
+  <%= link_to new_tweet_path, class: "tweet-btn", id: "tweet-btn" do %>
+    <i class="fas fa-edit"></i>
+  <% end %>
+<% end%>
