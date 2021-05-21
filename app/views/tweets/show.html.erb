@@ -1,0 +1,28 @@
+<%= render "shared/header" %>
+
+<div class="index">
+  <ul class="tweet-lists">
+    <li class='tweet-list'>
+
+      <div class="tweet-listTop">
+        <% if @tweet.user.image.attached? %>
+          <%= image_tag @tweet.user.image.variant(resize: '50x50'), class: "user-img" %>
+        <% end %>
+        <div class="user-name"><%= @tweet.user.name %></div>
+      </div>
+
+      <div class="tweet-listMain">
+        <% if @tweet.image.attached? %>
+          <%= image_tag @tweet.image, class: "tweet-img" %>
+        <% end %>
+      </div>
+
+      <div class="tweet-listBottom">
+        <div class="tweet-ttl"><%= @tweet.title %></div>
+        <div class="tweet-txt"><%= @tweet.text %></div>
+        <div class="tweet-day"><%= time_ago_in_words(@tweet.created_at) %>前</div>
+      </div>
+
+    </li>
+  </ul>
+</div>
