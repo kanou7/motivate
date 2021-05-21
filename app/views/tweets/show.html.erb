@@ -24,11 +24,13 @@
         <div class="tweet-status">見て欲しい心境,状態：<%= @tweet.status.name %></div>
         <div class="tweet-option">
           <div class="tweet-day"><%= time_ago_in_words(@tweet.created_at) %>前</div>
-          <div class="tweet-edit">
-            <%= link_to edit_tweet_path(@tweet.id), class: "edit-btn" do %>
-              <i class="far fa-edit"></i>
-            <% end %>
-          </div>
+          <% if user_signed_in? && current_user.id == @tweet.user_id %>
+            <div class="tweet-edit">
+              <%= link_to edit_tweet_path(@tweet.id), class: "edit-btn" do %>
+                <i class="far fa-edit"></i>
+              <% end %>
+            </div>
+          <% end %>
         </div>
       </div>
 
