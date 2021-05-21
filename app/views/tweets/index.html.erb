@@ -5,40 +5,38 @@
 </div>
 
 <div class="index">
-  <div class="index-container">
-    <ul class="tweet-lists">
-      <% if @tweets != [] %>
-        <% @tweets.each do |tweet| %>
-          <li class='tweet-list'>
-            <%= link_to "#" do %>
+  <ul class="tweet-lists">
+    <% if @tweets != [] %>
+      <% @tweets.each do |tweet| %>
+        <li class='tweet-list'>
+          <%= link_to "#" do %>
 
-              <div class="tweet-listTop">
-                <% if tweet.user.image.attached? %>
-                  <%= image_tag tweet.user.image, class: "user-img" %>
-                <% end %>
-                <div class="user-name"><%= tweet.user.name %></div>
-              </div>
+            <div class="tweet-listTop">
+              <% if tweet.user.image.attached? %>
+                <%= image_tag tweet.user.image.variant(resize: '50x50'), class: "user-img" %>
+              <% end %>
+              <div class="user-name"><%= tweet.user.name %></div>
+            </div>
 
-              <div class="tweet-listMain">
-                <% if tweet.image.attached? %>
-                  <%= image_tag tweet.image, class: "tweet-img" %>
-                <% end %>
-                <div class="tweet-ttl"><%= tweet.title %></div>
-                <div class="tweet-txt"><%= tweet.text %></div>
-              </div>
+            <div class="tweet-listMain">
+              <% if tweet.image.attached? %>
+                <%= image_tag tweet.image, class: "tweet-img" %>
+              <% end %>
+            </div>
 
-              <div class="tweet-listBottom">
-                <div class="tweet-day"><%= tweet.created_at %></div>
-              </div>
+            <div class="tweet-listBottom">
+              <div class="tweet-ttl"><%= tweet.title %></div>
+              <div class="tweet-txt"><%= tweet.text %></div>
+              <div class="tweet-day"><%= time_ago_in_words(tweet.created_at) %>前</div>
+            </div>
 
-            <% end %>
-          </li>
-        <% end %>
+          <% end %>
+        </li>
       <% end %>
-    </ul>
-  </div>
+    <% end %>
+  </ul>
 </div>
 
-<div class="tweet-btn">
-  <%= link_to '投稿', new_tweet_path, class: "tweet-link" %>
-</div>
+<%= link_to new_tweet_path, class: "tweet-btn" do %>
+  <i class="fas fa-edit"></i>
+<% end %>
