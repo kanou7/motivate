@@ -2,7 +2,7 @@
 
 <div class="tweet-new">
   <div class="container">
-    <h3 class="sub-title">投稿</h3>
+    <h3 class="sub-title">編集</h3>
     <%= form_with(model: @tweet, local: true) do |f| %>
 
       <div class="flash-message">
@@ -38,7 +38,7 @@
       </div>
 
       <div class="actions">
-        <%= f.submit "投稿する", :class => 'main-submit btn' %>
+        <%= f.submit "編集する", :class => 'main-submit btn' %>
       </div>
     <% end %>
   </div>

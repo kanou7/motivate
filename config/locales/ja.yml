@@ -10,8 +10,6 @@ ja:
         text: 説明文
         job_id: どんな職業、状況の人に見て欲しいか
         status_id: どんな状態、心境の人に見て欲しいか
-
-ja:
-  time:
-    formats:
-      default: "%Y/%m/%d %H:%M:%S"
+      time:
+        formats:
+          default: "%Y/%m/%d %H:%M:%S"
