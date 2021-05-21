@@ -14,7 +14,7 @@ RSpec.describe 'ツイート投稿', type: :system do
       find('input[name="commit"]').click
       expect(current_path).to eq(root_path)
       # 新規投稿ページへのボタンがあることを確認する
-      expect(page).to have_css('a', class: "tweet-btn")
+      expect(page).to have_css('a', class: 'tweet-btn')
       # 投稿ページに移動する
       visit new_tweet_path
       # フォームに情報を入力する
@@ -42,7 +42,7 @@ RSpec.describe 'ツイート投稿', type: :system do
       # トップページに遷移する
       visit root_path
       # 新規投稿ページへのボタンがないことを確認する
-      expect(page).to have_no_css('a', class: "tweet-btn")
+      expect(page).to have_no_css('a', class: 'tweet-btn')
     end
   end
 end
