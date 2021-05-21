@@ -32,7 +32,6 @@
 
 .tweet-listBottom {
   padding: 10px 15px;
-  color: #262626;
   font-size: 14px;
 }
 
@@ -40,15 +39,28 @@
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 10px;
+  color: #262626;
 }
 
 .tweet-listBottom .tweet-txt {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  color: #262626;
+}
+
+.tweet-listBottom .tweet-job, .tweet-listBottom .tweet-status {
+  color: #262626;
+  font-size: 12px;
+  margin-bottom: 5px;
 }
 
 .tweet-listBottom .tweet-day {
   color: var(--main-text-color);
   font-size: 12px;
+}
+
+.tweet-option {
+  display: flex;
+  justify-content: space-between;
 }
 
 .tweet-btn {
@@ -71,6 +83,10 @@
 }
 
 /*========================================================
-# show
+# edit
 ========================================================*/
+.edit-btn {
+  color: #262626;
+  font-size: 16px;
+}
 /*# sourceMappingURL=tweet.css.map */
