@@ -145,17 +145,17 @@ RSpec.describe 'ツイート削除', type: :system do
       # ツイート1に「削除」へのリンクがあることを確認する
       expect(page).to have_css('a', class: 'destroy-btn'), href: tweet_path(@tweet1)
       # 投稿を削除するとレコードの数が1減ることを確認する
-      expect{
+      expect do
         find('.destroy-btn').click
-      }.to change { Tweet.count }.by(-1)
+      end.to change { Tweet.count }.by(-1)
       # トップページ画面に遷移したことを確認する
       expect(current_path).to eq(root_path)
       # トップページには先ほど投稿した内容のツイートが存在しないことを確認する（タイトル）
-      expect(page).to have_no_content("#{@tweet1.title}")
+      expect(page).to have_no_content(@tweet1.title.to_s)
       # トップページには先ほど投稿した内容のツイートが存在しないことを確認する（画像）
       expect(page).to have_no_selector("img[src$='sample.png']")
       # トップページには先ほど投稿した内容のツイートが存在しないことを確認する（説明文）
-      expect(page).to have_no_content("#{@tweet1.text}")
+      expect(page).to have_no_content(@tweet1.text.to_s)
       # トップページには先ほど投稿した内容のツイートが存在しないことを確認する（職業、状況）
       expect(page).to have_no_content('学生')
       # トップページには先ほど投稿した内容のツイートが存在しないことを確認する（状態、心境）
@@ -171,15 +171,15 @@ RSpec.describe 'ツイート削除', type: :system do
       find('input[name="commit"]').click
       expect(current_path).to eq(root_path)
       # ツイート2に「削除」へのリンクがないことを確認する
-      expect(page).to have_no_link('a', class: 'destroy-btn'), href: "/tweets/#{@tweet1.id}/destroy" 
+      expect(page).to have_no_link('a', class: 'destroy-btn'), href: "/tweets/#{@tweet1.id}/destroy"
     end
     it 'ログインしていないとツイートの削除ボタンがない' do
       # トップページに移動する
       visit root_path
       # ツイート1に「削除」へのリンクがないことを確認する
-      expect(page).to have_no_link('a', class: 'destroy-btn'), href: "/tweets/#{@tweet1.id}/destroy" 
+      expect(page).to have_no_link('a', class: 'destroy-btn'), href: "/tweets/#{@tweet1.id}/destroy"
       # ツイート2に「削除」へのリンクがないことを確認する
-      expect(page).to have_no_link('a', class: 'destroy-btn'), href: "/tweets/#{@tweet2.id}/destroy" 
+      expect(page).to have_no_link('a', class: 'destroy-btn'), href: "/tweets/#{@tweet2.id}/destroy"
     end
   end
 end
