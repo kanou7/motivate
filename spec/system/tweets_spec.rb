@@ -77,30 +77,30 @@ RSpec.describe 'ツイート編集', type: :system do
       ).to eq(@tweet1.text)
       expect(
         find('#tweet_job').value
-      ).to eq("#{@tweet1.job_id}")
+      ).to eq(@tweet1.job_id.to_s)
       expect(
         find('#tweet_status').value
-      ).to eq("#{@tweet1.status_id}")
+      ).to eq(@tweet1.status_id.to_s)
       # 投稿内容を編集する
-      fill_in '作品名', with: "テスト2"
+      fill_in '作品名', with: 'テスト2'
       attach_file('画像', 'public/images/sample2.png', make_visible: true)
-      fill_in '説明文', with: "テストテスト2"
+      fill_in '説明文', with: 'テストテスト2'
       select '専業主婦', from: 'tweet[job_id]'
       select '失恋', from: 'tweet[status_id]'
       # 編集してもTweetモデルのカウントは変わらないことを確認する
-      expect{
+      expect do
         find('input[name="commit"]').click
-      }.to change { Tweet.count }.by(0)
+      end.to change { Tweet.count }.by(0)
       # 編集完了画面に遷移したことを確認する
       expect(current_path).to eq(tweet_path(@tweet1))
       # トップページに遷移する
       visit root_path
       # トップページには先ほど変更した内容のツイートが存在することを確認する（タイトル）
-      expect(page).to have_content("テスト2")
+      expect(page).to have_content('テスト2')
       # トップページには先ほど変更した内容のツイートが存在することを確認する（画像）
       expect(page).to have_selector("img[src$='sample2.png']")
       # トップページには先ほど変更した内容のツイートが存在することを確認する（テキスト）
-      expect(page).to have_content("テストテスト2")
+      expect(page).to have_content('テストテスト2')
       # トップページには先ほど変更した内容のツイートが存在することを確認する（職業、状況）
       expect(page).to have_content('専業主婦')
       # トップページには先ほど変更した内容のツイートが存在することを確認する（状態、心境）
