@@ -1,6 +1,6 @@
 class TweetsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
-  before_action :move_to_index, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :move_to_index, only: [:edit, :update, :destroy]
 
   def index
     @tweets = Tweet.all.order('created_at DESC')
@@ -23,10 +23,24 @@ class TweetsController < ApplicationController
     @tweet = Tweet.find(params[:id])
   end
 
+  def edit
+    @tweet = Tweet.find(params[:id])
+  end
+
+  def update
+    @tweet = Tweet.find(params[:id])
+    if @tweet.update(tweet_params)
+      redirect_to tweet_path(@tweet.id)
+    else
+      render :edit
+    end
+  end
+
   private
 
   def move_to_index
-    redirect_to action: :index unless user_signed_in?
+    @tweet = Tweet.find(params[:id])
+    redirect_to action: :index if current_user.id != @tweet.user.id
   end
 
   def tweet_params
