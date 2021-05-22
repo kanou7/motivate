@@ -27,14 +27,17 @@
             <div class="tweet-listBottom">
               <div class="tweet-ttl"><%= tweet.title %></div>
               <div class="tweet-txt"><%= tweet.text %></div>
-              <div class="tweet-job">見て欲しい職業,状況：<%= tweet.job.name %></div>
-              <div class="tweet-status">見て欲しい心境,状態：<%= tweet.status.name %></div>
+              <div class="tweet-job">見て欲しい人の職業,状況：<%= tweet.job.name %></div>
+              <div class="tweet-status">見て欲しい人の心境,状態：<%= tweet.status.name %></div>
               <div class="tweet-option">
                 <div class="tweet-day"><%= time_ago_in_words(tweet.created_at) %>前</div>
                 <% if user_signed_in? && current_user.id == tweet.user_id %>
-                  <div class="tweet-edit">
+                  <div class="tweet-sub">
                     <%= link_to edit_tweet_path(tweet.id), class: "edit-btn" do %>
                       <i class="far fa-edit"></i>
+                    <% end %>
+                    <%= link_to tweet_path(tweet.id), method: :delete, class: "destroy-btn" do %>
+                      <i class="fas fa-trash"></i>
                     <% end %>
                   </div>
                 <% end %>

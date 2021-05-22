@@ -128,3 +128,58 @@ RSpec.describe 'ツイート編集', type: :system do
     end
   end
 end
+
+RSpec.describe 'ツイート削除', type: :system do
+  before do
+    @tweet1 = FactoryBot.create(:tweet)
+    @tweet2 = FactoryBot.create(:tweet, :tweet2)
+  end
+  context 'ツイート削除ができるとき' do
+    it 'ログインしたユーザーは自らが投稿したツイートの削除ができる' do
+      # ツイート1を投稿したユーザーでログインする
+      visit new_user_session_path
+      fill_in 'メールアドレス', with: @tweet1.user.email
+      fill_in 'パスワード', with: @tweet1.user.password
+      find('input[name="commit"]').click
+      expect(current_path).to eq(root_path)
+      # ツイート1に「削除」へのリンクがあることを確認する
+      expect(page).to have_css('a', class: 'destroy-btn'), href: tweet_path(@tweet1)
+      # 投稿を削除するとレコードの数が1減ることを確認する
+      expect do
+        find('.destroy-btn').click
+      end.to change { Tweet.count }.by(-1)
+      # トップページ画面に遷移したことを確認する
+      expect(current_path).to eq(root_path)
+      # トップページには先ほど投稿した内容のツイートが存在しないことを確認する（タイトル）
+      expect(page).to have_no_content(@tweet1.title.to_s)
+      # トップページには先ほど投稿した内容のツイートが存在しないことを確認する（画像）
+      expect(page).to have_no_selector("img[src$='sample.png']")
+      # トップページには先ほど投稿した内容のツイートが存在しないことを確認する（説明文）
+      expect(page).to have_no_content(@tweet1.text.to_s)
+      # トップページには先ほど投稿した内容のツイートが存在しないことを確認する（職業、状況）
+      expect(page).to have_no_content('学生')
+      # トップページには先ほど投稿した内容のツイートが存在しないことを確認する（状態、心境）
+      expect(page).to have_no_content('失業')
+    end
+  end
+  context 'ツイート削除ができないとき' do
+    it 'ログインしたユーザーは自分以外が投稿したツイートの削除ができない' do
+      # ツイート1を投稿したユーザーでログインする
+      visit new_user_session_path
+      fill_in 'メールアドレス', with: @tweet1.user.email
+      fill_in 'パスワード', with: @tweet1.user.password
+      find('input[name="commit"]').click
+      expect(current_path).to eq(root_path)
+      # ツイート2に「削除」へのリンクがないことを確認する
+      expect(page).to have_no_link('a', class: 'destroy-btn'), href: "/tweets/#{@tweet1.id}/destroy"
+    end
+    it 'ログインしていないとツイートの削除ボタンがない' do
+      # トップページに移動する
+      visit root_path
+      # ツイート1に「削除」へのリンクがないことを確認する
+      expect(page).to have_no_link('a', class: 'destroy-btn'), href: "/tweets/#{@tweet1.id}/destroy"
+      # ツイート2に「削除」へのリンクがないことを確認する
+      expect(page).to have_no_link('a', class: 'destroy-btn'), href: "/tweets/#{@tweet2.id}/destroy"
+    end
+  end
+end
