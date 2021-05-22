@@ -8,11 +8,7 @@ RSpec.describe 'ツイート投稿', type: :system do
   context 'ツイート投稿ができるとき' do
     it 'ログインしたユーザーは新規投稿できる' do
       # ログインする
-      visit new_user_session_path
-      fill_in 'メールアドレス', with: @user.email
-      fill_in 'パスワード', with: @user.password
-      find('input[name="commit"]').click
-      expect(current_path).to eq(root_path)
+      sign_in(@user)
       # 新規投稿ページへのボタンがあることを確認する
       expect(page).to have_css('a', class: 'tweet-btn')
       # 投稿ページに移動する
@@ -59,11 +55,7 @@ RSpec.describe 'ツイート編集', type: :system do
   context 'ツイート編集ができるとき' do
     it 'ログインしたユーザーは自分が投稿したツイートの編集ができる' do
       # ツイート1を投稿したユーザーでログインする
-      visit new_user_session_path
-      fill_in 'メールアドレス', with: @tweet1.user.email
-      fill_in 'パスワード', with: @tweet1.user.password
-      find('input[name="commit"]').click
-      expect(current_path).to eq(root_path)
+      sign_in(@tweet1.user)
       # ツイート1に「編集」へのリンクがあることを確認する
       expect(page).to have_css('a', class: 'edit-btn'), href: edit_tweet_path(@tweet1)
       # 編集ページへ遷移する
@@ -110,11 +102,7 @@ RSpec.describe 'ツイート編集', type: :system do
   context 'ツイート編集ができないとき' do
     it 'ログインしたユーザーは自分以外が投稿したツイートの編集画面には遷移できない' do
       # ツイート2ユーザーでログインする
-      visit new_user_session_path
-      fill_in 'メールアドレス', with: @tweet2.user.email
-      fill_in 'パスワード', with: @tweet2.user.password
-      find('input[name="commit"]').click
-      expect(current_path).to eq(root_path)
+      sign_in(@tweet2.user)
       # ツイート2に「編集」へのリンクがないことを確認する
       expect(page).to have_no_link('a', class: 'edit-btn'), href: "/tweets/#{@tweet1.id}/edit"
     end
@@ -137,11 +125,7 @@ RSpec.describe 'ツイート削除', type: :system do
   context 'ツイート削除ができるとき' do
     it 'ログインしたユーザーは自らが投稿したツイートの削除ができる' do
       # ツイート1を投稿したユーザーでログインする
-      visit new_user_session_path
-      fill_in 'メールアドレス', with: @tweet1.user.email
-      fill_in 'パスワード', with: @tweet1.user.password
-      find('input[name="commit"]').click
-      expect(current_path).to eq(root_path)
+      sign_in(@tweet1.user)
       # ツイート1に「削除」へのリンクがあることを確認する
       expect(page).to have_css('a', class: 'destroy-btn'), href: tweet_path(@tweet1)
       # 投稿を削除するとレコードの数が1減ることを確認する
@@ -165,11 +149,7 @@ RSpec.describe 'ツイート削除', type: :system do
   context 'ツイート削除ができないとき' do
     it 'ログインしたユーザーは自分以外が投稿したツイートの削除ができない' do
       # ツイート1を投稿したユーザーでログインする
-      visit new_user_session_path
-      fill_in 'メールアドレス', with: @tweet1.user.email
-      fill_in 'パスワード', with: @tweet1.user.password
-      find('input[name="commit"]').click
-      expect(current_path).to eq(root_path)
+      sign_in(@tweet1.user)
       # ツイート2に「削除」へのリンクがないことを確認する
       expect(page).to have_no_link('a', class: 'destroy-btn'), href: "/tweets/#{@tweet1.id}/destroy"
     end
