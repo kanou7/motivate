@@ -35,8 +35,8 @@ RSpec.describe 'コメント投稿', type: :system do
       visit root_path
       # 投稿の詳細ページに行く
       visit tweet_path(@tweet)
-      # コメント投稿ボタンがないことを確認する
-      expect(page).to have_no_css('a', class: 'comment-submit')
+      # コメントフォームがないことを確認する
+      expect(page).to have_no_selector 'form'
     end
   end
 end

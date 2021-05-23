@@ -136,6 +136,10 @@
   opacity: 0.8;
 }
 
+.error-comment {
+  text-align: center;
+}
+
 .comment-listsTtl {
   text-align: center;
   margin: 20px 0;
