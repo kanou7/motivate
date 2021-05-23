@@ -43,10 +43,16 @@
   <div class="comment">
     <h3 class="comment-ttl">コメント</h3>
     <% if user_signed_in? %>
-      <%= form_with(model: [@tweet, @comment], local: true) do |form| %>
+      <%= form_with(model: [@tweet, @comment], local: true) do |f| %>
+
+        <div class="flash-message">
+          <%= render 'shared/error_messages', model: f.object %>
+        </div>
+
         <div class="comment-form">
-          <%= form.text_area :text, placeholder: "コメント", rows: "2", :class => 'comment-field' %>
-          <%= form.submit "投稿", :class => 'comment-submit' %>
+          <%= f.label :text, {class: 'hidden'} %>
+          <%= f.text_area :text, placeholder: "コメント", rows: "2", :class => 'comment-field' %>
+          <%= f.submit "投稿", :class => 'comment-submit' %>
         </div>
       <% end %>
     <% else %>
