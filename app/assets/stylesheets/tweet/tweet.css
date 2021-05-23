@@ -97,4 +97,71 @@
   color: #262626;
   font-size: 16px;
 }
+
+/*========================================================
+# comment
+========================================================*/
+.comment-ttl {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 20px auto 20px;
+}
+
+.comment-form {
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+}
+
+.comment-form .comment-field {
+  width: 84%;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  align-items: center;
+  outline: none;
+}
+
+.comment-form .comment-submit {
+  width: 13%;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--main-color);
+  color: #fff;
+  transition: 0.5s;
+}
+
+.comment-form .comment-submit:hover {
+  opacity: 0.8;
+}
+
+.error-comment {
+  text-align: center;
+}
+
+.comment-listsTtl {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.comment-list {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 0 5px;
+  margin-bottom: 15px;
+}
+
+.comment-list .user-img {
+  height: 30px;
+  width: 30px;
+  border-radius: 50px;
+  margin-right: 5px;
+}
+
+.comment-list .user-name {
+  color: #262626;
+}
 /*# sourceMappingURL=tweet.css.map */
