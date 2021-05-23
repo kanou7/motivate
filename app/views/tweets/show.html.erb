@@ -41,19 +41,25 @@
   </ul>
 
   <div class="comment">
+    <h3 class="comment-ttl">コメント</h3>
     <% if user_signed_in? %>
       <%= form_with(model: [@tweet, @comment], local: true) do |form| %>
-        <%= form.text_area :text, placeholder: "コメントする", rows: "2" %>
-        <%= form.submit "SEND" %>
+        <div class="comment-form">
+          <%= form.text_area :text, placeholder: "コメント", rows: "2", :class => 'comment-field' %>
+          <%= form.submit "投稿", :class => 'comment-submit' %>
+        </div>
       <% end %>
     <% else %>
       <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
     <% end %>
     <div class="comment-lists">
-      <h4>＜コメント一覧＞</h4>
+      <h4 class="comment-listsTtl">＜コメント一覧＞</h4>
       <% @comments.each do |comment| %>
         <div class="comment-list">
-          <%= link_to comment.user.name, user_path(comment.user_id) %>：
+          <% if comment.user.image.attached? %>
+            <%= image_tag comment.user.image.variant(resize: '30x30'), class: "user-img" %>
+          <% end %>
+          <%= link_to "#{comment.user.name}：", user_path(comment.user_id), class: "user-name" %>
           <%= comment.text %>
         </div>
       <% end %>
