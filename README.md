@@ -35,7 +35,7 @@
 
 | Column       | Type       | Options                        |
 | ------------ | ---------- | ------------------------------ |
-| comment      | text       | null: false                    |
+| text         |  text      | null: false                    |
 | user         | references | null: false, foreign_key: true |
 | tweet        | references | null: false, foreign_key: true |
 
