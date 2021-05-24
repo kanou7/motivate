@@ -6,7 +6,10 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   post '/users/guest_sign_in', to: 'users#guest_sign_in'
   root to: 'tweets#index'
+
   resources :tweets do
-    resources :comments, only: :create
+    resources :comments, only: [:create] 
+    resources :likes, only: [:create, :destroy]
   end
 end
+

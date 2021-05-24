@@ -43,3 +43,9 @@
 
 - belongs_to :user
 - belongs_to :tweet
+
+## likes テーブル
+| Column       | Type       | Options                        |
+| ------------ | ---------- | ------------------------------ |
+| user         | references | null: false, foreign_key: true |
+| tweet        | references | null: false, foreign_key: true |
