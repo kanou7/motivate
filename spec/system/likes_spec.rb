@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.describe 'いいね', type: :system do
   before do
-  @user = FactoryBot.create(:user)
-  @tweet = FactoryBot.create(:tweet)
-  @like = FactoryBot.build(:like)
+    @user = FactoryBot.create(:user)
+    @tweet = FactoryBot.create(:tweet)
+    @like = FactoryBot.build(:like)
   end
 
   context 'いいねができるとき' do
@@ -55,5 +55,4 @@ RSpec.describe 'いいね', type: :system do
       expect(page).to have_no_css('a', class: 'delete-likeBtn')
     end
   end
-
 end
