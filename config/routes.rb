@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   root to: 'tweets#index'
   resources :tweets do
     resources :comments, only: :create
+    post 'add' => 'likes#create'
+    delete '/add' => 'likes#destroy'
   end
 end

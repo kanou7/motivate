@@ -164,4 +164,20 @@
 .comment-list .user-name {
   color: #262626;
 }
+
+/*========================================================
+# like
+========================================================*/
+#like-createBtn {
+  color: #cf435a;
+}
+
+#like-deleteBtn {
+  color: gray;
+}
+
+.like-btn {
+  font-size: 16px;
+  margin-right: 5px;
+}
 /*# sourceMappingURL=tweet.css.map */
