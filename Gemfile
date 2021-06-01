@@ -70,4 +70,4 @@ gem 'image_processing', '~> 1.2'
 
 gem 'jquery-rails'
 
-gem 'RspecJunitFormatter'
+gem  'rspec_junit_formatter'
