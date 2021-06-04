@@ -30,6 +30,3 @@
 yarn-debug.log*
 .yarn-integrity
 .Ds_Store
-
-!/tmp/pid/.keep
-!/tmp/sockets/.keep
