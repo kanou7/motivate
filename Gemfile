@@ -35,6 +35,8 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'rubocop'
+  gem 'pry-rails'
+  gem 'pry-byebug'
 end
 
 group :development do
@@ -72,3 +74,5 @@ gem 'image_processing', '~> 1.2'
 gem 'jquery-rails'
 
 gem  'rspec_junit_formatter'
+
+gem 'pry-byebug'
