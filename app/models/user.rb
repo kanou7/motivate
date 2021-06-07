@@ -12,12 +12,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  def self.guest
-    find_or_create_by!(name: 'ゲスト', email: 'guest@example.com', job_id: 24, status_id: 12) do |user|
-      user.password = SecureRandom.urlsafe_base64
-    end
-  end
-
   with_options presence: true do
     validates :name
     validates :job_id, numericality: { other_than: 1, message: 'を選択してください' }
