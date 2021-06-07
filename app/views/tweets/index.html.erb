@@ -35,12 +35,12 @@
                 <% if user_signed_in? %>
                   <div class="tweet-sub">
                     <% if tweet.liked_by?(current_user) %>
-                      <% link_to({controller: "likes", action: "delete", tweet_id: tweet.id}, method: :delete, id: "like-createBtn", class: "like-btn delete-likeBtn") do %>
-                        あ<i class="fas fa-heart"></i>
+                      <%= button_to tweet_like_path(tweet, tweet.user), method: :delete, id: "like-createBtn", class: "like-btn delete-likeBtn" do %>
+                        <i class="fas fa-heart"></i>
                       <% end %>
                     <% else %>
-                      <% link_to({controller: "likes", action: "create", tweet_id: tweet.id}, method: :post, id: "like-deleteBtn", class: "like-btn") do %>
-                        あ<i class="fas fa-heart"></i>
+                      <%= link_to tweet_likes_path(tweet), method: :post, id: "like-deleteBtn", class: "like-btn" do %>
+                        <i class="fas fa-heart"></i>
                       <% end %>
                     <% end %>
                     <% if current_user.id == tweet.user_id %>
