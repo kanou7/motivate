@@ -35,7 +35,7 @@
                 <% if user_signed_in? %>
                   <div class="tweet-sub">
                     <% if tweet.liked_by?(current_user) %>
-                      <%= button_to tweet_like_path(tweet, tweet.user), method: :delete, id: "like-createBtn", class: "like-btn delete-likeBtn" do %>
+                      <%= link_to tweet_like_path(tweet, tweet.user), method: :delete, id: "like-createBtn", class: "like-btn delete-likeBtn" do %>
                         <i class="fas fa-heart"></i>
                       <% end %>
                     <% else %>
