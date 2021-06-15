@@ -3,43 +3,6 @@
 <div class="tweet-new">
   <div class="container">
     <h3 class="sub-title">投稿</h3>
-    <%= form_with(model: @tweet, local: true) do |f| %>
-
-      <div class="flash-message">
-        <%= render 'shared/error_messages', model: f.object %>
-      </div>
-
-      <div class="field">
-        <%= f.label :title, "作品名", {class: 'motivate-label'} %><span>※必須</span><br />
-        <%= f.text_field :title, placeholder: "作品名", :class => 'motivate-field' %>
-      </div>
-
-      <div class="field">   
-        <label for="tweet_image" class="motivate-label">
-          画像<br />
-          <i class="fas fa-camera motivate-camera"></i>
-        </label>
-        <%= f.file_field :image, class:"hidden motivate-field" %>
-      </div>
-
-      <div class="field">
-        <%= f.label :text, "説明文", {class: 'motivate-label'} %><span>※必須</span><br />
-        <%= f.text_area :text, placeholder: "説明文", maxlength: "200", :class => 'motivate-field text-field' %>
-      </div>
-
-      <div class="field">
-        <%= f.label :job_id, "どんな職業、状況の人に見て欲しいですか？", {class: 'motivate-label'} %><span>※必須</span><br />
-        <%= f.collection_select(:job_id, Job.all, :id, :name, {}, {class:"select-box", id:"tweet_job"}) %>
-      </div>
-
-      <div class="field">
-        <%= f.label :status_id, "どんな状態、心境の人に見て欲しいですか？", {class: 'motivate-label'} %><span>※必須</span><br />
-        <%= f.collection_select(:status_id, Status.all, :id, :name, {}, {class:"select-box", id:"tweet_status"}) %>
-      </div>
-
-      <div class="actions">
-        <%= f.submit "投稿する", :class => 'main-submit btn' %>
-      </div>
-    <% end %>
+    <%= render partial: "shared/tweet_new",  locals: { tweet: @tweet, btn: "投稿する" } %>
   </div>
 </div>
