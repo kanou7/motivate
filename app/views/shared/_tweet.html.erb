@@ -1,0 +1,43 @@
+<div class="tweet-listTop">
+  <% if tweet.user.image.attached? %>
+    <%= image_tag tweet.user.image.variant(resize: '50x50'), class: "user-img" %>
+  <% end %>
+  <div class="user-name"><%= tweet.user.name %></div>
+</div>
+
+<div class="tweet-listMain">
+  <% if tweet.image.attached? %>
+    <%= image_tag tweet.image, class: "tweet-img" %>
+  <% end %>
+</div>
+
+<div class="tweet-listBottom">
+  <div class="tweet-ttl"><%= tweet.title %></div>
+  <div class="tweet-txt"><%= tweet.text %></div>
+  <div class="tweet-job">見て欲しい人の職業,状況：<%= tweet.job.name %></div>
+  <div class="tweet-status">見て欲しい人の心境,状態：<%= tweet.status.name %></div>
+  <div class="tweet-option">
+    <div class="tweet-day"><%= time_ago_in_words(tweet.created_at) %>前</div>
+    <% if user_signed_in? %>
+      <div class="tweet-sub">
+        <% if tweet.liked_by?(current_user) %>
+          <%= link_to tweet_like_path(tweet, tweet.user), method: :delete, id: "like-createBtn", class: "like-btn delete-likeBtn" do %>
+            <i class="fas fa-heart"></i>
+          <% end %>
+        <% else %>
+          <%= link_to tweet_likes_path(tweet), method: :post, id: "like-deleteBtn", class: "like-btn" do %>
+            <i class="fas fa-heart"></i>
+          <% end %>
+        <% end %>
+        <% if current_user.id == tweet.user_id %>
+          <%= link_to edit_tweet_path(tweet.id), class: "edit-btn" do %>
+            <i class="far fa-edit"></i>
+          <% end %>
+          <%= link_to tweet_path(tweet.id), method: :delete, class: "destroy-btn" do %>
+            <i class="fas fa-trash"></i>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
