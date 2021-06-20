@@ -76,3 +76,7 @@ gem 'jquery-rails'
 gem  'rspec_junit_formatter'
 
 gem 'pry-byebug'
+
+group :production do
+    gem 'unicorn'
+end
