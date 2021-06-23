@@ -55,6 +55,6 @@ production:
   encoding: utf8
   database: motivate-mysql
   username: root
-  password: myrdspassword
-  host: motivate-mysql.c9qrjp4c7nos.ap-northeast-1.rds.amazonaws.com
+  password: <%= Rails.application.credentials.db[:password] %>
+  host: <%= Rails.application.credentials.db[:hostname] %>
   port: 3306
