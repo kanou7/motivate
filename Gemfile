@@ -82,6 +82,8 @@ gem  'rspec_junit_formatter'
 
 gem 'pry-byebug'
 
+gem 'aws-sdk-s3', require: false
+
 group :production do
     gem 'unicorn'
 end
