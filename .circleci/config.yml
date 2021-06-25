@@ -4,7 +4,7 @@ jobs:
     docker:
       - image: circleci/ruby:2.6.5-node-browsers
         environment:
-          - BUNDLER_VERSION: 2.2.20
+          - BUNDLER_VERSION: 2.2.18
           - RAILS_ENV: 'test'
           - MYSQL_PORT: 3306
       - image: circleci/mysql:5.6
@@ -24,7 +24,7 @@ jobs:
       - run:
           name: install dependencies
           command: |
-            gem install bundler:2.2.20
+            gem install bundler:2.2.18
             bundle install --jobs=4 --retry=3 --path vendor/bundle
 
       - save_cache:
@@ -71,7 +71,7 @@ jobs:
     docker:
       - image: circleci/ruby:2.6.5-node-browsers
         environment:
-          BUNDLER_VERSION: 2.2.20
+          BUNDLER_VERSION: 2.2.18
     steps:
       - checkout
       - add_ssh_keys:
