@@ -17,6 +17,9 @@ jobs:
     steps:
       - checkout
 
+      - add_ssh_keys:
+          fingerprints: "c0:ca:b1:d1:32:d6:4d:3d:90:22:06:76:cb:81:af:94"
+
       - restore_cache:
           keys:
             - v1-dependencies-{{ checksum "Gemfile.lock" }}
@@ -68,9 +71,28 @@ jobs:
           path: /tmp/test-results
           destination: test-results
 
+  deploy:
+    docker:
+      - image: circleci/ruby:2.6.5-node-browsers
+        environment:
+          BUNDLER_VERSION: 2.2.18
+    steps:
+      - checkout
+      - ruby/install-deps
+      - add_ssh_keys:
+          fingerprints: "c0:ca:b1:d1:32:d6:4d:3d:90:22:06:76:cb:81:af:94"
       - deploy:
-          name: Deploy Master to Heroku
-          command: |
-            if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
-            fi
+          name: Capistrano deploy
+          command: bundle exec cap production deploy
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
