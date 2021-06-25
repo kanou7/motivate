@@ -23,7 +23,7 @@
 
 ### インフラ
 
-- AWS(VPC/EC2/RDS/ALB/S3/CloudFront/ACM/Route53/IAM)
+- AWS(VPC/EC2/RDS/ALB/S3/ACM/Route53/IAM)
 - Nginx
 - Unicorn
 - CircleCI
