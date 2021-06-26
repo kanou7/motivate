@@ -1,8 +1,7 @@
 server "54.168.30.4", user: "motivate-user", roles: %w{app db web}
 
 set :ssh_options, {
-  port: 22,
-  keys: [ENV.fetch('PRODUCTION_SSH_KEY').to_s],
+  keys: %w(~/.ssh/motivate_keypair.pem),
   forward_agent: true,
   auth_methods: %w(publickey)
 }
