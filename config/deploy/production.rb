@@ -3,7 +3,7 @@ server "54.168.30.4", user: "motivate-user", roles: %w{app db web}
 set :ssh_options, {
   keys: %w(~/.ssh/motivate_keypair.pem),
   forward_agent: true,
-  auth_methods: %w(publickey)
+  auth_methods: ['publickey'],keys:['~/.ssh/id_rsa_c0cab1d132d64d3d90220676cb81af94']
 }
 
 # server-based syntax
