@@ -1,5 +1,5 @@
 .tweets-container {
-  padding: 0 30px;
+  margin: 0 30px;
 }
 
 .index {
@@ -30,7 +30,7 @@
 }
 
 .tweet-listMain .tweet-img {
-  height: 300px;
+  height: 400px;
   width: 100%;
 }
 
@@ -189,9 +189,47 @@
 # recommend
 ========================================================*/
 .recommend {
-  background-color: #fff;
-  height: 30px;
   width: 100%;
   margin-top: 20px;
+  padding: 20px 0 40px;
+}
+
+.recoTweet-lists {
+  display: flex;
+  justify-content: space-around;
+}
+
+.recoTweet-list {
+  height: 250px;
+  width: 30%;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: relative;
+}
+
+.recoTweet-img {
+  height: 100%;
+  width: 100%;
+  transition: 0.5s;
+  opacity: 0.6;
+}
+
+.recoTweet-img:hover {
+  transform: scale(1.05);
+}
+
+.recoTweet-ttl {
+  color: #fff;
+  font-size: 18px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.recoTweet-txt {
+  color: #fff;
+  font-size: 12px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
 }
 /*# sourceMappingURL=tweet.css.map */

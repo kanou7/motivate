@@ -15,16 +15,17 @@
  */
 
  :root {
-  --main-bg-color: #f5e8e296;
+  --main-bg-color: #f6fafa;
   --main-text-color: #A0A0AC;
-  --main-color: #da8155;
+  --main-color: #95c9c9;
 }
 
  body {
-   font-family: 'ヒラギノ角ゴシック','Hiragino Sans',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic','Droid Sans',sans-serif;
+   font-family: "ヒラギノ明朝 ProN",'Hiragino Sans',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic','Droid Sans',sans-serif;
    background-color: var(--main-bg-color);
    color: var(--main-text-color);
    padding-bottom: 100px;
+   padding-top: 60px;
  }
 
  .hidden {

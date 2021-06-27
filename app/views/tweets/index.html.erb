@@ -7,8 +7,21 @@
 
 <div class="tweets-container">
 
-  <div class="recommend">
-  </div>
+  <% if @recommend_tweets != [] && user_signed_in? %>
+    <div class="recommend">
+      <ul class="recoTweet-lists">
+        <%  @recommend_tweets.each do |tweet| %>
+          <li class='recoTweet-list'>
+            <%= link_to tweet_path(tweet.id), class: "show-link" do %>
+                <%= image_tag tweet.image, class: "recoTweet-img" %>
+                <div class="recoTweet-ttl"><%= tweet.title %></div>
+                <div class="recoTweet-txt"><%= current_user.name %>さんへオススメの投稿</div>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
 
   <div class="index">
     <ul class="tweet-lists">
