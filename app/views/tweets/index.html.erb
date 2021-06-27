@@ -5,20 +5,27 @@
     <%= flash[:alert] %>
 </div>
 
-<div class="index">
-  <ul class="tweet-lists">
-    <% if @tweets != [] %>
-      <% @tweets.each do |tweet| %>
-        <li class='tweet-list'>
-          <%= link_to tweet_path(tweet.id), class: "show-link" do %>
+<div class="tweets-container">
 
-            <%= render partial: "shared/tweet",  locals: { tweet: tweet } %>
+  <div class="recommend">
+  </div>
 
-          <% end %>
-        </li>
+  <div class="index">
+    <ul class="tweet-lists">
+      <% if @tweets != [] %>
+        <% @tweets.each do |tweet| %>
+          <li class='tweet-list'>
+            <%= link_to tweet_path(tweet.id), class: "show-link" do %>
+
+              <%= render partial: "shared/tweet",  locals: { tweet: tweet } %>
+
+            <% end %>
+          </li>
+        <% end %>
       <% end %>
-    <% end %>
-  </ul>
+    </ul>
+  </div>
+
 </div>
 
 <% if user_signed_in? %>
