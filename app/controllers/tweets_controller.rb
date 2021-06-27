@@ -5,7 +5,6 @@ class TweetsController < ApplicationController
 
   def index
     @tweets = Tweet.all.order('created_at DESC')
-    @recommend_tweets = Tweet.find_by(status_id: current_user[:status_id])
   end
 
   def new
