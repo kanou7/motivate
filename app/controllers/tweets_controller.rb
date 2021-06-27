@@ -5,9 +5,7 @@ class TweetsController < ApplicationController
 
   def index
     @tweets = Tweet.all.order('created_at DESC')
-    return if user_signed_in?
-
-    @recommend_tweets = Tweet.where(status_id: current_user[:status_id]).limit(3).order('created_at DESC')
+    @recommend_tweets = Tweet.where(status_id: current_user[:status_id]).limit(3).order('created_at DESC') if user_signed_in?
   end
 
   def new
