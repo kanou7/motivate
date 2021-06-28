@@ -1,7 +1,7 @@
 class User < ApplicationRecord
-  has_many :tweets
-  has_one_attached :image
-  has_many :comments
+  has_many :tweets, dependent: :destroy
+  has_one_attached :image, dependent: :destroy
+  has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :like_tweets, through: :likes, source: :tweet
 
