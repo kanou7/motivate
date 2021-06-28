@@ -23,20 +23,47 @@
     </div>
   <% end %>
 
-  <div class="index">
-    <ul class="tweet-lists">
-      <% if @tweets != [] %>
-        <% @tweets.each do |tweet| %>
-          <li class='tweet-list'>
-            <%= link_to tweet_path(tweet.id), class: "show-link" do %>
+  <div class="main">
 
-              <%= render partial: "shared/tweet",  locals: { tweet: tweet } %>
+    <div class="left-sideBar"></div>
 
-            <% end %>
-          </li>
+    <div class="index">
+      <ul class="tweet-lists">
+        <% if @tweets != [] %>
+          <% @tweets.each do |tweet| %>
+            <li class='tweet-list'>
+              <%= link_to tweet_path(tweet.id), class: "show-link" do %>
+
+                <%= render partial: "shared/tweet",  locals: { tweet: tweet } %>
+
+              <% end %>
+            </li>
+          <% end %>
         <% end %>
-      <% end %>
-    </ul>
+      </ul>
+    </div>
+
+    <div class="right-sideBar">
+      <div class="right-container">
+        <h2 class="rank-ttl">人気投稿ランキング</h2>
+
+        <ul class="rank-lists">
+          <% if @rank_tweets != [] %>
+            <% @rank_tweets.each do |tweet| %>
+              <li class='rank-list'>
+                <%= link_to tweet_path(tweet.id), class: "show-link" do %>
+
+                  <div class="rank-TweetTtl"><%= tweet.title %></div>
+
+                <% end %>
+              </li>
+            <% end %>
+          <% end %>
+        </ul>
+
+      </div>
+    </div>
+
   </div>
 
 </div>

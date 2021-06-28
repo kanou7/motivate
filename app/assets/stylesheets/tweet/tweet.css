@@ -2,15 +2,19 @@
   margin: 0 30px;
 }
 
+.main {
+  display: flex;
+  justify-content: space-around;
+}
+
 .index {
   width: 40%;
-  margin: 0 auto;
 }
 
 .tweet-list {
   background-color: #fff;
-  margin-top: 20px;
   border-radius: 5px;
+  margin-top: 20px;
 }
 
 .tweet-listTop {
@@ -84,6 +88,13 @@
 
 .tweet-btn:hover {
   opacity: 0.8;
+}
+
+/*========================================================
+# show
+========================================================*/
+.tweet-showIndex {
+  margin: 0 auto;
 }
 
 /*========================================================
@@ -231,5 +242,37 @@
   position: absolute;
   bottom: 10px;
   right: 10px;
+}
+
+/*========================================================
+# right-sideBar
+========================================================*/
+.right-sideBar {
+  width: 25%;
+  background-color: #fff;
+  height: 500px;
+  margin-top: 20px;
+}
+
+.right-container {
+  padding: 30px 50px;
+  text-align: center;
+}
+
+.rank-ttl {
+  background-color: var(--main-bg-color);
+  padding: 15px;
+  color: var(--main-color);
+  border-top: 3px solid var(--main-color);
+}
+
+/*========================================================
+# left-sideBar
+========================================================*/
+.left-sideBar {
+  width: 25%;
+  background-color: #fff;
+  height: 500px;
+  margin-top: 20px;
 }
 /*# sourceMappingURL=tweet.css.map */
