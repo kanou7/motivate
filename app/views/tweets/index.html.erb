@@ -25,7 +25,29 @@
 
   <div class="main">
 
-    <div class="left-sideBar"></div>
+    <div class="left-sideBar">
+      <div class="left-container">
+        <div class="rank-container">
+          <h2 class="rank-ttl">選ばれている心境ランキング</h2>
+
+          <ul class="rank-lists">
+            <% if @tweet_statuses != [] %>
+              <% j = 0 %>
+              <% @tweet_statuses.each do |status| %>
+                <li class='rank-list'>
+                  <div class="rank-num">
+                    <% j += 1 %>
+                    <p>第<%= j %>位</p>
+                  </div>
+                  <div class="rank-TweetStatus"><%= status[0].name %></div>
+                </li>
+              <% end %>
+            <% end %>
+          </ul>
+        </div>
+
+      </div>
+    </div>
 
     <div class="index">
       <ul class="tweet-lists">
@@ -45,27 +67,31 @@
 
     <div class="right-sideBar">
       <div class="right-container">
-        <h2 class="rank-ttl">人気投稿ランキング</h2>
+        <div class="rank-container">
+          <h2 class="rank-ttl">人気投稿ランキング</h2>
 
-        <ul class="rank-lists">
-          <% if @rank_tweets != [] %>
-            <% j = 0 %>
-            <% @rank_tweets.each do |tweet| %>
-              <li class='rank-list'>
-                <%= link_to tweet_path(tweet.id), class: "show-link" do %>
-                  
-                  <div class="rank-num">
-                    <% j += 1 %>
-                    <p>第<%= j %>位</p>
+          <ul class="rank-lists">
+            <% if @rank_tweets != [] %>
+              <% j = 0 %>
+              <% @rank_tweets.each do |tweet| %>
+                <li class='rank-list ranking'>
+                  <div class="rank-hover">
+                    <%= link_to tweet_path(tweet.id), class: "show-link" do %>
+                      
+                      <div class="rank-num">
+                        <% j += 1 %>
+                        <p>第<%= j %>位</p>
+                      </div>
+                      <div class="rank-TweetTtl"><%= tweet.title %></div>
+                      <div class="rank-TweetUser"><%= tweet.user.name %>さん</div>
+
+                    <% end %>
                   </div>
-                  <div class="rank-TweetTtl"><%= tweet.title %></div>
-                  <div class="rank-TweetUser"><%= tweet.user.name %></div>
-
-                <% end %>
-              </li>
+                </li>
+              <% end %>
             <% end %>
-          <% end %>
-        </ul>
+          </ul>
+        </div>
 
       </div>
     </div>
