@@ -219,17 +219,17 @@
   width: 30%;
   background-color: rgba(0,0,0,0.6);
   position: relative;
+  transition: 0.5s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
 .recoTweet-img {
   height: 100%;
   width: 100%;
-  transition: 0.5s;
   opacity: 0.6;
-
-  &:hover {
-    transform: scale(1.05);
-  }
 }
 
 .recoTweet-ttl {
@@ -254,13 +254,11 @@
 .right-sideBar {
   width: 25%;
   background-color: #fff;
-  height: 500px;
   margin-top: 20px;
 }
 
 .right-container {
   padding: 30px 50px;
-  text-align: center;
 }
 
 .rank-ttl {
@@ -268,6 +266,22 @@
   padding: 15px;
   color: var(--main-color);
   border-top: 3px solid var(--main-color);
+  text-align: center;
+}
+
+.rank-list {
+  border-bottom: 1px solid var(--main-text-color);
+  margin-top: 10px;
+  padding: 0 5px 5px;
+  transition: 0.5s;
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+.rank-TweetUser {
+  text-align: right;
 }
 
 

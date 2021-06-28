@@ -49,11 +49,17 @@
 
         <ul class="rank-lists">
           <% if @rank_tweets != [] %>
+            <% j = 0 %>
             <% @rank_tweets.each do |tweet| %>
               <li class='rank-list'>
                 <%= link_to tweet_path(tweet.id), class: "show-link" do %>
-
+                  
+                  <div class="rank-num">
+                    <% j += 1 %>
+                    <p>第<%= j %>位</p>
+                  </div>
                   <div class="rank-TweetTtl"><%= tweet.title %></div>
+                  <div class="rank-TweetUser"><%= tweet.user.name %></div>
 
                 <% end %>
               </li>
