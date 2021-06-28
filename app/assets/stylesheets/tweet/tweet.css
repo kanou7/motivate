@@ -269,15 +269,32 @@
   border-bottom: 1px solid var(--main-text-color);
   margin-top: 10px;
   padding: 0 5px 5px;
+}
+
+.rank-hover {
   transition: 0.5s;
 }
 
-.rank-list:hover {
-  opacity: 0.5;
+.rank-hover:hover {
+  transform: scale(1.1);
+}
+
+.rank-TweetTtl {
+  text-align: center;
 }
 
 .rank-TweetUser {
   text-align: right;
+}
+
+/* job-rank
+--------------------------------------------------------*/
+.rank-TweetStatus {
+  text-align: center;
+}
+
+.job-rankTtl {
+  margin-top: 80px;
 }
 
 /*========================================================
@@ -286,7 +303,10 @@
 .left-sideBar {
   width: 25%;
   background-color: #fff;
-  height: 500px;
   margin-top: 20px;
+}
+
+.left-container {
+  padding: 30px 50px;
 }
 /*# sourceMappingURL=tweet.css.map */
