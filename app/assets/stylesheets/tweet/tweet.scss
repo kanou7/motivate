@@ -291,6 +291,16 @@
   text-align: right;
 }
 
+/* job-rank
+--------------------------------------------------------*/
+
+.rank-TweetStatus {
+  text-align: center;
+}
+
+.job-rankTtl {
+  margin-top: 80px;
+}
 
 /*========================================================
 # left-sideBar
@@ -303,8 +313,4 @@
 
 .left-container {
   padding: 30px 50px;
-}
-
-.rank-TweetStatus {
-  text-align: center;
 }

@@ -28,24 +28,7 @@
     <div class="left-sideBar">
       <div class="left-container">
         <div class="rank-container">
-          <h2 class="rank-ttl">選ばれている心境ランキング</h2>
-
-          <ul class="rank-lists">
-            <% if @tweet_statuses != [] %>
-              <% j = 0 %>
-              <% @tweet_statuses.each do |status| %>
-                <li class='rank-list'>
-                  <div class="rank-num">
-                    <% j += 1 %>
-                    <p>第<%= j %>位</p>
-                  </div>
-                  <div class="rank-TweetStatus"><%= status[0].name %></div>
-                </li>
-              <% end %>
-            <% end %>
-          </ul>
         </div>
-
       </div>
     </div>
 
@@ -91,6 +74,24 @@
               <% end %>
             <% end %>
           </ul>
+
+          <h2 class="rank-ttl job-rankTtl">選ばれている心境ランキング</h2>
+
+          <ul class="rank-lists">
+            <% if @tweet_statuses != [] %>
+              <% j = 0 %>
+              <% @tweet_statuses.each do |status| %>
+                <li class='rank-list'>
+                  <div class="rank-num">
+                    <% j += 1 %>
+                    <p>第<%= j %>位</p>
+                  </div>
+                  <div class="rank-TweetStatus"><%= status[0].name %></div>
+                </li>
+              <% end %>
+            <% end %>
+          </ul>
+
         </div>
 
       </div>
