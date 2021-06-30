@@ -92,6 +92,23 @@
             <% end %>
           </ul>
 
+          <h2 class="rank-ttl job-rankTtl">選ばれている職業ランキング</h2>
+
+          <ul class="rank-lists">
+            <% if @tweet_jobs != [] %>
+              <% j = 0 %>
+              <% @tweet_jobs.each do |job| %>
+                <li class='rank-list'>
+                  <div class="rank-num">
+                    <% j += 1 %>
+                    <p>第<%= j %>位</p>
+                  </div>
+                  <div class="rank-TweetStatus"><%= job[0].name %></div>
+                </li>
+              <% end %>
+            <% end %>
+          </ul>
+
         </div>
 
       </div>
