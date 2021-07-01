@@ -13,7 +13,9 @@
         <%  @recommend_tweets.each do |tweet| %>
           <li class='recoTweet-list'>
             <%= link_to tweet_path(tweet.id), class: "show-link" do %>
-                <%= image_tag tweet.image, class: "recoTweet-img" %>
+                <% if tweet.image.attached? %>
+                  <%= image_tag tweet.image, class: "recoTweet-img" %>
+                <% end %>
                 <div class="recoTweet-ttl"><%= tweet.title %></div>
                 <div class="recoTweet-txt"><%= current_user.name %>さんへオススメの投稿</div>
             <% end %>
