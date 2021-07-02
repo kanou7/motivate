@@ -32,8 +32,7 @@ class TweetsController < ApplicationController
   end
 
   def edit
-    @form = TweetsTag.new \
-    (title: @tweet.title, text: @tweet.text, image: @tweet.image, job_id: @tweet.job_id, status_id: @tweet.status_id)
+    @form = TweetsTag.new(title: @tweet.title, text: @tweet.text, image: @tweet.image, job_id: @tweet.job_id, status_id: @tweet.status_id)
   end
 
   def update
@@ -63,9 +62,7 @@ class TweetsController < ApplicationController
   end
 
   def update_params
-    params.require(:tweet) \
-    .permit(:title, :image, :text, :job_id, :status_id, :name) \
-    .merge(user_id: current_user.id, tweet_id: params[:id])
+    params.require(:tweet) .permit(:title, :image, :text, :job_id, :status_id, :name).merge(user_id: current_user.id, tweet_id: params[:id])
   end
 
   def set_item
