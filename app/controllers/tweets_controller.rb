@@ -17,7 +17,7 @@ class TweetsController < ApplicationController
 
   def create
     @tweet = TweetsTag.new(tweet_params)
-    tag_list = params[:tweets_tag][:name].split(",")
+    tag_list = params[:tweets_tag][:name].split(',')
     if @tweet.valid?
       @tweet.save(tag_list)
       redirect_to :root
@@ -32,12 +32,13 @@ class TweetsController < ApplicationController
   end
 
   def edit
-    @form = TweetsTag.new(title: @tweet.title, text: @tweet.text, image: @tweet.image, job_id: @tweet.job_id, status_id: @tweet.status_id)
+    @form = TweetsTag.new \
+    (title: @tweet.title, text: @tweet.text, image: @tweet.image, job_id: @tweet.job_id, status_id: @tweet.status_id)
   end
 
   def update
     @tweet = TweetsTag.new(update_params)
-    tag_list = params[:tweet][:name].split(",")
+    tag_list = params[:tweet][:name].split(',')
     if @tweet.valid?
       @tweet.update(tag_list)
       redirect_to root_path
@@ -47,9 +48,8 @@ class TweetsController < ApplicationController
   end
 
   def destroy
-    if @tweet.destroy
-      redirect_to root_path
-    end
+    @tweet.destroy
+    redirect_to root_path
   end
 
   private
@@ -63,7 +63,9 @@ class TweetsController < ApplicationController
   end
 
   def update_params
-    params.require(:tweet).permit(:title, :image, :text, :job_id, :status_id, :name).merge(user_id: current_user.id, tweet_id: params[:id])
+    params.require(:tweet) \
+    .permit(:title, :image, :text, :job_id, :status_id, :name) \
+    .merge(user_id: current_user.id, tweet_id: params[:id])
   end
 
   def set_item

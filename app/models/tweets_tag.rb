@@ -1,5 +1,4 @@
 class TweetsTag
-
   include ActiveModel::Model
   attr_accessor :title, :text, :image, :job_id, :status_id, :user_id, :tweet_id, :name
 
@@ -27,19 +26,17 @@ class TweetsTag
   def update(tag_list)
     @tweet = Tweet.where(id: tweet_id)
     tweet = @tweet.update(title: title, text: text, image: image, job_id: job_id, status_id: status_id, user_id: user_id)
-    
     @old_relations = TweetTagRelation.where(tweet_id: tweet_id)
     @old_relations.each do |relation|
       relation.delete
-    end 
+    end
 
     tag_list.each do |tag_name|
       tag = Tag.where(name: tag_name).first_or_initialize
       tag.save
 
-      new_relation=TweetTagRelation.new(tweet_id:tweet_id, tag_id:tag.id)
+      new_relation = TweetTagRelation.new(tweet_id: tweet_id, tag_id: tag.id)
       new_relation.save
     end
   end
-
 end
