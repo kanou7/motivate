@@ -5,11 +5,16 @@ ja:
         name: 名前
         job_id: 職業、状況
         status_id: 乗り越えたい状態、心境
-      tweet:
+  activemodel:
+    models:
+      tweets_tag: 投稿 
+    attributes:
+      tweets_tag:
         title: 作品名
         text: 説明文
         job_id: どんな職業、状況の人に見て欲しいか
         status_id: どんな状態、心境の人に見て欲しいか
-      time:
-        formats:
-          default: "%Y/%m/%d %H:%M:%S"
+        name: タグ
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"
