@@ -14,14 +14,14 @@
 <div class="tweet-listBottom">
   <div class="tweet-ttl"><%= tweet.title %></div>
   <div class="tweet-txt"><%= tweet.text %></div>
-  <div class="tweet-job">見て欲しい人の職業,状況：<%= tweet.job.name %></div>
-  <div class="tweet-status">見て欲しい人の心境,状態：<%= tweet.status.name %></div>
+  <div class="tweet-job">おすすめの職業,状況：<%= tweet.job.name %></div>
+  <div class="tweet-status">おすすめの心境,状態：<%= tweet.status.name %></div>
 
   <% if tweet.tags != [] %>
     <div class="tweet-tags">
       <ul class="tweet-tagList">
         <% tweet.tags.each do |tag| %>
-          <%= tag.name %>
+          <div class="tag-name">#<%= tag.name %></div>
         <% end %>
       </ul>
     </div>
