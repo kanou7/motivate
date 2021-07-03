@@ -27,8 +27,8 @@ class TweetsTag
     @tweet = Tweet.where(id: tweet_id)
     tweet = @tweet.update(title: title, text: text, image: image, job_id: job_id, status_id: status_id, user_id: user_id)
     if tag_list != []
-      old_relations = TweetTagRelation.where(tweet_id: tweet.id)
-      old_relations.each.delete
+      old_relations = TweetTagRelation.where(tweet_id: tweet)
+      old_relations.destroy_all
     end
 
     tag_list.each do |tag_name|
