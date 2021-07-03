@@ -4,6 +4,8 @@ class Tweet < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :users, through: :likes
+  has_many :tweet_tag_relations, dependent: :destroy
+  has_many :tags, through: :tweet_tag_relations, dependent: :destroy
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :job

@@ -12,12 +12,14 @@ class TweetsController < ApplicationController
   end
 
   def new
-    @tweet = Tweet.new
+    @tweet = TweetsTag.new
   end
 
   def create
-    @tweet = Tweet.new(tweet_params)
-    if @tweet.save
+    @tweet = TweetsTag.new(tweet_params)
+    tag_list = params[:tweets_tag][:name].split(',')
+    if @tweet.valid?
+      @tweet.save(tag_list)
       redirect_to :root
     else
       render new_tweet_path
@@ -30,11 +32,15 @@ class TweetsController < ApplicationController
   end
 
   def edit
+    @form = TweetsTag.new(title: @tweet.title, text: @tweet.text, image: @tweet.image, job_id: @tweet.job_id, status_id: @tweet.status_id)
   end
 
   def update
-    if @tweet.update(tweet_params)
-      redirect_to tweet_path(@tweet.id)
+    @tweet = TweetsTag.new(update_params)
+    tag_list = params[:tweet][:name].split(',')
+    if @tweet.valid?
+      @tweet.update(tag_list)
+      redirect_to root_path
     else
       render :edit
     end
@@ -52,7 +58,11 @@ class TweetsController < ApplicationController
   end
 
   def tweet_params
-    params.require(:tweet).permit(:title, :image, :text, :job_id, :status_id).merge(user_id: current_user.id)
+    params.require(:tweets_tag).permit(:title, :image, :text, :job_id, :status_id, :name).merge(user_id: current_user.id)
+  end
+
+  def update_params
+    params.require(:tweet).permit(:title, :image, :text, :job_id, :status_id, :name).merge(user_id: current_user.id, tweet_id: params[:id])
   end
 
   def set_item
