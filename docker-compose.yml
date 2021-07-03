@@ -15,6 +15,7 @@ services:
     stdin_open: true
     depends_on:
       - db
+      - chrome
     links:
       - db
 
@@ -29,3 +30,8 @@ services:
     command: --default-authentication-plugin=mysql_native_password
     volumes:
       - mysql-data:/var/lib/mysql
+
+  chrome:
+    image: selenium/standalone-chrome-debug:latest
+    ports:
+      - 4444:4444

@@ -17,8 +17,8 @@ RSpec.describe 'ツイート投稿', type: :system do
       fill_in '作品名', with: @tweet.title
       attach_file('画像', 'public/images/sample.png', make_visible: true)
       fill_in '説明文', with: @tweet.text
-      select '学生', from: 'tweet[job_id]'
-      select '中退', from: 'tweet[status_id]'
+      select '学生', from: 'tweet_job'
+      select '中退', from: 'tweet_status'
       # 送信するとTweetモデルのカウントが1上がることを確認する
       expect do
         find('input[name="commit"]').click
@@ -83,10 +83,8 @@ RSpec.describe 'ツイート編集', type: :system do
       expect do
         find('input[name="commit"]').click
       end.to change { Tweet.count }.by(0)
-      # 編集完了画面に遷移したことを確認する
-      expect(current_path).to eq(tweet_path(@tweet1))
-      # トップページに遷移する
-      visit root_path
+      # トップページに遷移したことを確認する
+      expect(current_path).to eq(root_path)
       # トップページには先ほど変更した内容のツイートが存在することを確認する（タイトル）
       expect(page).to have_content('テスト2')
       # トップページには先ほど変更した内容のツイートが存在することを確認する（画像）
