@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     resources :likes, only: [:create, :destroy]
     collection do
       get 'search'
+      get 'search_tag'
     end
   end
 end

@@ -21,7 +21,9 @@
     <div class="tweet-tags">
       <ul class="tweet-tagList">
         <% tweet.tags.each do |tag| %>
-          <div class="tag-name">#<%= tag.name %></div>
+          <%= link_to search_tag_tweets_path(tag: tag), class: "tag-link" do %>
+            <div class="tag-name">#<%= tag.name %></div>
+          <% end %>
         <% end %>
       </ul>
     </div>
