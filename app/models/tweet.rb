@@ -24,4 +24,12 @@ class Tweet < ApplicationRecord
   def liked_by?(user)
     likes.where(user_id: user.id).exists?
   end
+
+  def self.search(search)
+    if search != ""
+      Tweet.where(['title LIKE ? OR text LIKE ?', "%#{search}%", "%#{search}%"])
+    else
+      Tweet.all
+    end
+  end
 end
