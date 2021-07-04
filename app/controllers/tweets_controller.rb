@@ -55,6 +55,14 @@ class TweetsController < ApplicationController
     @tweets = Tweet.search(params[:keyword])
   end
 
+  def search_tag
+    relations = TweetTagRelation.where(tag_id: params[:tag])
+    @tag_tweets = []
+    relations.each do |relation|
+      @tag_tweets << Tweet.find_by(id: relation.tweet_id)
+    end
+  end
+
   private
 
   def move_to_index
