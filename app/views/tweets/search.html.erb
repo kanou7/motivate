@@ -5,31 +5,37 @@
     <%= flash[:alert] %>
 </div>
 
-<div class="tweets-container">
-
-  <div class="main">
+<div class="search-container">
 
     <%= form_with(url: search_tweets_path, local: true, method: :get, class: "search-form") do |f| %>
       <%= f.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
       <%= f.submit "検索", class: "search-submit" %>
     <% end %>
 
-    <div class="index">
-      <ul class="tweet-lists">
-        <% if @tweets != [] %>
-          <% @tweets.each do |tweet| %>
-            <li class='tweet-list'>
-              <%= link_to tweet_path(tweet.id), class: "show-link" do %>
+    <div class="main">
 
-                <%= render partial: "shared/tweet",  locals: { tweet: tweet } %>
+      <div class="left-searchSideBar">
+      </div>
 
-              <% end %>
-            </li>
+      <div class="index">
+        <ul class="tweet-lists">
+          <% if @tweets != [] %>
+            <% @tweets.each do |tweet| %>
+              <li class='tweet-list'>
+                <%= link_to tweet_path(tweet.id), class: "show-link" do %>
+
+                  <%= render partial: "shared/tweet",  locals: { tweet: tweet } %>
+
+                <% end %>
+              </li>
+            <% end %>
           <% end %>
-        <% end %>
-      </ul>
-    </div>
+        </ul>
+      </div>
 
-  </div>
+      <div class="right-searchSideBar">
+      <div>
+
+    </div>
 
 </div>
