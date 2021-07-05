@@ -63,6 +63,16 @@ class TweetsController < ApplicationController
     end
   end
 
+  def search_incre_tag
+    return nil if params[:keyword] == ""
+    tag = Tag.where(['name LIKE ?', "%#{params[:keyword]}%"])
+    render json:{ keyword: tag }
+  end
+
+  def search_tags
+    @tags = Tag.search(params[:keyword])
+  end
+
   private
 
   def move_to_index

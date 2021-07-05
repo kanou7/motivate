@@ -310,6 +310,13 @@
   padding: 30px 50px;
 }
 
+.search-subTtl {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--main-color);
+  font-size: 18px;
+}
+
 /*========================================================
 # tag
 ========================================================*/
@@ -317,6 +324,14 @@
   display: flex;
   margin-top: 20px;
   margin-bottom: 10px;
+}
+
+.tag-link {
+  transition: 0.5s;
+}
+
+.tag-link:hover {
+  transform: scale(1.15);
 }
 
 .tag-name {
@@ -352,10 +367,51 @@
 
 .search-form {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
-.search-bigInput {
-  width: 100%;
+/*========================================================
+# tag-search
+========================================================*/
+.search-tagList {
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.search-tagLink {
+  width: 30%;
+  margin-bottom: 40px;
+}
+
+.search-tagName {
+  text-align: center;
+  font-size: 18px;
+  padding: 10px 0;
+}
+
+#search-result {
+  width: 100px;
+  margin: 0 auto;
+}
+
+#search-result .child {
+  background-color: var(--main-color);
+  color: #fff;
+  padding: 2px;
+  border-radius: 100px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.tag-searchBtn {
+  background-color: var(--main-color);
+  color: #fff;
+  padding: 15px 50px;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+
+.tag-searchBtn:hover {
+  opacity: 0.7;
 }
 /*# sourceMappingURL=tweet.css.map */

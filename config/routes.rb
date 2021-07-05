@@ -13,6 +13,8 @@ Rails.application.routes.draw do
     collection do
       get 'search'
       get 'search_tag'
+      get 'search_incre_tag'
+      get 'search_tags'
     end
   end
 end
