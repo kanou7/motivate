@@ -4,7 +4,7 @@ if (location.pathname.match("tweets/new")) {
     inputElement.addEventListener("keyup", () => {
       const keyword = document.getElementById("tweets_tag_name").value;
       const XHR = new XMLHttpRequest();
-      XHR.open("GET", `searchIncre_tag/?keyword=${keyword}`, true);
+      XHR.open("GET", `search_incre_tag/?keyword=${keyword}`, true);
       XHR.responseType = "json";
       XHR.send();
       XHR.onload = () => {
@@ -37,7 +37,7 @@ if (location.pathname.match("/")) {
     inputElement.addEventListener("keyup", () => {
       const keyword = document.getElementById("keyword").value;
       const XHR = new XMLHttpRequest();
-      XHR.open("GET", `searchIncre_tag/?keyword=${keyword}`, true);
+      XHR.open("GET", `search_incre_tag/?keyword=${keyword}`, true);
       XHR.responseType = "json";
       XHR.send();
       XHR.onload = () => {
