@@ -70,7 +70,7 @@ class TweetsController < ApplicationController
   end
 
   def search_tags
-    @tags = Tag.all
+    @tags = Tag.search(params[:keyword])
   end
 
   private
