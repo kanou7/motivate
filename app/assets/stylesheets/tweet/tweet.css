@@ -319,6 +319,14 @@
   margin-bottom: 10px;
 }
 
+.tag-link {
+  transition: 0.5s;
+}
+
+.tag-link:hover {
+  transform: scale(1.15);
+}
+
 .tag-name {
   background-color: var(--main-color);
   color: #fff;
@@ -355,7 +363,22 @@
   margin-bottom: 50px;
 }
 
-.search-bigInput {
-  width: 100%;
+/*========================================================
+# tag-search
+========================================================*/
+.search-tagList {
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.search-tagLink {
+  width: 30%;
+  margin-bottom: 40px;
+}
+
+.search-tagName {
+  text-align: center;
+  font-size: 18px;
+  padding: 10px 0;
 }
 /*# sourceMappingURL=tweet.css.map */

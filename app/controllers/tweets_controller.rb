@@ -69,6 +69,10 @@ class TweetsController < ApplicationController
     render json:{ keyword: tag }
   end
 
+  def search_tags
+    @tags = Tag.all
+  end
+
   private
 
   def move_to_index

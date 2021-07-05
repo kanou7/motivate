@@ -14,6 +14,7 @@ Rails.application.routes.draw do
       get 'search'
       get 'search_tag'
       get 'searchIncre_tag'
+      get 'search_tags'
     end
   end
 end
