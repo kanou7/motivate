@@ -29,11 +29,15 @@
 
     <div class="left-sideBar">
       <div class="left-container">
+        <div class="search-subTtl">キーワード検索</div>
         <%= form_with(url: search_tweets_path, local: true, method: :get, class: "search-form") do |f| %>
           <%= f.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
           <%= f.submit "検索", class: "search-submit" %>
         <% end %>
-        <%= link_to "タグで検索する", search_tags_tweets_path, class: "search-form" %>
+        <div class="search-subTtl">タグ検索</div>
+        <%= link_to search_tags_tweets_path, class: "search-form tag-searchBtn" do %>
+          <i class="fas fa-tags"></i>タグで検索する
+        <% end %>
       </div>
     </div>
 
