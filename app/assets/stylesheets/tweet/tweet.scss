@@ -107,6 +107,11 @@
 .edit-btn {
   color: rgb(38,38,38);
   font-size: 16px;
+  transition: 0.5s;
+
+  &:hover {
+    opacity: 0.5;
+  }
 }
 
 /*========================================================
@@ -115,6 +120,11 @@
 .destroy-btn {
   color: rgb(38,38,38);
   font-size: 16px;
+  transition: 0.5s;
+
+  &:hover {
+    opacity: 0.5;
+  }
 }
 
 /*========================================================
@@ -198,6 +208,11 @@
 .like-btn {
   font-size: 16px;
   margin-right: 5px;
+  transition: 0.5s;
+
+  &:hover {
+    opacity: 0.5;
+  }
 }
 
 /*========================================================
@@ -253,8 +268,10 @@
 ========================================================*/
 .right-sideBar {
   width: 25%;
+  height: 2000px;
   background-color: #fff;
   margin-top: 20px;
+  
 }
 
 .right-container {
