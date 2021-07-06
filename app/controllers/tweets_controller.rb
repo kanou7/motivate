@@ -78,6 +78,10 @@ class TweetsController < ApplicationController
     @tweets = Tweet.where(status_id: params[:status_id])
   end
 
+  def search_job
+    @tweets = Tweet.where(job_id: params[:job_id])
+  end
+
   private
 
   def move_to_index

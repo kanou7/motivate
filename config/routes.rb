@@ -16,6 +16,7 @@ Rails.application.routes.draw do
       get 'search_incre_tag'
       get 'search_tags'
       get 'search_status'
+      get 'search_job'
     end
   end
 end
