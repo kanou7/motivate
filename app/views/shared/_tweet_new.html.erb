@@ -22,12 +22,12 @@
   </div>
 
   <div class="field">
-    <%= f.label :job_id, "どんな職業、状況の人に見て欲しいですか？", {class: 'motivate-label'} %><span>※必須</span><br />
+    <%= f.label :job_id, "どの職業、状況の方に一番見て欲しいですか？", {class: 'motivate-label'} %><span>※必須</span><br />
     <%= f.collection_select(:job_id, Job.all, :id, :name, {}, {class:"select-box", id:"tweet_job"}) %>
   </div>
 
   <div class="field">
-    <%= f.label :status_id, "どんな状態、心境の人に見て欲しいですか？", {class: 'motivate-label'} %><span>※必須</span><br />
+    <%= f.label :status_id, "どの状態、心境の方に一番見て欲しいですか？", {class: 'motivate-label'} %><span>※必須</span><br />
     <%= f.collection_select(:status_id, Status.all, :id, :name, {}, {class:"select-box", id:"tweet_status"}) %>
   </div>
 

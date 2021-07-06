@@ -1,0 +1,43 @@
+<%= render "shared/header" %>
+
+<div class='flash-message'>
+    <%= flash[:notice] %>
+    <%= flash[:alert] %>
+</div>
+
+<div class="search-container">
+
+    <%= form_with(url: search_status_tweets_path, local: true, method: :get, class: "search-form") do |f| %>
+      <%= f.collection_select(:status_id, Status.all, :id, :name, {}, {class:"select-box", id:"tweet_status"}) %>
+      <%= f.submit "検索", class: "search-submit" %>
+    <% end %>
+
+    <div class="main">
+
+      <div class="left-searchSideBar">
+      </div>
+
+      <div class="index">
+        <ul class="tweet-lists">
+          <% if @tweets != [] %>
+            <% @tweets.each do |tweet| %>
+              <li class='tweet-list'>
+                <%= link_to tweet_path(tweet.id), class: "show-link" do %>
+
+                  <%= render partial: "shared/tweet",  locals: { tweet: tweet } %>
+
+                <% end %>
+              </li>
+            <% end %>
+          <% else %>
+            <div class="none-message">選んだ心境に該当する投稿はありません。</div>
+          <% end %>
+        </ul>
+      </div>
+
+      <div class="right-searchSideBar">
+      <div>
+
+    </div>
+
+</div>
