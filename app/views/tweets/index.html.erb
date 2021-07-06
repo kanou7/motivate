@@ -32,12 +32,28 @@
         <div class="search-subTtl">キーワード検索</div>
         <%= form_with(url: search_tweets_path, local: true, method: :get, class: "search-form") do |f| %>
           <%= f.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
-          <%= f.submit "検索", class: "search-submit" %>
+          <%= f.submit "検索", class: "search-submit keyword-searchBtn" %>
         <% end %>
+
         <div class="search-subTtl">タグ検索</div>
         <%= link_to search_tags_tweets_path, class: "search-form tag-searchBtn" do %>
           <i class="fas fa-tags"></i>タグで検索する
         <% end %>
+
+        <div class="search-subTtl rank-tagTtl">人気のタグ</div>
+        <ul class="tag-lists">
+          <% if @tags != [] %>
+            <div class="tweet-tags">
+              <ul class="tweet-tagList search-tagList">
+                <% @tags.each do |tag| %>
+                  <%= link_to search_tag_tweets_path(tag: tag), class: "tag-link search-tagLink rank-tagLink" do %>
+                    <div class="tag-name search-tagName">#<%= tag.name %></div>
+                  <% end %>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+        </ul>
       </div>
     </div>
 
