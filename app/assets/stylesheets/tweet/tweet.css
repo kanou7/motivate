@@ -328,7 +328,7 @@
 
 .search-subTtl {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   color: var(--main-color);
   font-size: 18px;
 }
@@ -388,7 +388,7 @@
 
 .search-form {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 60px;
 }
 
 .none-message {
@@ -438,5 +438,16 @@
 
 .tag-searchBtn:hover {
   opacity: 0.7;
+}
+
+/*========================================================
+# tag-rank
+========================================================*/
+.rank-tagTtl {
+  margin-top: 80px;
+}
+
+.rank-tagLink {
+  width: 40%;
 }
 /*# sourceMappingURL=tweet.css.map */

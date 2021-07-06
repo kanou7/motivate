@@ -9,6 +9,7 @@ class TweetsController < ApplicationController
     @rank_tweets = Tweet.find(Like.group(:tweet_id).order('count(tweet_id) DESC').limit(5).pluck(:tweet_id))
     @tweet_statuses = Status.find(Tweet.group(:status_id).order('count_all DESC').limit(5).count.to_a)
     @tweet_jobs = Job.find(Tweet.group(:job_id).order('count_all DESC').limit(5).count.to_a)
+    @tags = Tag.find(TweetTagRelation.group(:tag_id).order('count(tag_id) DESC').limit(8).pluck(:tag_id))
   end
 
   def new
