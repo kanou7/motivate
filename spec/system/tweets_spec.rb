@@ -138,10 +138,6 @@ RSpec.describe 'ツイート削除', type: :system do
       expect(page).to have_no_selector("img[src$='sample.png']")
       # トップページには先ほど投稿した内容のツイートが存在しないことを確認する（説明文）
       expect(page).to have_no_content(@tweet1.text.to_s)
-      # トップページには先ほど投稿した内容のツイートが存在しないことを確認する（職業、状況）
-      expect(page).to have_no_content('学生')
-      # トップページには先ほど投稿した内容のツイートが存在しないことを確認する（状態、心境）
-      expect(page).to have_no_content('失業')
     end
   end
   context 'ツイート削除ができないとき' do
