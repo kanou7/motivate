@@ -74,6 +74,10 @@ class TweetsController < ApplicationController
     @tags = Tag.search(params[:keyword])
   end
 
+  def search_status
+    @tweets = Tweet.where(status_id: params[:status_id])
+  end
+
   private
 
   def move_to_index
