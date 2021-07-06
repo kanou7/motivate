@@ -42,6 +42,12 @@
           <%= f.submit "検索", class: "search-submit" %>
         <% end %>
 
+        <div class="search-subTtl">職・状況で検索</div>
+        <%= form_with(url: search_job_tweets_path, local: true, method: :get, class: "search-form") do |f| %>
+          <%= f.collection_select(:job_id, Job.all, :id, :name, {}, {class:"select-box job-search", id:"tweet_job"}) %>
+          <%= f.submit "検索", class: "search-submit" %>
+        <% end %>
+
         <div class="search-subTtl">タグ検索</div>
         <%= link_to search_tags_tweets_path, class: "search-form tag-searchBtn" do %>
           <i class="fas fa-tags"></i>タグで検索する
