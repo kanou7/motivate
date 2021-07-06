@@ -334,9 +334,25 @@
 
 .search-subTtl {
   text-align: center;
-  margin-bottom: 30px;
-  color: var(--main-color);
+  margin-bottom: 50px;
   font-size: 18px;
+  position: relative;
+  background: #d8e4ec;
+  box-shadow: 0px 0px 0px 5px #d8e4ec;
+  border: dashed 2px white;
+  padding: 0.2em 0.5em;
+  color: #454545;
+
+  &:after {
+    position: absolute;
+    content: '';
+    left: -7px;
+    top: -7px;
+    border-width: 0 0 15px 15px;
+    border-style: solid;
+    border-color: #fff #fff #98c0db;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+  }
 }
 
 /*========================================================
@@ -439,6 +455,7 @@
   color: #fff;
   padding: 15px 50px;
   border-radius: 5px;
+  display: inline-block;
   transition: 0.5s;
 
   &:hover {
@@ -449,10 +466,6 @@
 /*========================================================
 # tag-rank
 ========================================================*/
-.rank-tagTtl {
-  margin-top: 80px;
-}
-
 .rank-tagLink {
   width: 40%;
 }
