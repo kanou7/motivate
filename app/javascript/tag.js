@@ -31,7 +31,7 @@ if (location.pathname.match("tweets/new")) {
   });
 };
 
-if (location.pathname.match("/")) {
+if (location.pathname.match("tweets/search_tags")) {
   document.addEventListener("DOMContentLoaded", () => {
     const inputElement = document.getElementById("keyword");
     inputElement.addEventListener("keyup", () => {
