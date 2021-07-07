@@ -65,13 +65,28 @@
   margin-top: 20px;
 }
 
-.profile-tweetsTtl {
-  margin: 50px auto 0;
+.profile-bottomTtl {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0;
+}
+
+.profile-tweetsTtl, .profile-likesTtl {
   background-color: #fff;
   padding: 10px;
   width: 150px;
   border-radius: 5px;
   text-align: center;
+  transition: 0.5s;
+
+  &:hover {
+    background-color: var(--main-color);
+    color: #fff;
+  }
+}
+
+.profile-tweetsTtl {
+  margin-right: 20px;
 }
 
 .profile-index {

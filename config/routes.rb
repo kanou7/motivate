@@ -3,7 +3,11 @@ Rails.application.routes.draw do
     sessions: "users/sessions",
     registrations: "users/registrations"
   }
-  resources :users, only: [:show]
+  resources :users, only: [:show] do
+    member do
+      get :likes
+    end
+  end
   post '/users/guest_sign_in', to: 'users#guest_sign_in'
   root to: 'tweets#index'
 
