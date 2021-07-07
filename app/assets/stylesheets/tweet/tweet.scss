@@ -13,14 +13,19 @@
 
 .tweet-list {
   background-color: #fff;
-  border-radius: 5px;
   margin-top: 20px;
+  border: outset 15px rgb(30, 128, 131);
+  box-shadow: 3px 3px 5px 5px rgba(0, 0, 0, 0.3);
+
+  & + & {
+    margin-top: 40px;
+  }
 }
 
 .tweet-listTop {
   display: flex;
   align-items: center;
-  padding: 10px 15px;
+  padding: 5px 15px;
   color: rgb(38,38,38);
 
   .user-img {
@@ -36,7 +41,7 @@
 .tweet-listMain {
 
   .tweet-img {
-    height: 400px;
+    height: 300px;
     width: 100%;
   }
 }
@@ -57,10 +62,17 @@
     color: rgb(38,38,38);
   }
 
+  .tweet-choice {
+    display: flex;
+  }
+
   .tweet-job, .tweet-status {
     color: rgb(38,38,38);
     font-size: 12px;
-    margin-bottom: 5px;
+  }
+
+  .tweet-job {
+    margin-right: 10px;
   }
 
   .tweet-day {
@@ -235,8 +247,10 @@
 
 .recoTweet-list {
   height: 250px;
-  width: 30%;
+  width: 28%;
   background-color: rgba(0,0,0,0.6);
+  border: outset 15px rgb(30, 128, 131);
+  box-shadow: 3px 3px 5px 5px rgba(0, 0, 0, 0.3);
   position: relative;
   transition: 0.5s;
 
@@ -364,7 +378,7 @@
 ========================================================*/
 .tweet-tagList {
   display: flex;
-  margin-top: 20px;
+  margin-top: 10px;
   margin-bottom: 10px;
 }
 

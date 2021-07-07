@@ -1,6 +1,6 @@
 <div class="tweet-listTop">
   <% if tweet.user.image.attached? %>
-    <%= image_tag tweet.user.image.variant(resize: '50x50'), class: "user-img" %>
+    <%= image_tag tweet.user.image.variant(resize: '40x40'), class: "user-img" %>
   <% end %>
   <div class="user-name"><%= tweet.user.name %></div>
 </div>
@@ -14,8 +14,10 @@
 <div class="tweet-listBottom">
   <div class="tweet-ttl"><%= tweet.title %></div>
   <div class="tweet-txt"><%= tweet.text %></div>
-  <div class="tweet-job">おすすめの職業,状況：<%= tweet.job.name %></div>
-  <div class="tweet-status">おすすめの心境,状態：<%= tweet.status.name %></div>
+  <div class="tweet-choice">
+    <div class="tweet-job"><span><i class="far fa-hand-point-right"></i>職業,状況 : </span><%= tweet.job.name %></div>
+    <div class="tweet-status"><span><i class="far fa-hand-point-right"></i>心境,状態 : </span><%= tweet.status.name %></div>
+  </div>
 
   <% if tweet.tags != [] %>
     <div class="tweet-tags">
