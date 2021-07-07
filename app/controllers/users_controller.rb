@@ -14,4 +14,10 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @tweets = @user.tweets.order('created_at DESC')
   end
+
+  def likes
+    @user = User.find(params[:id])
+    likes = Like.where(user_id: @user.id).pluck(:tweet_id)
+    @tweets = Tweet.find(likes)
+  end
 end
