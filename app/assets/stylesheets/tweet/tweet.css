@@ -14,8 +14,8 @@
 .tweet-list {
   background-color: #fff;
   margin-top: 20px;
-  border: outset 15px #1e8083;
-  box-shadow: 3px 3px 5px 5px rgba(0, 0, 0, 0.3);
+  border: 1px solid #E4E4E4;
+  border-radius: 3px;
 }
 
 .tweet-list + .tweet-list {
@@ -282,6 +282,8 @@
   height: 1700px;
   background-color: #fff;
   margin-top: 20px;
+  border: 1px solid #E4E4E4;
+  border-radius: 3px;
 }
 
 .right-container {
@@ -336,6 +338,8 @@
   height: 1700px;
   background-color: #fff;
   margin-top: 20px;
+  border: 1px solid #E4E4E4;
+  border-radius: 3px;
 }
 
 .left-container {
