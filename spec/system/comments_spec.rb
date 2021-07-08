@@ -21,12 +21,8 @@ RSpec.describe 'コメント投稿', type: :system do
       expect do
         find('input[name="commit"]').click
       end.to change { Comment.count }.by(1)
-      # 投稿の詳細ページにいることを確認する
-      expect(current_path).to eq(tweet_path(@tweet))
-      # 投稿の詳細ページには先ほど投稿した内容のコメントが存在することを確認する
-      expect(page).to have_content(@comment.text)
-      # 投稿ページには先ほどコメントしたユーザーの名前が存在することを確認する
-      expect(page).to have_content(@user.name)
+      # トップにいることを確認する
+      expect(current_path).to eq(root_path)
     end
   end
   context 'コメント投稿ができないとき' do

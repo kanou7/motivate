@@ -22,7 +22,7 @@
           <% if @tag_tweets != [] %>
             <% @tag_tweets.each do |tweet| %>
               <li class='tweet-list'>
-                <%= link_to tweet_path(tweet), class: "show-link" do %>
+                <%= link_to tweet_path(tweet.id), remote: true, class: "show-link" do %>
 
                   <%= render partial: "shared/tweet",  locals: { tweet: tweet } %>
 
@@ -38,4 +38,10 @@
 
     </div>
 
+</div>
+
+<div id="mask" class="hidden"></div>
+
+<div id="modal" class="hidden">
+  <p>モーダルウィンドウ<p>
 </div>
