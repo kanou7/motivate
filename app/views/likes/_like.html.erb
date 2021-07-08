@@ -1,0 +1,9 @@
+<% if tweet.liked_by?(current_user) %>
+  <%= link_to tweet_like_path(tweet, tweet.user), method: :delete, remote: true, class: "delete-likeBtn" do %>
+    <i class="fas fa-heart"></i><%= tweet.likes.count %>
+  <% end %>
+<% else %>
+  <%= link_to tweet_likes_path(tweet), method: :post, remote: true, class: "create-likeBtn" do %>
+    <i class="fas fa-heart"></i><%= tweet.likes.count %>
+  <% end %>
+<% end %>
