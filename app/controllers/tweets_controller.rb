@@ -30,6 +30,10 @@ class TweetsController < ApplicationController
   def show
     @comment = Comment.new
     @comments = @tweet.comments.includes(:user)
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def edit

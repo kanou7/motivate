@@ -12,7 +12,7 @@
       <ul class="recoTweet-lists">
         <%  @recommend_tweets.each do |tweet| %>
           <li class='recoTweet-list'>
-            <%= link_to tweet_path(tweet.id), class: "show-link" do %>
+            <%= link_to tweet_path(tweet.id), remote: true, class: "show-link" do %>
                 <% if tweet.image.attached? %>
                   <%= image_tag tweet.image, class: "recoTweet-img" %>
                 <% end %>
@@ -76,7 +76,7 @@
         <% if @tweets != [] %>
           <% @tweets.each do |tweet| %>
             <li class='tweet-list'>
-              <%= link_to tweet_path(tweet.id), class: "show-link" do %>
+              <%= link_to tweet_path(tweet.id), remote: true, class: "show-link" do %>
 
                 <%= render partial: "shared/tweet",  locals: { tweet: tweet } %>
 
@@ -98,7 +98,7 @@
               <% @rank_tweets.each do |tweet| %>
                 <li class='rank-list ranking'>
                   <div class="rank-hover">
-                    <%= link_to tweet_path(tweet.id), class: "show-link" do %>
+                    <%= link_to tweet_path(tweet.id), remote: true, class: "show-link" do %>
                       
                       <div class="rank-num">
                         <% j += 1 %>
@@ -161,4 +161,10 @@
   <%= link_to new_tweet_path, class: "tweet-btn", id: "tweet-btn" do %>
     <i class="fas fa-edit"></i>
   <% end %>
-<% end%>
+<% end %>
+
+<div id="mask" class="hidden"></div>
+
+<div id="modal" class="hidden">
+  <p>モーダルウィンドウ<p>
+</div>
