@@ -5,14 +5,12 @@ class LikesController < ApplicationController
   def create
     user = current_user
     Like.create(user_id: user.id, tweet_id: @tweet.id)
-    redirect_to root_path
   end
 
   def destroy
     user = current_user
     like = Like.find_by(user_id: user.id, tweet_id: @tweet.id)
     like.destroy
-    redirect_to root_path
   end
 
   private

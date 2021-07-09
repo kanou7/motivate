@@ -1,0 +1,9 @@
+<% comments.each do |comment| %>
+  <div class="comment-list">
+    <% if comment.user.image.attached? %>
+      <%= image_tag comment.user.image.variant(resize: '30x30'), class: "user-img" %>
+    <% end %>
+    <%= link_to "#{comment.user.name}：", user_path(comment.user_id), class: "user-name" %>
+    <%= comment.text %>
+  </div>
+<% end %>

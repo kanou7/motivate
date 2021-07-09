@@ -109,6 +109,11 @@
   }
 }
 
+.tweet-sub {
+  display: flex;
+  align-items: center;
+}
+
 /*========================================================
 # show
 ========================================================*/
@@ -210,25 +215,26 @@
   }
 }
 
+.comment-btn {
+  color: var(--main-text-color);
+}
+
+.fa-comment {
+  margin-right: 3px;
+}
 /*========================================================
 # like
 ========================================================*/
-#like-createBtn {
-  color: rgb(207, 67, 90);
-}
-
-#like-deleteBtn {
-  color: gray;
-}
-
 .like-btn {
-  font-size: 16px;
   margin-right: 5px;
-  transition: 0.5s;
+}
 
-  &:hover {
-    opacity: 0.5;
-  }
+.delete-likeBtn {
+  color: #E1255E;
+}
+
+.create-likeBtn {
+  color: var(--main-text-color);
 }
 
 /*========================================================

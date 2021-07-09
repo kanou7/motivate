@@ -1,0 +1,12 @@
+<%= form_with(model: [tweet, comment] ) do |f| %>
+
+  <div class="flash-message">
+    <%= render 'shared/error_messages', model: f.object %>
+  </div>
+
+  <div class="comment-form">
+    <%= f.label :text, {class: 'hidden'} %>
+    <%= f.text_area :text, placeholder: "コメント", rows: "2", :class => 'comment-field' %>
+    <%= f.submit "投稿", :class => 'comment-submit' %>
+  </div>
+<% end %>

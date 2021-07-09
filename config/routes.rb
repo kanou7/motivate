@@ -12,8 +12,6 @@ Rails.application.routes.draw do
   root to: 'tweets#index'
 
   resources :tweets do
-    resources :comments, only: [:create] 
-    resources :likes, only: [:create, :destroy]
     collection do
       get 'search'
       get 'search_tag'
@@ -22,6 +20,8 @@ Rails.application.routes.draw do
       get 'search_status'
       get 'search_job'
     end
+    resources :comments, only: [:create]
+    resources :likes, only: [:create, :destroy] 
   end
 end
 
