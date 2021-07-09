@@ -35,6 +35,9 @@
     <div class="tweet-day"><%= time_ago_in_words(tweet.created_at) %>前</div>
     <% if user_signed_in? %>
       <div class="tweet-sub">
+        <%= link_to tweet_path(tweet.id), remote: true, class: "comment-btn" do %>
+          <i class="far fa-comment"></i><%= tweet.comments.count %>
+        <% end %>
         <div id="likes_buttons_<%= tweet.id %>" class="like-btn">
           <%= render partial: 'likes/like', locals: { tweet: tweet} %>
         </div>
