@@ -13,11 +13,13 @@
         <%  @recommend_tweets.each do |tweet| %>
           <li class='recoTweet-list'>
             <%= link_to tweet_path(tweet.id), remote: true, class: "show-link" do %>
-                <% if tweet.image.attached? %>
-                  <%= image_tag tweet.image, class: "recoTweet-img" %>
-                <% end %>
-                <div class="recoTweet-ttl"><%= tweet.title %></div>
-                <div class="recoTweet-txt"><%= current_user.name %>さんへオススメの投稿</div>
+              <% if tweet.image.attached? %>
+                <%= image_tag tweet.image, class: "recoTweet-img" %>
+              <% else %>
+                <div class="recoTweet-img"></div>
+              <% end %>
+              <div class="recoTweet-ttl"><%= tweet.title %></div>
+              <div class="recoTweet-txt"><%= current_user.name %>さんへオススメの投稿</div>
             <% end %>
           </li>
         <% end %>

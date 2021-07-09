@@ -1,7 +1,9 @@
 class CommentsController < ApplicationController
   def create
+    @tweet = Tweet.find(params[:tweet_id])
+    @comments = Comment.where(tweet_id: @tweet)
     @comment = Comment.create(comment_params)
-    redirect_to root_path
+    render :index
   end
 
   private
