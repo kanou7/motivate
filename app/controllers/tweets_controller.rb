@@ -93,11 +93,11 @@ class TweetsController < ApplicationController
   end
 
   def tweet_params
-    params.require(:tweets_tag).permit(:title, :image, :text, :job_id, :status_id, :name).merge(user_id: current_user.id)
+    params.require(:tweets_tag).permit(:title, :image, :message, :text, :job_id, :status_id, :name).merge(user_id: current_user.id)
   end
 
   def update_params
-    params.require(:tweet).permit(:title, :image, :text, :job_id, :status_id, :name).merge(user_id: current_user.id, tweet_id: params[:id])
+    params.require(:tweet).permit(:title, :image, :message, :text, :job_id, :status_id, :name).merge(user_id: current_user.id, tweet_id: params[:id])
   end
 
   def set_item
