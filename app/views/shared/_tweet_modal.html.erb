@@ -1,0 +1,55 @@
+<div class="tweet-listTop">
+  <% if tweet.user.image.attached? %>
+    <%= image_tag tweet.user.image.variant(resize: '40x40'), class: "user-img" %>
+  <% end %>
+  <div class="user-name"><%= tweet.user.name %></div>
+</div>
+
+<div class="tweet-listMain">
+  <% if tweet.image.attached? %>
+    <%= image_tag tweet.image, class: "tweet-img" %>
+  <% end %>
+</div>
+
+<div class="tweet-listBottom">
+  <div class="tweet-ttl"><%= tweet.title %></div>
+  <div class="tweet-txt"><%= tweet.text %></div>
+  <div class="tweet-choice">
+    <div class="tweet-job"><span><i class="far fa-hand-point-right"></i>職業,状況 : </span><%= tweet.job.name %></div>
+    <div class="tweet-status"><span><i class="far fa-hand-point-right"></i>心境,状態 : </span><%= tweet.status.name %></div>
+  </div>
+
+  <% if tweet.tags != [] %>
+    <div class="tweet-tags">
+      <ul class="tweet-tagList">
+        <% tweet.tags.each do |tag| %>
+          <%= link_to search_tag_tweets_path(tag: tag), class: "tag-link" do %>
+            <div class="tag-name">#<%= tag.name %></div>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="tweet-option">
+    <div class="tweet-day"><%= time_ago_in_words(tweet.created_at) %>前</div>
+    <% if user_signed_in? %>
+      <div class="tweet-sub">
+        <%= link_to tweet_path(tweet.id), remote: true, class: "comment-btn" do %>
+          <i class="far fa-comment"></i><%= tweet.comments.count %>
+        <% end %>
+        <div id="likes_btns_<%= tweet.id %>" class="like-btn">
+          <%= render partial: 'likes/like', locals: { tweet: tweet} %>
+        </div>
+        <% if current_user.id == tweet.user_id %>
+          <%= link_to edit_tweet_path(tweet.id), class: "edit-btn" do %>
+            <i class="far fa-edit"></i>
+          <% end %>
+          <%= link_to tweet_path(tweet.id), method: :delete, class: "destroy-btn" do %>
+            <i class="fas fa-trash"></i>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
