@@ -17,6 +17,11 @@
   </div>
 
   <div class="field">
+    <%= f.label :message, "ユーザーへの一言", {class: 'motivate-label'} %><br />
+    <%= f.text_area :message, placeholder: "(例)悩んでる方はぜひみてください！", :class => 'motivate-field' %>
+  </div>
+
+  <div class="field">
     <%= f.label :text, "説明文", {class: 'motivate-label'} %><span>※必須</span><br />
     <%= f.text_area :text, placeholder: "説明文", maxlength: "600", :class => 'motivate-field text-field' %>
   </div>

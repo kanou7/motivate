@@ -1,6 +1,6 @@
 class TweetsTag
   include ActiveModel::Model
-  attr_accessor :title, :text, :image, :job_id, :status_id, :user_id, :tweet_id, :name
+  attr_accessor :title, :text, :image, :message, :job_id, :status_id, :user_id, :tweet_id, :name
 
   with_options presence: true do
     validates :title
@@ -13,7 +13,7 @@ class TweetsTag
   end
 
   def save(tag_list)
-    tweet = Tweet.create(title: title, text: text, image: image, job_id: job_id, status_id: status_id, user_id: user_id)
+    tweet = Tweet.create(title: title, text: text, image: image, message: message, job_id: job_id, status_id: status_id, user_id: user_id)
 
     tag_list.each do |tag_name|
       tag = Tag.where(name: tag_name).first_or_initialize
@@ -25,7 +25,7 @@ class TweetsTag
 
   def update(tag_list)
     @tweet = Tweet.where(id: tweet_id)
-    tweet = @tweet.update(title: title, text: text, image: image, job_id: job_id, status_id: status_id, user_id: user_id)
+    tweet = @tweet.update(title: title, text: text, image: image, message: message, job_id: job_id, status_id: status_id, user_id: user_id)
     if tag_list != []
       old_relations = TweetTagRelation.where(tweet_id: tweet)
       old_relations.destroy_all

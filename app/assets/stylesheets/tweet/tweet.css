@@ -25,22 +25,61 @@
 .tweet-listTop {
   display: flex;
   align-items: center;
-  padding: 5px 15px;
-  color: #262626;
-}
-
-.tweet-listTop .user-img {
-  border-radius: 100%;
-  margin-right: 15px;
 }
 
 .tweet-listTop .user-name {
-  font-weight: 600;
+  margin-left: 10px;
+  color: #000;
+}
+
+.tweet-listMain {
+  height: 300px;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 .tweet-listMain .tweet-img {
   height: 300px;
   width: 100%;
+  opacity: 0.6;
+}
+
+.tweet-listMain .tweet-nonImg {
+  height: 300px;
+}
+
+.tweet-listMain .tweet-ttl {
+  color: #fff;
+  font-size: 20px;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+
+.tweet-listMain .tweet-message {
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.tweet-listMain .user-info {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  font-size: 18px;
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+}
+
+.tweet-listMain .user-info .user-name {
+  margin-left: 10px;
 }
 
 .tweet-listBottom {
@@ -271,6 +310,18 @@
   position: absolute;
   top: 10px;
   left: 10px;
+}
+
+.recoTweet-message {
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
 }
 
 .recoTweet-txt {
