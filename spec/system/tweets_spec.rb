@@ -29,8 +29,6 @@ RSpec.describe 'ツイート投稿', type: :system do
       expect(page).to have_content(@tweet.title)
       # トップページには先ほど投稿した内容のツイートが存在することを確認する（画像）
       expect(page).to have_selector("img[src$='sample.png']")
-      # トップページには先ほど投稿した内容のツイートが存在することを確認する（説明文）
-      expect(page).to have_content(@tweet.text)
       # トップページには先ほど投稿した内容のツイートが存在することを確認する（職業、状況）
       expect(page).to have_content('学生')
       # トップページには先ほど投稿した内容のツイートが存在することを確認する（状態、心境）
@@ -89,8 +87,6 @@ RSpec.describe 'ツイート編集', type: :system do
       expect(page).to have_content('テスト2')
       # トップページには先ほど変更した内容のツイートが存在することを確認する（画像）
       expect(page).to have_selector("img[src$='sample2.png']")
-      # トップページには先ほど変更した内容のツイートが存在することを確認する（テキスト）
-      expect(page).to have_content('テストテスト2')
       # トップページには先ほど変更した内容のツイートが存在することを確認する（職業、状況）
       expect(page).to have_content('専業主婦')
       # トップページには先ほど変更した内容のツイートが存在することを確認する（状態、心境）
