@@ -8,7 +8,7 @@
 <div class="tweets-container">
 
   <% if @recommend_tweets != [] && user_signed_in? %>
-    <div class="recommend">
+    <div class="recommend fadeIn">
       <ul class="recoTweet-lists">
         <%  @recommend_tweets.each do |tweet| %>
           <li class='recoTweet-list'>
@@ -30,7 +30,7 @@
 
   <div class="main">
 
-    <div class="left-sideBar">
+    <div class="left-sideBar fadeIn">
       <div class="left-container">
 
         <div class="search-subTtl">キーワード検索</div>
@@ -78,7 +78,7 @@
       <ul class="tweet-lists">
         <% if @tweets != [] %>
           <% @tweets.each do |tweet| %>
-            <li class='tweet-list'>
+            <li class='tweet-list fadeIn'>
               <%= link_to tweet_path(tweet.id), remote: true, class: "show-link" do %>
 
                 <%= render partial: "shared/tweet",  locals: { tweet: tweet } %>
@@ -90,7 +90,7 @@
       </ul>
     </div>
 
-    <div class="right-sideBar">
+    <div class="right-sideBar fadeIn">
       <div class="right-container">
         <div class="rank-container">
           <h2 class="rank-ttl">人気投稿ランキング</h2>
