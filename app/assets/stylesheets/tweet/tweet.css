@@ -318,23 +318,31 @@
 /*========================================================
 # recommend
 ========================================================*/
-.recommend {
+.slider {
+  margin: 50px auto;
   width: 100%;
-  margin-top: 20px;
-  padding: 20px 0 40px;
 }
 
-.recoTweet-lists {
-  display: flex;
-  justify-content: space-around;
+.slick-next {
+  right: 10px !important;
+  z-index: 100;
+}
+
+.slick-prev {
+  left: 0 !important;
+  z-index: 100;
+}
+
+.slick-prev:before, .slick-next:before {
+  font-size: 30px !important;
+  color: #000  !important;
 }
 
 .recoTweet-list {
-  height: 250px;
-  width: 28%;
   background-color: rgba(0, 0, 0, 0.6);
   border: outset 15px #1e8083;
   box-shadow: 3px 3px 5px 5px rgba(0, 0, 0, 0.3);
+  margin: 20px;
   position: relative;
   transition: 0.5s;
 }
@@ -344,9 +352,10 @@
 }
 
 .recoTweet-img {
-  height: 100%;
   width: 100%;
   opacity: 0.6;
+  height: 18vw;
+  object-fit: cover;
 }
 
 .recoTweet-ttl {

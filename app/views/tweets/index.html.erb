@@ -9,7 +9,7 @@
 
   <% if @recommend_tweets != [] && user_signed_in? %>
     <div class="recommend fadeIn">
-      <ul class="recoTweet-lists">
+      <ul class="recoTweet-lists slider">
         <%  @recommend_tweets.each do |tweet| %>
           <li class='recoTweet-list'>
             <%= link_to tweet_path(tweet.id), remote: true, class: "show-link" do %>

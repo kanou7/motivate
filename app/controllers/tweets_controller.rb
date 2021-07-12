@@ -5,7 +5,7 @@ class TweetsController < ApplicationController
 
   def index
     @tweets = Tweet.all.order('created_at DESC')
-    @recommend_tweets = Tweet.where(status_id: current_user[:status_id]).limit(3).order('created_at DESC') if user_signed_in?
+    @recommend_tweets = Tweet.where(status_id: current_user[:status_id]).limit(5).order('created_at DESC') if user_signed_in?
     @rank_tweets = Tweet.find(Like.group(:tweet_id).order('count(tweet_id) DESC').limit(5).pluck(:tweet_id))
     @tweet_statuses = Status.find(Tweet.group(:status_id).order('count_all DESC').limit(5).count.to_a)
     @tweet_jobs = Job.find(Tweet.group(:job_id).order('count_all DESC').limit(5).count.to_a)

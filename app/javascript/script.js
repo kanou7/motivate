@@ -19,6 +19,7 @@ $( function() {
 
   })();
 
+  //slideIn
   $(window).on('load scroll',function (){
 		$('.fadeIn').each(function(){
 			//ターゲットの位置を取得
@@ -34,5 +35,16 @@ $( function() {
 			}
 		});
 	});
+
+  //slide
+  $('.slider').slick({
+    dots: true,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    slidesToScroll:1,
+    slidesToShow: 3,
+    pauseOnHover: false,
+    arrows: true,
+  });
 
 });
