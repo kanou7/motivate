@@ -5,6 +5,18 @@
     <%= flash[:alert] %>
 </div>
 
+<% unless user_signed_in? %>
+  <div class="intro-bg fadeIn">
+    <div class="intro">
+    </div>
+  </div>
+  <div class="intro-content fadeIn">
+    <div class="intro-mainTxt">あなたの人生を変えてくれる作品と出会いましょう</div>
+    <div class="intro-txt">motivateは各職業の方がもっと仕事の質を上げたい、あるマイナスの状態の方がその状態を改善したいと<br>思うような目的意識を与えるドラマ、映画、アニメ、漫画、個人動画などを投稿、もしくは探せるサービス</div>
+    <div class="intro-subTxt">右上のログインボタンからゲストログインができます。</div>
+  </div>
+<% end %>
+
 <div class="tweets-container">
 
   <% if @recommend_tweets != [] && user_signed_in? %>
