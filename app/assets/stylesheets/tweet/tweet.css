@@ -330,18 +330,18 @@
 .intro {
   width: 100%;
   opacity: 0.6;
-  height: 500px;
+  height: 550px;
   margin-bottom: 30px;
 }
 
 .intro-img {
-  height: 500px;
+  height: 550px;
   width: 100%;
 }
 
 .intro-content {
   position: absolute;
-  top: 45%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
