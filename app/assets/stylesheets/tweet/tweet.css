@@ -147,6 +147,36 @@
   align-items: center;
 }
 
+/* to-top
+--------------------------------------------------------*/
+.totop {
+  position: fixed;
+  cursor: pointer;
+  transition: all .4s;
+  background: white;
+  border: solid 1px #b1a9a9;
+  border-radius: 1000px;
+  bottom: 16px;
+  display: block;
+  height: 50px;
+  right: 16px;
+  width: 50px;
+  z-index: 999;
+}
+
+.totop:after {
+  border-right: solid 3px #3e3e3e;
+  border-top: solid 3px #3e3e3e;
+  content: '';
+  display: block;
+  height: 15px;
+  left: 15px;
+  position: absolute;
+  top: 20px;
+  transform: rotate(-45deg);
+  width: 15px;
+}
+
 /*========================================================
 # show
 ========================================================*/
