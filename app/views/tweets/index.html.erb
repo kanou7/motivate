@@ -5,11 +5,23 @@
     <%= flash[:alert] %>
 </div>
 
+<% unless user_signed_in? %>
+  <div class="intro-bg fadeIn">
+    <div class="intro">
+    </div>
+  </div>
+  <div class="intro-content fadeIn">
+    <div class="intro-mainTxt">あなたの人生を変えてくれる作品と出会いましょう</div>
+    <div class="intro-txt">motivateは各職業の方がもっと仕事の質を上げたい、あるマイナスの状態の方がその状態を改善したいと<br>思うような目的意識を与えるドラマ、映画、アニメ、漫画、個人動画などを投稿、もしくは探せるサービス</div>
+    <div class="intro-subTxt">右上のログインボタンからゲストログインができます。</div>
+  </div>
+<% end %>
+
 <div class="tweets-container">
 
   <% if @recommend_tweets != [] && user_signed_in? %>
-    <div class="recommend">
-      <ul class="recoTweet-lists">
+    <div class="recommend fadeIn">
+      <ul class="recoTweet-lists slider">
         <%  @recommend_tweets.each do |tweet| %>
           <li class='recoTweet-list'>
             <%= link_to tweet_path(tweet.id), remote: true, class: "show-link" do %>
@@ -30,7 +42,7 @@
 
   <div class="main">
 
-    <div class="left-sideBar">
+    <div class="left-sideBar fadeIn">
       <div class="left-container">
 
         <div class="search-subTtl">キーワード検索</div>
@@ -78,7 +90,7 @@
       <ul class="tweet-lists">
         <% if @tweets != [] %>
           <% @tweets.each do |tweet| %>
-            <li class='tweet-list'>
+            <li class='tweet-list fadeIn'>
               <%= link_to tweet_path(tweet.id), remote: true, class: "show-link" do %>
 
                 <%= render partial: "shared/tweet",  locals: { tweet: tweet } %>
@@ -90,7 +102,7 @@
       </ul>
     </div>
 
-    <div class="right-sideBar">
+    <div class="right-sideBar fadeIn">
       <div class="right-container">
         <div class="rank-container">
           <h2 class="rank-ttl">人気投稿ランキング</h2>
@@ -165,6 +177,8 @@
     <i class="fas fa-edit"></i>
   <% end %>
 <% end %>
+
+<div class="totop"></div>
 
 <div id="mask" class="hidden"></div>
 
