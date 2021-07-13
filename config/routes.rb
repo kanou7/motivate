@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show] do
     member do
       get :likes
+      get :followings, :followers
     end
   end
   post '/users/guest_sign_in', to: 'users#guest_sign_in'

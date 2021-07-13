@@ -146,4 +146,41 @@
   background-color: var(--main-color);
   color: #fff;
 }
+
+.follow-container {
+  margin-top: 10px;
+}
+
+.follow-indexBtn {
+  border: 1px solid var(--main-color);
+  margin-right: 10px;
+  padding: 5px;
+  border-radius: 100px;
+  transition: 0.5s;
+}
+
+.follow-indexBtn:hover {
+  background-color: var(--main-color);
+  color: #fff;
+}
+
+.follow-index {
+  text-align: center;
+}
+
+.follow-ttl {
+  font-size: 24px;
+  margin-top: 50px;
+}
+
+.follow-list {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.follow-name {
+  font-size: 18px;
+  margin-left: 10px;
+}
 /*# sourceMappingURL=mypage.css.map */
