@@ -1,0 +1,9 @@
+<div class="follow-index">
+  <div class="follow-ttl">フォロー中のユーザー</div>
+  <% @users.each do |user| %>
+    <% if user.image.attached? %>
+      <%= image_tag user.image.variant(resize: '30x30'), class: "follow-img" %>
+    <% end %>
+    <%= user.name %>
+  <% end %>
+</div>
