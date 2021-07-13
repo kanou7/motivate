@@ -1,9 +1,9 @@
-<div class="tweet-listTop">
+<%= link_to user_path(tweet.user), class: "tweet-listTop" do %>
   <% if tweet.user.image.attached? %>
     <%= image_tag tweet.user.image.variant(resize: '40x40'), class: "user-img" %>
   <% end %>
   <div class="user-name"><%= tweet.user.name %></div>
-</div>
+<% end %>
 
 <div class="tweet-listBottom">
   <div class="tweet-ttl"><%= tweet.title %></div>

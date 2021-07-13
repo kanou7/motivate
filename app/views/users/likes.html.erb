@@ -14,7 +14,13 @@
     <div class="profile-mainTop">
       <div class="profile-info">
         <span class="profile-name"><%= @user.name %></span>
-        <%= link_to "プロフィールの編集", edit_user_registration_path(current_user.id), method: :get, class: "profile-edit" %>
+        <% if current_user == @user %>
+          <%= link_to "プロフィールの編集", edit_user_registration_path(current_user.id), method: :get, class: "profile-edit" %>
+        <% else %>
+          <div id = "relationship_<%= @user.id %>">
+            <%= render partial: "users/relationship", locals: { user: @user } %>
+          </div>
+        <% end %>
       </div>
       <div class="profile-job">
         職業,状況：<%= @user.job.name %>
@@ -30,10 +36,10 @@
 
   <div class="profile-bottom">
     <div class="profile-bottomTtl">
-      <%= link_to user_path(current_user), class: "profile-tweetsTtl" do %>
+      <%= link_to user_path(@user), class: "profile-tweetsTtl" do %>
         投稿一覧
       <% end %>
-      <%= link_to likes_user_path(current_user), class: "profile-likesTtl" do %>
+      <%= link_to likes_user_path(@user), class: "profile-likesTtl" do %>
         いいね一覧
       <% end %>
     </div>
