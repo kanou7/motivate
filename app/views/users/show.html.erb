@@ -22,12 +22,14 @@
           </div>
         <% end %>
       </div>
-      <%= link_to followings_user_path(@user), class: "follow-indexBtn" do %>
-        フォロー<%= @user.followings.count %>
-      <% end %>
-      <%= link_to followers_user_path(@user), class: "follow-indexBtn" do %>
-        フォロワー<%= @user.followers.count %>
-      <% end %>
+      <div class="follow-container">
+        <%= link_to followings_user_path(@user), class: "follow-indexBtn" do %>
+          フォロー<%= @user.followings.count %>
+        <% end %>
+        <%= link_to followers_user_path(@user), class: "follow-indexBtn" do %>
+          フォロワー<%= @user.followers.count %>
+        <% end %>
+      </div>
       <div class="profile-job">
         職業,状況：<%= @user.job.name %>
       </div>

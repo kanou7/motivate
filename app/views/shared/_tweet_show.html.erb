@@ -10,16 +10,16 @@
 
   <div class="comment">
     <h3 class="comment-ttl">コメント</h3>
-    <%= render partial: 'comments/form', locals: { comment: @comment, tweet: @tweet } %>
+    <% if user_signed_in? %>
+      <%= render partial: 'comments/form', locals: { comment: @comment, tweet: @tweet } %>
+    <% else %>
+      <div class="error-comment">※※※ コメントの投稿には新規登録/ログインが必要です ※※※</div>
+    <% end %>
     <div class="comment-lists">
       <h4 class="comment-listsTtl">＜コメント一覧＞</h4>
-      <% if user_signed_in? %>
-        <div id="comments_area">
-          <%= render partial: 'comments/index', locals: { comments: @comments } %>
-        </div>
-      <% else %>
-        <div class="error-comment">※※※ コメントの投稿には新規登録/ログインが必要です ※※※</div>
-      <% end %>
+      <div id="comments_area">
+        <%= render partial: 'comments/index', locals: { comments: @comments } %>
+      </div>
     </div>
   </div>
 
