@@ -6,12 +6,14 @@
   <% end %>
   <div class="tweet-ttl"><%= tweet.title %></div>
   <div class="tweet-message"><%= tweet.message %></div>
-  <div class="user-info">
+
+  <%= link_to user_path(tweet.user), class: "user-info" do %>
     <% if tweet.user.image.attached? %>
       <%= image_tag tweet.user.image.variant(resize: '30x30'), class: "user-img" %>
     <% end %>
     <div class="user-name"><%= tweet.user.name %></div>
-  </div>
+  <% end %>
+
 </div>
 
 <div class="tweet-listBottom">
