@@ -129,4 +129,21 @@
   background-color: var(--main-color);
   color: #fff;
 }
+
+/*========================================================
+# follow
+========================================================*/
+.follow-btn {
+  background-color: #fff;
+  border: 1px solid var(--main-color);
+  color: var(--main-color);
+  border-radius: 100px;
+  padding: 5px 10px;
+  transition: 0.5s;
+}
+
+.follow-btn:hover {
+  background-color: var(--main-color);
+  color: #fff;
+}
 /*# sourceMappingURL=mypage.css.map */
