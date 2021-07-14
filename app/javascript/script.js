@@ -45,6 +45,14 @@ $( function() {
     slidesToShow: 3,
     pauseOnHover: false,
     arrows: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 1,
+        }
+      },
+    ]
   });
 
 });

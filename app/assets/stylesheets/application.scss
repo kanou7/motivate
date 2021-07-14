@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -14,31 +13,30 @@
  *= require_tree .
  *= require_self
  */
-/*===========================================
-mixin
-===========================================*/
+
 /*===========================================
 全体設定
 ===========================================*/
-:root {
+
+ :root {
   --main-bg-color: #f6fafa;
   --main-text-color: #A0A0AC;
   --main-color: #95c9c9;
 }
 
-body {
-  font-family: "ヒラギノ明朝 ProN",'Hiragino Sans',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic','Droid Sans',sans-serif;
-  background-color: var(--main-bg-color);
-  color: var(--main-text-color);
-  padding-bottom: 600px;
-  padding-top: 60px;
-}
+ body {
+   font-family: "ヒラギノ明朝 ProN",'Hiragino Sans',YuGothic,'Yu Gothic','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic','Droid Sans',sans-serif;
+   background-color: var(--main-bg-color);
+   color: var(--main-text-color);
+   padding-bottom: 600px;
+   padding-top: 60px;
+ }
 
-.hidden {
-  display: none;
-}
+ .hidden {
+   display: none;
+ }
 
-a {
+ a {
   text-decoration: none;
   color: var(--main-color);
 }
@@ -81,6 +79,7 @@ a {
 }
 
 /* 入力フォーム */
+
 .field .motivate-label {
   margin-bottom: 10px;
 }
@@ -125,4 +124,3 @@ a {
   background-color: var(--main-color);
   color: #fff;
 }
-/*# sourceMappingURL=application.css.map */

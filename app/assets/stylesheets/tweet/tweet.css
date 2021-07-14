@@ -11,6 +11,18 @@
   width: 40%;
 }
 
+@media (max-width: 1024px) {
+  .index {
+    width: 70%;
+  }
+}
+
+@media (max-width: 767px) {
+  .index {
+    width: 90%;
+  }
+}
+
 .tweet-list {
   background-color: #fff;
   margin-top: 20px;
@@ -20,6 +32,15 @@
 
 .tweet-list + .tweet-list {
   margin-top: 40px;
+}
+
+@media (max-width: 1024px) {
+  .tweet-list {
+    margin-top: 60px;
+  }
+  .tweet-list + .tweet-list {
+    margin-top: 50px;
+  }
 }
 
 .tweet-listTop {
@@ -56,6 +77,20 @@
   left: 15px;
 }
 
+@media (max-width: 1024px) {
+  .tweet-listMain .tweet-ttl {
+    font-size: 20px;
+    top: 20px;
+    left: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .tweet-listMain .tweet-ttl {
+    font-size: 22px;
+  }
+}
+
 .tweet-listMain .tweet-message {
   color: #fff;
   font-size: 18px;
@@ -66,6 +101,18 @@
   transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
+}
+
+@media (max-width: 1024px) {
+  .tweet-listMain .tweet-message {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .tweet-listMain .tweet-message {
+    font-size: 22px;
+  }
 }
 
 .tweet-listMain .user-info {
@@ -82,9 +129,35 @@
   margin-left: 10px;
 }
 
+@media (max-width: 1024px) {
+  .tweet-listMain .user-info {
+    font-size: 22px;
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .tweet-listMain .user-info {
+    font-size: 26px;
+  }
+}
+
 .tweet-listBottom {
   padding: 10px 15px;
   font-size: 14px;
+}
+
+@media (max-width: 1024px) {
+  .tweet-listBottom {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  .tweet-listBottom {
+    font-size: 18px;
+  }
 }
 
 .tweet-listBottom .tweet-ttl {
@@ -134,12 +207,28 @@
   width: 80px;
   text-align: center;
   border-radius: 1000px;
-  box-shadow: 0 5px 0 #2b3838;
 }
 
-.tweet-btn:active {
-  transform: translate(0, 3px);
-  box-shadow: 0 2px 0 #2b3838;
+@media (min-width: 1025px) {
+  .tweet-btn {
+    box-shadow: 0 5px 0 #2b3838;
+  }
+  .tweet-btn:active {
+    transform: translate(0, 3px);
+    box-shadow: 0 2px 0 #2b3838;
+  }
+}
+
+@media (max-width: 1024px) {
+  .tweet-btn {
+    height: 100px;
+    width: 100px;
+    bottom: 50px;
+    right: 50px;
+  }
+  .tweet-btn .fa-edit {
+    font-size: 30px;
+  }
 }
 
 .tweet-sub {
@@ -181,6 +270,13 @@
   width: 15px;
 }
 
+@media (max-width: 1024px) {
+  .totop {
+    bottom: 10px;
+    right: 10px;
+  }
+}
+
 /* fadeIn
 --------------------------------------------------------*/
 .fadeIn {
@@ -216,6 +312,12 @@
   opacity: 0.5;
 }
 
+@media (max-width: 1024px) {
+  .edit-btn {
+    font-size: 18px;
+  }
+}
+
 /*========================================================
 # destroy
 ========================================================*/
@@ -227,6 +329,12 @@
 
 .destroy-btn:hover {
   opacity: 0.5;
+}
+
+@media (max-width: 1024px) {
+  .destroy-btn {
+    font-size: 18px;
+  }
 }
 
 /*========================================================
@@ -372,6 +480,20 @@
   width: 100%;
 }
 
+@media (max-width: 1024px) {
+  .slider {
+    width: 80%;
+    margin: 60px auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .slider {
+    width: 100%;
+    margin: 70px auto;
+  }
+}
+
 .slick-next {
   right: 10px !important;
   z-index: 100;
@@ -382,9 +504,33 @@
   z-index: 100;
 }
 
+@media (max-width: 1024px) {
+  .slick-prev {
+    left: -15px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .slick-prev {
+    left: -25px !important;
+  }
+}
+
 .slick-prev:before, .slick-next:before {
   font-size: 30px !important;
   color: #000  !important;
+}
+
+@media (max-width: 1024px) {
+  .slick-prev:before, .slick-next:before {
+    font-size: 50px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .slick-prev:before, .slick-next:before {
+    font-size: 60px !important;
+  }
 }
 
 .recoTweet-list {
@@ -407,12 +553,38 @@
   object-fit: cover;
 }
 
+@media (max-width: 1024px) {
+  .recoTweet-img {
+    height: 35vw;
+  }
+}
+
+@media (max-width: 767px) {
+  .recoTweet-img {
+    height: 45vw;
+  }
+}
+
 .recoTweet-ttl {
   color: #fff;
   font-size: 18px;
   position: absolute;
   top: 10px;
   left: 10px;
+}
+
+@media (max-width: 1024px) {
+  .recoTweet-ttl {
+    font-size: 24px;
+    top: 20px;
+    left: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .recoTweet-ttl {
+    font-size: 28px;
+  }
 }
 
 .recoTweet-message {
@@ -427,12 +599,38 @@
   -ms-transform: translate(-50%, -50%);
 }
 
+@media (max-width: 1024px) {
+  .recoTweet-message {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  .recoTweet-message {
+    font-size: 28px;
+  }
+}
+
 .recoTweet-txt {
   color: #fff;
   font-size: 12px;
   position: absolute;
   bottom: 10px;
   right: 10px;
+}
+
+@media (max-width: 1024px) {
+  .recoTweet-txt {
+    font-size: 16px;
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .recoTweet-txt {
+    font-size: 18px;
+  }
 }
 
 /*========================================================
@@ -445,6 +643,13 @@
   margin-top: 20px;
   border: 1px solid #E4E4E4;
   border-radius: 3px;
+}
+
+@media (max-width: 1024px) {
+  .right-sideBar {
+    position: fixed;
+    right: -80%;
+  }
 }
 
 .right-container {
@@ -501,6 +706,13 @@
   margin-top: 20px;
   border: 1px solid #E4E4E4;
   border-radius: 3px;
+}
+
+@media (max-width: 1024px) {
+  .left-sideBar {
+    position: fixed;
+    left: -80%;
+  }
 }
 
 .left-container {
