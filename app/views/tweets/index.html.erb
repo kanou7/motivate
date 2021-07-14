@@ -6,12 +6,12 @@
 </div>
 
 <% unless user_signed_in? %>
-  <div class="intro-bg fadeIn">
+  <div class="intro-bg">
     <div class="intro">
       <%= image_tag asset_path("intro_img.jpg"), class: "intro-img" %>
     </div>
   </div>
-  <div class="intro-content fadeIn">
+  <div class="intro-content">
     <div class="intro-mainTxt">あなたの人生を変えてくれる作品と出会いましょう</div>
     <div class="intro-txt">motivateは各職業の方がもっと仕事の質を上げたい、あるマイナスの状態の方がその状態を改善したいと<br>思うような目的意識を与えるドラマ、映画、アニメ、漫画、個人動画などを投稿、もしくは探せるサービス</div>
     <div class="intro-subTxt">右上のログインボタンからゲストログインができます</div>
@@ -21,7 +21,7 @@
 <div class="tweets-container">
 
   <% if @recommend_tweets != [] && user_signed_in? %>
-    <div class="recommend fadeIn">
+    <div class="recommend">
       <ul class="recoTweet-lists slider">
         <%  @recommend_tweets.each do |tweet| %>
           <li class='recoTweet-list'>
@@ -96,7 +96,7 @@
       <ul class="tweet-lists">
         <% if @tweets != [] %>
           <% @tweets.each do |tweet| %>
-            <li class='tweet-list fadeIn'>
+            <li class='tweet-list'>
               <%= link_to tweet_path(tweet.id), remote: true, class: "show-link" do %>
 
                 <%= render partial: "shared/tweet",  locals: { tweet: tweet } %>
@@ -196,12 +196,12 @@
     <% end %>
   <% else %>
     <%= link_to root_path, class: "home header-item" do %>
-      <i class="fas fa-home"></i>ホーム
+      <i class="fas fa-home"></i>
     <% end %>
-    <a class="search-headBtn header-item">検索</a>
-    <a  class="rank-headBtn header-item" id="rank-js">ランキング</a>
+    <a class="search-headBtn header-item" id="search-js"><i class="fas fa-search"></i></a>
+    <a  class="rank-headBtn header-item" id="rank-js"><i class="fas fa-crown"></i></a>
     <%= link_to new_user_session_path, class: "login header-item" do %>
-      <i class="fas fa-sign-in-alt"></i>ログイン
+      <i class="fas fa-sign-in-alt"></i>
     <% end %>
   <% end %>
 </div>

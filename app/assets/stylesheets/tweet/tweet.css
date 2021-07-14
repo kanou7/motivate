@@ -19,7 +19,7 @@
 
 @media (max-width: 767px) {
   .index {
-    width: 90%;
+    width: 100%;
   }
 }
 
@@ -36,10 +36,10 @@
 
 @media (max-width: 1024px) {
   .tweet-list {
-    margin-top: 60px;
+    margin-top: 10px;
   }
   .tweet-list + .tweet-list {
-    margin-top: 50px;
+    margin-top: 20px;
   }
 }
 
@@ -59,10 +59,22 @@
   background-color: rgba(0, 0, 0, 0.6);
 }
 
+@media (max-width: 767px) {
+  .tweet-listMain {
+    height: 200px;
+  }
+}
+
 .tweet-listMain .tweet-img {
   height: 300px;
   width: 100%;
   opacity: 0.6;
+}
+
+@media (max-width: 767px) {
+  .tweet-listMain .tweet-img {
+    height: 200px;
+  }
 }
 
 .tweet-listMain .tweet-nonImg {
@@ -79,15 +91,13 @@
 
 @media (max-width: 1024px) {
   .tweet-listMain .tweet-ttl {
-    font-size: 20px;
-    top: 20px;
-    left: 20px;
+    font-size: 16px;
   }
 }
 
 @media (max-width: 767px) {
   .tweet-listMain .tweet-ttl {
-    font-size: 22px;
+    font-size: 14px;
   }
 }
 
@@ -105,13 +115,13 @@
 
 @media (max-width: 1024px) {
   .tweet-listMain .tweet-message {
-    font-size: 20px;
+    font-size: 16px;
   }
 }
 
 @media (max-width: 767px) {
   .tweet-listMain .tweet-message {
-    font-size: 22px;
+    font-size: 14px;
   }
 }
 
@@ -131,15 +141,13 @@
 
 @media (max-width: 1024px) {
   .tweet-listMain .user-info {
-    font-size: 22px;
-    bottom: 20px;
-    right: 20px;
+    font-size: 16px;
   }
 }
 
 @media (max-width: 767px) {
   .tweet-listMain .user-info {
-    font-size: 26px;
+    font-size: 14px;
   }
 }
 
@@ -223,11 +231,23 @@
   .tweet-btn {
     height: 100px;
     width: 100px;
-    bottom: 170px;
-    right: 50px;
+    bottom: 120px;
+    right: 40px;
   }
   .tweet-btn .fa-edit {
     font-size: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .tweet-btn {
+    height: 70px;
+    width: 70px;
+    bottom: 140px;
+    right: 20px;
+  }
+  .tweet-btn .fa-edit {
+    font-size: 40px;
   }
 }
 
@@ -272,8 +292,8 @@
 
 @media (max-width: 1024px) {
   .totop {
-    bottom: 130px;
-    right: 10px;
+    bottom: 85px;
+    right: 0;
   }
 }
 
@@ -353,6 +373,18 @@
   height: 60px;
 }
 
+@media (max-width: 1024px) {
+  .comment-form {
+    height: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .comment-form {
+    height: 30px;
+  }
+}
+
 .comment-form .comment-field {
   width: 84%;
   border: none;
@@ -362,6 +394,12 @@
   outline: none;
 }
 
+@media (max-width: 1024px) {
+  .comment-form .comment-field {
+    width: 83%;
+  }
+}
+
 .comment-form .comment-submit {
   width: 13%;
   border: none;
@@ -369,6 +407,12 @@
   background-color: var(--main-color);
   color: #fff;
   transition: 0.5s;
+}
+
+@media (max-width: 1024px) {
+  .comment-form .comment-submit {
+    width: 12%;
+  }
 }
 
 .comment-form .comment-submit:hover {
@@ -442,14 +486,26 @@
   margin-bottom: 30px;
 }
 
+@media (max-width: 767px) {
+  .intro {
+    height: 450px;
+  }
+}
+
 .intro-img {
   height: 550px;
   width: 100%;
 }
 
+@media (max-width: 767px) {
+  .intro-img {
+    height: 450px;
+  }
+}
+
 .intro-content {
   position: absolute;
-  top: 40%;
+  top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
@@ -458,18 +514,66 @@
   text-align: center;
 }
 
+@media (max-width: 1024px) {
+  .intro-content {
+    top: 20%;
+  }
+}
+
+@media (max-width: 767px) {
+  .intro-content {
+    top: 30%;
+  }
+}
+
 .intro-content .intro-mainTxt {
   font-size: 26px;
-  margin-bottom: 30px;
+  margin-bottom: 5px;
+}
+
+@media (max-width: 1024px) {
+  .intro-content .intro-mainTxt {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .intro-content .intro-mainTxt {
+    font-size: 18px;
+  }
 }
 
 .intro-content .intro-txt {
   font-size: 14px;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
+}
+
+@media (max-width: 1024px) {
+  .intro-content .intro-txt {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 767px) {
+  .intro-content .intro-txt {
+    font-size: 10px;
+  }
 }
 
 .intro-content .intro-subTxt {
   font-size: 14px;
+}
+
+@media (max-width: 1024px) {
+  .intro-content .intro-subTxt {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 767px) {
+  .intro-content .intro-subTxt {
+    font-size: 10px;
+  }
 }
 
 /*========================================================
@@ -484,14 +588,12 @@
   .slider {
     width: 80%;
     padding-top: 20px;
-    margin: 60px auto;
   }
 }
 
 @media (max-width: 767px) {
   .slider {
     width: 100%;
-    margin: 70px auto;
   }
 }
 
@@ -505,33 +607,9 @@
   z-index: 100;
 }
 
-@media (max-width: 1024px) {
-  .slick-prev {
-    left: -15px !important;
-  }
-}
-
-@media (max-width: 767px) {
-  .slick-prev {
-    left: -25px !important;
-  }
-}
-
 .slick-prev:before, .slick-next:before {
   font-size: 30px !important;
   color: #000  !important;
-}
-
-@media (max-width: 1024px) {
-  .slick-prev:before, .slick-next:before {
-    font-size: 50px !important;
-  }
-}
-
-@media (max-width: 767px) {
-  .slick-prev:before, .slick-next:before {
-    font-size: 60px !important;
-  }
 }
 
 .recoTweet-list {
@@ -541,6 +619,18 @@
   margin: 20px;
   position: relative;
   transition: 0.5s;
+}
+
+@media (max-width: 1024px) {
+  .recoTweet-list {
+    margin: 10;
+  }
+}
+
+@media (max-width: 767px) {
+  .recoTweet-list {
+    margin: 0;
+  }
 }
 
 .recoTweet-list:hover {
@@ -556,13 +646,13 @@
 
 @media (max-width: 1024px) {
   .recoTweet-img {
-    height: 35vw;
+    height: 40vw;
   }
 }
 
 @media (max-width: 767px) {
   .recoTweet-img {
-    height: 45vw;
+    height: 50vw;
   }
 }
 
@@ -576,15 +666,13 @@
 
 @media (max-width: 1024px) {
   .recoTweet-ttl {
-    font-size: 24px;
-    top: 20px;
-    left: 20px;
+    font-size: 16px;
   }
 }
 
 @media (max-width: 767px) {
   .recoTweet-ttl {
-    font-size: 28px;
+    font-size: 14px;
   }
 }
 
@@ -602,13 +690,13 @@
 
 @media (max-width: 1024px) {
   .recoTweet-message {
-    font-size: 24px;
+    font-size: 16px;
   }
 }
 
 @media (max-width: 767px) {
   .recoTweet-message {
-    font-size: 28px;
+    font-size: 14px;
   }
 }
 
@@ -622,15 +710,13 @@
 
 @media (max-width: 1024px) {
   .recoTweet-txt {
-    font-size: 16px;
-    bottom: 20px;
-    right: 20px;
+    font-size: 12px;
   }
 }
 
 @media (max-width: 767px) {
   .recoTweet-txt {
-    font-size: 18px;
+    font-size: 10px;
   }
 }
 
@@ -649,10 +735,10 @@
 @media (max-width: 1024px) {
   .right-sideBar {
     position: fixed;
-    right: -80%;
-    top: 50px;
+    right: -100%;
+    top: 30px;
     width: 60%;
-    height: 1000px;
+    height: 1250px;
     overflow-y: scroll;
   }
   .right-sideBar.add-active {
@@ -662,7 +748,8 @@
 
 @media (max-width: 767px) {
   .right-sideBar {
-    width: 80%;
+    width: 100%;
+    height: 680px;
   }
 }
 
@@ -672,7 +759,7 @@
 
 @media (max-width: 1024px) {
   .right-container {
-    padding-top: 100px;
+    padding-top: 70px;
   }
 }
 
@@ -717,7 +804,7 @@
     top: 0;
     left: 0;
     z-index: 1000px;
-    font-size: 60px;
+    font-size: 40px;
     color: var(--main-color);
   }
 }
@@ -747,10 +834,10 @@
 @media (max-width: 1024px) {
   .left-sideBar {
     position: fixed;
-    left: -80%;
-    top: 50px;
+    left: -100%;
+    top: 30px;
     width: 60%;
-    height: 1000px;
+    height: 1250px;
     overflow-y: scroll;
     z-index: 999;
   }
@@ -761,7 +848,8 @@
 
 @media (max-width: 767px) {
   .left-sideBar {
-    width: 80%;
+    width: 100%;
+    height: 680px;
   }
 }
 
@@ -771,7 +859,7 @@
 
 @media (max-width: 1024px) {
   .left-container {
-    padding-top: 100px;
+    padding-top: 70px;
   }
 }
 
@@ -809,7 +897,7 @@
     top: 0;
     right: 0;
     z-index: 1000;
-    font-size: 60px;
+    font-size: 40px;
     color: var(--main-color);
   }
 }
@@ -837,6 +925,19 @@
   padding: 2px 6px;
   border-radius: 100px;
   margin-right: 5px;
+}
+
+@media (max-width: 1024px) {
+  .tag-name {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 767px) {
+  .tag-name {
+    font-size: 12px;
+    padding: 1px 4px;
+  }
 }
 
 /*========================================================
@@ -992,9 +1093,16 @@
   overflow-y: scroll;
 }
 
+@media (max-width: 1024px) {
+  #modal {
+    width: 95%;
+    font-size: 16px;
+  }
+}
+
 @media (max-width: 767px) {
   #modal {
-    font-size: 24px;
+    font-size: 14px;
   }
 }
 
@@ -1022,7 +1130,15 @@
   #close-btn {
     top: 5%;
     right: 5%;
-    font-size: 70px;
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  #close-btn {
+    top: 3px;
+    right: 3px;
+    font-size: 40px;
   }
 }
 
@@ -1031,9 +1147,15 @@
   font-size: 16px;
 }
 
+@media (max-width: 1024px) {
+  .modal-txt {
+    font-size: 16px;
+  }
+}
+
 @media (max-width: 767px) {
   .modal-txt {
-    font-size: 20px;
+    font-size: 14px;
   }
 }
 
@@ -1123,7 +1245,7 @@
   width: 100%;
   background-color: #fff;
   text-align: center;
-  padding: 30px 0;
+  padding: 10px 0;
   z-index: 999;
   display: none;
   font-size: 40px;
@@ -1135,7 +1257,15 @@
   }
 }
 
-.footer .header-item {
-  padding: 0 10px;
+@media (max-width: 1024px) {
+  .footer .header-item {
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer .header-item {
+    padding: 0;
+  }
 }
 /*# sourceMappingURL=tweet.css.map */
