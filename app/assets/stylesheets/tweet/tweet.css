@@ -254,7 +254,7 @@
   height: 50px;
   right: 16px;
   width: 50px;
-  z-index: 999;
+  z-index: 900;
 }
 
 .totop:after {
@@ -992,6 +992,12 @@
   overflow-y: scroll;
 }
 
+@media (max-width: 767px) {
+  #modal {
+    font-size: 24px;
+  }
+}
+
 #mask.hidden {
   opacity: 0;
   visibility: hidden;
@@ -1005,11 +1011,19 @@
 
 #close-btn {
   position: fixed;
-  top: 0;
+  top: 3%;
   right: 30%;
   z-index: 1000;
-  font-size: 40px;
+  font-size: 50px;
   color: var(--main-color);
+}
+
+@media (max-width: 1024px) {
+  #close-btn {
+    top: 5%;
+    right: 5%;
+    font-size: 70px;
+  }
 }
 
 .modal-txt {
@@ -1017,8 +1031,20 @@
   font-size: 16px;
 }
 
+@media (max-width: 767px) {
+  .modal-txt {
+    font-size: 20px;
+  }
+}
+
 .txt-ttl {
   text-align: center;
+}
+
+@media (max-width: 767px) {
+  .txt-ttl {
+    font-size: 24px;
+  }
 }
 
 .ribbon {
