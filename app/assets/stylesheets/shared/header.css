@@ -12,6 +12,18 @@
   box-sizing: border-box;
 }
 
+@media (max-width: 1024px) {
+  .header {
+    height: 70px;
+  }
+}
+
+@media (max-width: 767px) {
+  .header {
+    height: 80px;
+  }
+}
+
 .header-ttl {
   font-size: 26px;
   font-weight: bold;
@@ -29,5 +41,23 @@
 .fas {
   margin-left: 7px;
   margin-right: 2px;
+}
+
+@media (min-width: 1025px) {
+  .search-headBtn {
+    display: none;
+  }
+}
+
+@media (min-width: 1025px) {
+  .rank-headBtn {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .main-menu {
+    display: none;
+  }
 }
 /*# sourceMappingURL=header.css.map */

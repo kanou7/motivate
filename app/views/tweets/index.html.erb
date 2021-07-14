@@ -43,18 +43,21 @@
 
   <div class="main">
 
-    <div class="left-sideBar fadeIn">
+    <div class="left-sideBar fadeIn" id="left-sideJs">
+      <div id="search-closeBtn">
+        <i class="fas fa-times-circle"></i>
+      </div>
       <div class="left-container">
 
         <div class="search-subTtl">キーワード検索</div>
         <%= form_with(url: search_tweets_path, local: true, method: :get, class: "search-form") do |f| %>
-          <%= f.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
+          <%= f.text_field :keyword, placeholder: "投稿を検索する", class: "search-input word-search" %>
           <%= f.submit "検索", class: "search-submit keyword-searchBtn" %>
         <% end %>
 
         <div class="search-subTtl">心境で検索</div>
         <%= form_with(url: search_status_tweets_path, local: true, method: :get, class: "search-form") do |f| %>
-          <%= f.collection_select(:status_id, Status.all, :id, :name, {}, {class:"select-box", id:"tweet_status"}) %>
+          <%= f.collection_select(:status_id, Status.all, :id, :name, {}, {class:"select-box status-search", id:"tweet_status"}) %>
           <%= f.submit "検索", class: "search-submit" %>
         <% end %>
 
@@ -65,9 +68,11 @@
         <% end %>
 
         <div class="search-subTtl">タグ検索</div>
-        <%= link_to search_tags_tweets_path, class: "search-form tag-searchBtn" do %>
-          <i class="fas fa-tags"></i>タグで検索する
-        <% end %>
+        <div class="search-tagContainer">
+          <%= link_to search_tags_tweets_path, class: "search-form tag-searchBtn" do %>
+            <i class="fas fa-tags"></i>タグで検索する
+          <% end %>
+        </div>
 
         <div class="search-subTtl rank-tagTtl">人気のタグ</div>
         <ul class="tag-lists">
@@ -87,7 +92,7 @@
       </div>
     </div>
 
-    <div class="index">
+    <div class="index" id="tweets-back">
       <ul class="tweet-lists">
         <% if @tweets != [] %>
           <% @tweets.each do |tweet| %>
@@ -103,7 +108,10 @@
       </ul>
     </div>
 
-    <div class="right-sideBar fadeIn">
+    <div class="right-sideBar fadeIn" id="right-sideJs">
+      <div id="rank-closeBtn">
+        <i class="fas fa-times-circle"></i>
+      </div>
       <div class="right-container">
         <div class="rank-container">
           <h2 class="rank-ttl">人気投稿ランキング</h2>
@@ -171,6 +179,31 @@
 
   </div>
 
+</div>
+
+<div class="footer">
+  <% if user_signed_in? %>
+    <%= link_to root_path, class: "home header-item" do %>
+      <i class="fas fa-home"></i>
+    <% end %>
+    <%= link_to user_path(current_user), class: "post header-item" do %>
+      <i class="fas fa-user"></i>
+    <% end %>
+    <a class="search-headBtn header-item" id="search-js"><i class="fas fa-search"></i></a>
+    <a class="rank-headBtn header-item" id="rank-js"><i class="fas fa-crown"></i></a>
+    <%= link_to destroy_user_session_path, class: "logout header-item", method: :delete do %>
+      <i class="fas fa-sign-out-alt"></i>
+    <% end %>
+  <% else %>
+    <%= link_to root_path, class: "home header-item" do %>
+      <i class="fas fa-home"></i>ホーム
+    <% end %>
+    <a class="search-headBtn header-item">検索</a>
+    <a  class="rank-headBtn header-item" id="rank-js">ランキング</a>
+    <%= link_to new_user_session_path, class: "login header-item" do %>
+      <i class="fas fa-sign-in-alt"></i>ログイン
+    <% end %>
+  <% end %>
 </div>
 
 <% if user_signed_in? %>

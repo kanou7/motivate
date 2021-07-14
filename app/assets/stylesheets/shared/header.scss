@@ -10,6 +10,14 @@
   align-items: center;
   padding: 0 30px;
   box-sizing: border-box;
+
+  @media (max-width: 1024px) {
+    height: 70px;
+  }
+
+  @media (max-width: 767px) {
+    height: 80px;
+  }
 }
 
 .header-ttl {
@@ -29,4 +37,24 @@
 .fas {
   margin-left: 7px;
   margin-right: 2px;
+}
+
+.search-headBtn {
+  
+  @media (min-width: 1025px) {
+    display: none;
+  }
+}
+
+.rank-headBtn {
+  @media (min-width: 1025px) {
+    display: none;
+  }
+}
+
+.main-menu {
+
+  @media (max-width: 1024px) {
+    display: none;
+  }
 }

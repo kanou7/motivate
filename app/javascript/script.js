@@ -45,6 +45,38 @@ $( function() {
     slidesToShow: 3,
     pauseOnHover: false,
     arrows: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 1,
+        }
+      },
+    ]
+  });
+
+  //right-side
+  var $rank = $( '#right-sideJs' );
+  $( '#rank-js' ).on( 'click', function(e) {
+    e.preventDefault();
+    $rank.toggleClass( 'add-active' );
+  });
+
+  $( '#rank-closeBtn, #tweets-back' ).on( 'click', function(e) {
+    e.preventDefault();
+    $rank.removeClass( 'add-active' );
+  });
+
+  //left-side
+  var $search = $( '#left-sideJs' );
+  $( '#search-js' ).on( 'click', function(e) {
+    e.preventDefault();
+    $search.toggleClass( 'add-active' );
+  });
+
+  $( '#search-closeBtn, #tweets-back' ).on( 'click', function(e) {
+    e.preventDefault();
+    $search.removeClass( 'add-active' );
   });
 
 });
