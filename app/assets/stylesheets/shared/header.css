@@ -42,4 +42,16 @@
   margin-left: 7px;
   margin-right: 2px;
 }
+
+@media (min-width: 1025px) {
+  .search-headBtn {
+    display: none;
+  }
+}
+
+@media (min-width: 1025px) {
+  .rank-headBtn {
+    display: none;
+  }
+}
 /*# sourceMappingURL=header.css.map */

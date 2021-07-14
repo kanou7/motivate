@@ -38,3 +38,16 @@
   margin-left: 7px;
   margin-right: 2px;
 }
+
+.search-headBtn {
+  
+  @media (min-width: 1025px) {
+    display: none;
+  }
+}
+
+.rank-headBtn {
+  @media (min-width: 1025px) {
+    display: none;
+  }
+}

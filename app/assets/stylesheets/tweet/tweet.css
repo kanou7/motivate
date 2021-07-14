@@ -483,6 +483,7 @@
 @media (max-width: 1024px) {
   .slider {
     width: 80%;
+    padding-top: 20px;
     margin: 60px auto;
   }
 }
@@ -649,6 +650,13 @@
   .right-sideBar {
     position: fixed;
     right: -80%;
+    top: 50px;
+    width: 70%;
+    height: 1000px;
+    overflow-y: scroll;
+  }
+  .right-sideBar.add-active {
+    right: 0;
   }
 }
 

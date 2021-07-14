@@ -55,4 +55,16 @@ $( function() {
     ]
   });
 
+  //right-side
+  var $rank = $( '#right-sideJs' );
+  $( '#rank-js' ).on( 'click', function(e) {
+    e.preventDefault();
+    $rank.toggleClass( 'add-active' );
+  });
+
+  $( '.js-navLink, #js-overlay' ).on( 'click', function(e) {
+    e.preventDefault();
+    $header.removeClass( 'add-active' );
+  });
+
 });

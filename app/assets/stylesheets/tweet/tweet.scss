@@ -459,6 +459,7 @@
 
   @media (max-width: 1024px) {
     width: 80%;
+    padding-top: 20px;
     margin: 60px auto;
   }
 
@@ -597,6 +598,14 @@
   @media (max-width: 1024px) {
     position: fixed;
     right: -80%;
+    top: 50px;
+    width: 70%;
+    height: 1000px;
+    overflow-y: scroll;
+
+    &.add-active {
+      right: 0;
+    }
   }
 }
 
