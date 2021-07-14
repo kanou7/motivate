@@ -13,7 +13,7 @@
 
 @media (max-width: 1024px) {
   .index {
-    width: 70%;
+    width: 80%;
   }
 }
 
@@ -223,7 +223,7 @@
   .tweet-btn {
     height: 100px;
     width: 100px;
-    bottom: 50px;
+    bottom: 170px;
     right: 50px;
   }
   .tweet-btn .fa-edit {
@@ -272,7 +272,7 @@
 
 @media (max-width: 1024px) {
   .totop {
-    bottom: 10px;
+    bottom: 130px;
     right: 10px;
   }
 }
@@ -651,7 +651,7 @@
     position: fixed;
     right: -80%;
     top: 50px;
-    width: 70%;
+    width: 60%;
     height: 1000px;
     overflow-y: scroll;
   }
@@ -660,8 +660,20 @@
   }
 }
 
+@media (max-width: 767px) {
+  .right-sideBar {
+    width: 80%;
+  }
+}
+
 .right-container {
   padding: 30px 50px;
+}
+
+@media (max-width: 1024px) {
+  .right-container {
+    padding-top: 100px;
+  }
 }
 
 .rank-ttl {
@@ -694,6 +706,22 @@
   text-align: right;
 }
 
+#rank-closeBtn {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  #rank-closeBtn {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000px;
+    font-size: 60px;
+    color: var(--main-color);
+  }
+}
+
 /* job-rank
 --------------------------------------------------------*/
 .rank-TweetStatus {
@@ -720,11 +748,31 @@
   .left-sideBar {
     position: fixed;
     left: -80%;
+    top: 50px;
+    width: 60%;
+    height: 1000px;
+    overflow-y: scroll;
+    z-index: 999;
+  }
+  .left-sideBar.add-active {
+    left: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .left-sideBar {
+    width: 80%;
   }
 }
 
 .left-container {
   padding: 30px 50px;
+}
+
+@media (max-width: 1024px) {
+  .left-container {
+    padding-top: 100px;
+  }
 }
 
 .search-subTtl {
@@ -748,6 +796,22 @@
   border-style: solid;
   border-color: #fff #fff #98d7db;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+#search-closeBtn {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  #search-closeBtn {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    font-size: 60px;
+    color: var(--main-color);
+  }
 }
 
 /*========================================================
@@ -795,6 +859,13 @@
   display: inline-block;
   text-decoration: none;
   border-bottom: solid 2px #45585c;
+  width: 20%;
+}
+
+@media (max-width: 1024px) {
+  .search-submit {
+    width: 10%;
+  }
 }
 
 .keyword-searchBtn:active {
@@ -814,6 +885,10 @@
 
 .none-message {
   text-align: center;
+}
+
+.word-search {
+  width: 70%;
 }
 
 /*========================================================
@@ -849,6 +924,12 @@
   text-align: center;
 }
 
+@media (max-width: 1024px) {
+  .search-tagContainer {
+    text-align: center;
+  }
+}
+
 .tag-searchBtn {
   background-color: var(--main-color);
   color: #fff;
@@ -876,6 +957,13 @@
 # job-search
 ========================================================*/
 .job-search {
+  width: 70%;
+}
+
+/*========================================================
+# status-search
+========================================================*/
+.status-search {
   width: 70%;
 }
 
@@ -998,5 +1086,30 @@
 
 .tweet-modalList {
   padding: 30px;
+}
+
+/*========================================================
+# footer
+========================================================*/
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+  text-align: center;
+  padding: 30px 0;
+  z-index: 999;
+  display: none;
+  font-size: 40px;
+}
+
+@media (max-width: 1024px) {
+  .footer {
+    display: block;
+  }
+}
+
+.footer .header-item {
+  padding: 0 10px;
 }
 /*# sourceMappingURL=tweet.css.map */

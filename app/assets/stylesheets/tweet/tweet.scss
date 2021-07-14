@@ -11,7 +11,7 @@
   width: 40%;
 
   @media (max-width: 1024px) {
-    width: 70%;
+    width: 80%;
   }
 
   @media (max-width: 767px) {
@@ -202,16 +202,12 @@
   @media (max-width: 1024px) {
     height: 100px;
     width: 100px;
-    bottom: 50px;
+    bottom: 170px;
     right: 50px;
 
     .fa-edit {
       font-size: 30px;
     }
-  }
-
-  @media (max-width: 767px) {
-    
   }
 }
 
@@ -254,7 +250,7 @@
 	}
 
   @media (max-width: 1024px) {
-    bottom: 10px;
+    bottom: 130px;
     right: 10px;
   }
 }
@@ -599,7 +595,7 @@
     position: fixed;
     right: -80%;
     top: 50px;
-    width: 70%;
+    width: 60%;
     height: 1000px;
     overflow-y: scroll;
 
@@ -607,10 +603,18 @@
       right: 0;
     }
   }
+
+  @media (max-width: 767px) {
+    width: 80%;
+  }
 }
 
 .right-container {
   padding: 30px 50px;
+
+  @media (max-width: 1024px) {
+    padding-top: 100px;
+  }
 }
 
 .rank-ttl {
@@ -643,6 +647,20 @@
   text-align: right;
 }
 
+#rank-closeBtn {
+  display: none;
+
+  @media (max-width: 1024px) {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000px;
+    font-size: 60px;
+    color: var(--main-color);
+  }
+}
+
 /* job-rank
 --------------------------------------------------------*/
 
@@ -668,11 +686,28 @@
   @media (max-width: 1024px) {
     position: fixed;
     left: -80%;
+    top: 50px;
+    width: 60%;
+    height: 1000px;
+    overflow-y: scroll;
+    z-index: 999;
+
+    &.add-active {
+      left: 0;
+    }
+  }
+
+  @media (max-width: 767px) {
+    width: 80%;
   }
 }
 
 .left-container {
   padding: 30px 50px;
+
+  @media (max-width: 1024px) {
+    padding-top: 100px;
+  }
 }
 
 .search-subTtl {
@@ -695,6 +730,20 @@
     border-style: solid;
     border-color: #fff #fff #98d7db;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+  }
+}
+
+#search-closeBtn {
+  display: none;
+
+  @media (max-width: 1024px) {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    font-size: 60px;
+    color: var(--main-color);
   }
 }
 
@@ -743,6 +792,11 @@
   display: inline-block;
   text-decoration: none;
   border-bottom: solid 2px #45585c;
+  width: 20%;
+
+  @media (max-width: 1024px) {
+    width: 10%;
+  }
 }
 
 .keyword-searchBtn {
@@ -766,6 +820,10 @@
 
 .none-message {
   text-align: center;
+}
+
+.word-search {
+  width: 70%;
 }
 
 /*========================================================
@@ -801,6 +859,13 @@
   }
 }
 
+.search-tagContainer {
+
+  @media (max-width: 1024px) {
+    text-align: center;
+  }
+}
+
 .tag-searchBtn {
   background-color: var(--main-color);
   color: #fff;
@@ -829,6 +894,13 @@
 # job-search
 ========================================================*/
 .job-search {
+  width: 70%;
+}
+
+/*========================================================
+# status-search
+========================================================*/
+.status-search {
   width: 70%;
 }
 
@@ -951,4 +1023,27 @@
 
 .tweet-modalList {
   padding: 30px;  
+}
+
+/*========================================================
+# footer
+========================================================*/
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+  text-align: center;
+  padding: 30px 0;
+  z-index: 999;
+  display: none;
+  font-size: 40px;
+
+  @media (max-width: 1024px) {
+    display: block;
+  }  
+
+  .header-item {
+    padding: 0 10px;
+  }
 }

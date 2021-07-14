@@ -3,7 +3,7 @@
   <div class="header-left">
     <h1 class="header-ttl"><%= link_to "Motivate", root_path %></h1>
   </div>
-  <div class="header-right">
+  <div class="header-right main-menu">
     <nav class="header-nav">
       <ul class="header-list">
 
@@ -15,8 +15,8 @@
             <%= link_to user_path(current_user), class: "post header-item" do %>
               <i class="fas fa-user"></i>プロフィール
             <% end %>
-            <a class="search-headBtn">検索</a>
-            <a class="rank-headBtn" id="rank-js">ランキング</a>
+            <a class="search-headBtn"><i class="fas fa-search"></i>検索</a>
+            <a class="rank-headBtn"><i class="fas fa-crown"></i>ランキング</a>
             <%= link_to destroy_user_session_path, class: "logout header-item", method: :delete do %>
               <i class="fas fa-sign-out-alt"></i>ログアウト
             <% end %>
@@ -27,7 +27,7 @@
               <i class="fas fa-home"></i>ホーム
             <% end %>
             <a class="search-headBtn">検索</a>
-            <a  class="rank-headBtn" id="rank-js">ランキング</a>
+            <a  class="rank-headBtn">ランキング</a>
             <%= link_to new_user_session_path, class: "login header-item" do %>
               <i class="fas fa-sign-in-alt"></i>ログイン
             <% end %>

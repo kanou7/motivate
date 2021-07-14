@@ -62,9 +62,21 @@ $( function() {
     $rank.toggleClass( 'add-active' );
   });
 
-  $( '.js-navLink, #js-overlay' ).on( 'click', function(e) {
+  $( '#rank-closeBtn, #tweets-back' ).on( 'click', function(e) {
     e.preventDefault();
-    $header.removeClass( 'add-active' );
+    $rank.removeClass( 'add-active' );
+  });
+
+  //left-side
+  var $search = $( '#left-sideJs' );
+  $( '#search-js' ).on( 'click', function(e) {
+    e.preventDefault();
+    $search.toggleClass( 'add-active' );
+  });
+
+  $( '#search-closeBtn, #tweets-back' ).on( 'click', function(e) {
+    e.preventDefault();
+    $search.removeClass( 'add-active' );
   });
 
 });

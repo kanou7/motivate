@@ -54,4 +54,10 @@
     display: none;
   }
 }
+
+@media (max-width: 1024px) {
+  .main-menu {
+    display: none;
+  }
+}
 /*# sourceMappingURL=header.css.map */
