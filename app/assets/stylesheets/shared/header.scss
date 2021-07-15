@@ -11,12 +11,8 @@
   padding: 0 30px;
   box-sizing: border-box;
 
-  @media (max-width: 1024px) {
-    height: 70px;
-  }
-
   @media (max-width: 767px) {
-    height: 80px;
+    padding: 0 15px;
   }
 }
 

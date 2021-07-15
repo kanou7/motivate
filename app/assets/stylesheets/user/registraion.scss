@@ -9,6 +9,10 @@
 .registration-main {
   width: 400px;
   margin: 0 auto;
+
+  @media (max-width: 767px) {
+    width: 300px;
+  }
 }
 
 .registration-error {
@@ -34,6 +38,10 @@
     border: none;
     border-radius: 5px;
     outline: none;
+
+    @media (max-width: 767px) {
+      width: 300px;
+    }
   }
 }
 
@@ -52,6 +60,10 @@
     &:hover {
       transition: 0.5s;
       opacity: 0.8;
+    }
+
+    @media (max-width: 767px) {
+      padding: 15px 60px;
     }
   }
 }

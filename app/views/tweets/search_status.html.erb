@@ -8,8 +8,8 @@
 <div class="search-container">
 
     <%= form_with(url: search_status_tweets_path, local: true, method: :get, class: "search-form") do |f| %>
-      <%= f.collection_select(:status_id, Status.all, :id, :name, {}, {class:"select-box", id:"tweet_status"}) %>
-      <%= f.submit "検索", class: "search-submit" %>
+      <%= f.collection_select(:status_id, Status.all, :id, :name, {}, {class:"select-box search-resultSelect", id:"tweet_status"}) %>
+      <%= f.submit "検索", class: "search-submit search-resultSubmit" %>
     <% end %>
 
     <div class="main">

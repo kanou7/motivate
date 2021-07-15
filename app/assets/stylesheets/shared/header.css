@@ -12,15 +12,9 @@
   box-sizing: border-box;
 }
 
-@media (max-width: 1024px) {
-  .header {
-    height: 70px;
-  }
-}
-
 @media (max-width: 767px) {
   .header {
-    height: 80px;
+    padding: 0 15px;
   }
 }
 

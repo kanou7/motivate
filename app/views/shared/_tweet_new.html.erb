@@ -27,17 +27,17 @@
   </div>
 
   <div class="field">
-    <%= f.label :job_id, "どの職業、状況の方に一番見て欲しいですか？", {class: 'motivate-label'} %><span>※必須</span><br />
+    <%= f.label :job_id, "おすすめの職業、状況", {class: 'motivate-label'} %><span>※必須</span><br />
     <%= f.collection_select(:job_id, Job.all, :id, :name, {}, {class:"select-box", id:"tweet_job"}) %>
   </div>
 
   <div class="field">
-    <%= f.label :status_id, "どの状態、心境の方に一番見て欲しいですか？", {class: 'motivate-label'} %><span>※必須</span><br />
+    <%= f.label :status_id, "おすすめの状態、心境", {class: 'motivate-label'} %><span>※必須</span><br />
     <%= f.collection_select(:status_id, Status.all, :id, :name, {}, {class:"select-box", id:"tweet_status"}) %>
   </div>
 
   <div class="field">
-    <%= f.label :name, "タグ(タグ同士の間には半角の「,」を入れてください)", {class: 'motivate-label'} %><br />
+    <%= f.label :name, "タグ(タグは半角の「,」で区切ってください)", {class: 'motivate-label'} %><br />
     <%= f.text_field :name, placeholder: "（例）ドラマ,医療,社会", :class => 'motivate-field' %>
   </div>
 

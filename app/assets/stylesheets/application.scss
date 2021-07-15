@@ -100,6 +100,12 @@
   outline: none;
 }
 
+@media (max-width: 767px) {
+  .field .motivate-field, .field .select-box {
+    width: 300px;
+  }
+}
+
 .field .motivate-camera {
   font-size: 100px;
   display: flex;
@@ -110,6 +116,10 @@
   width: 100%;
   padding: 100px 0;
   border-radius: 5px;
+
+  @media (max-width: 767px) {
+    width: 300px;
+  }
 }
 
 .field .motivate-camera:hover {

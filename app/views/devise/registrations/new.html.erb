@@ -1,47 +1,52 @@
 <%= render "shared/header" %>
-<h2 class="registration-ttl">新規登録</h2>
 
-<%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
+<div class="registration-container">
 
-  <div class="flash-message">
-    <%= render 'shared/error_messages', model: f.object %>
+  <h2 class="registration-ttl">新規登録</h2>
+
+  <%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
+
+    <div class="flash-message">
+      <%= render 'shared/error_messages', model: f.object %>
+    </div>
+
+    <div class="field">
+      <%= f.label :name, "名前（6文字以下）", {class: 'registration-label'} %><span>※必須</span><br />
+      <%= f.text_field :name, autofocus: true, autocomplete: "name", :class => 'registration-field' %>
+    </div>
+
+    <div class="field">
+      <%= f.label :email, "メールアドレス ", {class: 'registration-label'} %><span>※必須</span><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", :class => 'registration-field' %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password, "パスワード（6文字以上）", {class: 'registration-label'} %><span>※必須</span><br />
+      <%= f.password_field :password, autocomplete: "new-password", :class => 'registration-field' %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password_confirmation, "パスワード（確認用）", {class: 'registration-label'} %><span>※必須</span><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", :class => 'registration-field' %>
+    </div>
+
+    <div class="field">
+      <%= f.label :job_id, "職業、状況 ", {class: 'registration-label'} %><span>※必須</span><br />
+      <%= f.collection_select(:job_id, Job.all, :id, :name, {}, {class:"registration-field choice"}) %><br />
+    </div>
+
+    <div class="field">
+      <%= f.label :status, "乗り越えたい現在の状態、心境", {class: 'registration-label'} %><br />
+      <%= f.collection_select(:status_id, Status.all, :id, :name, {}, {class:"registration-field choice"}) %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "登録する", :class => 'registration-submit' %>
+    </div>
+  <% end %>
+
+  <div class="registration-rogin">
+    すでにアカウントをお持ちの方は<%= link_to "こちら", new_user_session_path, class: "post" %>
   </div>
 
-  <div class="field">
-    <%= f.label :name, "名前（6文字以下）", {class: 'registration-label'} %><span>※必須</span><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name", :class => 'registration-field' %>
-  </div>
-
-  <div class="field">
-    <%= f.label :email, "メールアドレス ", {class: 'registration-label'} %><span>※必須</span><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", :class => 'registration-field' %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password, "パスワード（6文字以上）", {class: 'registration-label'} %><span>※必須</span><br />
-    <%= f.password_field :password, autocomplete: "new-password", :class => 'registration-field' %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation, "パスワード（確認用）", {class: 'registration-label'} %><span>※必須</span><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", :class => 'registration-field' %>
-  </div>
-
-  <div class="field">
-    <%= f.label :job_id, "職業、状況 ", {class: 'registration-label'} %><span>※必須</span><br />
-    <%= f.collection_select(:job_id, Job.all, :id, :name, {}, {class:"registration-field choice"}) %><br />
-  </div>
-
-  <div class="field">
-    <%= f.label :status, "乗り越えたい現在の状態、心境", {class: 'registration-label'} %><br />
-    <%= f.collection_select(:status_id, Status.all, :id, :name, {}, {class:"registration-field choice"}) %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "登録する", :class => 'registration-submit' %>
-  </div>
-<% end %>
-
-<div class="registration-rogin">
-  すでにアカウントをお持ちの方は<%= link_to "こちら", new_user_session_path, class: "post" %>
 </div>

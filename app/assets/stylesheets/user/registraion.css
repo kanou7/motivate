@@ -11,6 +11,12 @@
   margin: 0 auto;
 }
 
+@media (max-width: 767px) {
+  .registration-main {
+    width: 300px;
+  }
+}
+
 .registration-error {
   margin-bottom: 20px;
 }
@@ -34,6 +40,12 @@
   outline: none;
 }
 
+@media (max-width: 767px) {
+  .field .registration-field {
+    width: 300px;
+  }
+}
+
 .actions {
   text-align: center;
   margin-top: 50px;
@@ -51,6 +63,12 @@
 .actions .registration-submit:hover {
   transition: 0.5s;
   opacity: 0.8;
+}
+
+@media (max-width: 767px) {
+  .actions .registration-submit {
+    padding: 15px 55px;
+  }
 }
 
 .registration-rogin {
