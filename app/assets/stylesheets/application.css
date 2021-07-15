@@ -100,7 +100,7 @@ a {
 
 @media (max-width: 767px) {
   .field .motivate-field, .field .select-box {
-    width: 300px;
+    width: 250px;
   }
 }
 
@@ -118,7 +118,7 @@ a {
 
 @media (max-width: 767px) {
   .field .motivate-camera {
-    width: 300px;
+    width: 95%;
   }
 }
 

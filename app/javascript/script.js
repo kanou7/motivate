@@ -63,7 +63,7 @@ $( function() {
     $rank.toggleClass( 'add-active' );
   });
 
-  $( '#rank-closeBtn, #tweets-back, #header-close' ).on( 'click', function(e) {
+  $( '#rank-closeBtn, #tweets-back' ).on( 'click', function(e) {
     e.preventDefault();
     $rank.removeClass( 'add-active' );
   });
@@ -75,7 +75,7 @@ $( function() {
     $search.toggleClass( 'add-active' );
   });
 
-  $( '#search-closeBtn, #tweets-back, #header-close' ).on( 'click', function(e) {
+  $( '#search-closeBtn, #tweets-back' ).on( 'click', function(e) {
     e.preventDefault();
     $search.removeClass( 'add-active' );
   });
