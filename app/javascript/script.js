@@ -80,4 +80,7 @@ $( function() {
     $search.removeClass( 'add-active' );
   });
 
+
+  //flash message
+  setTimeout("$('.flash-message').fadeOut('slow')", 2000);
 });

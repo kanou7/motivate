@@ -52,6 +52,7 @@
 }
 
 .actions .registration-submit {
+  -webkit-appearance: none;
   border: none;
   border-radius: 100px;
   background-color: var(--main-color);
@@ -67,7 +68,7 @@
 
 @media (max-width: 767px) {
   .actions .registration-submit {
-    padding: 15px 55px;
+    padding: 15px 60px;
   }
 }
 

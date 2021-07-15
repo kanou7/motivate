@@ -68,7 +68,7 @@
 
 @media (max-width: 767px) {
   .tweet-listMain {
-    height: 200px;
+    height: 250px;
   }
 }
 
@@ -80,7 +80,7 @@
 
 @media (max-width: 767px) {
   .tweet-listMain .tweet-img {
-    height: 200px;
+    height: 250px;
   }
 }
 
@@ -329,7 +329,8 @@
 
 @media (max-width: 767px) {
   .tweet-newContainer {
-    width: 300px;
+    width: 95%;
+    text-align: center;
   }
 }
 
@@ -350,11 +351,13 @@
 
 @media (max-width: 767px) {
   .tweet-editContainer {
-    width: 300px;
+    width: 95%;
+    text-align: center;
   }
 }
 
 .edit-btn {
+  -webkit-appearance: none;
   color: #262626;
   font-size: 16px;
   transition: 0.5s;
@@ -433,6 +436,7 @@
 }
 
 .comment-form .comment-submit {
+  -webkit-appearance: none;
   width: 13%;
   border: none;
   border-radius: 5px;
@@ -655,13 +659,14 @@
 
 @media (max-width: 1024px) {
   .recoTweet-list {
-    margin: 10;
+    margin-bottom: 20px;
   }
 }
 
 @media (max-width: 767px) {
   .recoTweet-list {
     margin: 0;
+    margin-bottom: 20px;
   }
 }
 
@@ -781,7 +786,7 @@
 @media (max-width: 767px) {
   .right-sideBar {
     width: 100%;
-    height: 680px;
+    height: 700px;
   }
 }
 
@@ -881,7 +886,7 @@
 @media (max-width: 767px) {
   .left-sideBar {
     width: 100%;
-    height: 680px;
+    height: 700px;
   }
 }
 
@@ -984,6 +989,7 @@
 }
 
 .search-submit {
+  -webkit-appearance: none;
   padding: 4px;
   background-color: var(--main-color);
   border: none;
@@ -1300,23 +1306,26 @@
   z-index: 999;
   display: none;
   font-size: 40px;
+  border-top: 1px solid #DBDBDB;
 }
 
 @media (max-width: 1024px) {
   .footer {
     display: block;
+    padding: 0;
   }
 }
 
 @media (max-width: 1024px) {
   .footer .header-item {
-    padding: 0 10px;
+    padding: 0 20px;
   }
 }
 
 @media (max-width: 767px) {
   .footer .header-item {
-    padding: 0;
+    padding: 0 5px;
+    font-size: 30px;
   }
 }
 /*# sourceMappingURL=tweet.css.map */
