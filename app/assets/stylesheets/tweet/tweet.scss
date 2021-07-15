@@ -1,5 +1,10 @@
 .tweets-container {
+  padding-top: 10px;
   margin: 0 30px;
+
+  @media (max-width: 767px) {
+    margin: 0;
+  }
 }
 
 .main {
@@ -209,19 +214,19 @@
     bottom: 120px;
     right: 40px;
 
-    .fa-edit {
+    .fa-pen {
       font-size: 30px;
     }
   }
 
   @media (max-width: 767px) {
-    height: 70px;
-    width: 70px;
-    bottom: 140px;
-    right: 20px;
+    height: 75px;
+    width: 75px;
+    bottom: 135px;
+    right: 18px;
 
-    .fa-edit {
-      font-size: 40px;
+    .fa-pen {
+      font-size: 45px;
     }
   }
 }
@@ -284,6 +289,19 @@
 	visibility: visible;
 	transform: translateY(0);
 }
+
+/*========================================================
+# new
+========================================================*/
+.tweet-newContainer {
+  padding-top: 70px;
+  padding-bottom: 400px;
+
+  @media (max-width: 767px) {
+    width: 300px;
+  }
+}
+
 /*========================================================
 # show
 ========================================================*/
@@ -295,6 +313,15 @@
 /*========================================================
 # edit
 ========================================================*/
+.tweet-editContainer {
+  padding-top: 70px;
+  padding-bottom: 400px;
+
+  @media (max-width: 767px) {
+    width: 300px;
+  }
+}
+
 .edit-btn {
   color: rgb(38,38,38);
   font-size: 16px;
@@ -525,7 +552,7 @@
   width: 100%;
 
   @media (max-width: 1024px) {
-    width: 80%;
+    width: 90%;
     padding-top: 20px;
   }
 
@@ -866,7 +893,23 @@
   width: 20%;
 
   @media (max-width: 1024px) {
-    width: 10%;
+    width: 15%;
+  }
+}
+
+.search-resultSelect {
+  width: 300px;
+
+  @media (max-width: 767px) {
+    width: 70%;
+  }
+}
+
+.search-resultSubmit {
+  width: 50px;
+
+  @media (max-width: 767px) {
+    width: 12%;
   }
 }
 
@@ -881,7 +924,8 @@
 }
 
 .search-container {
-  margin-top: 50px;
+  padding-top: 100px;
+  padding-bottom: 800px;
 }
 
 .search-form {
@@ -1031,13 +1075,11 @@
   @media (max-width: 1024px) {
     top: 5%;
     right: 5%;
-    font-size: 30px;
+    font-size: 50px;
   }  
 
   @media (max-width: 767px) {
-    top: 3px;
-    right: 3px;
-    font-size: 40px;
+    font-size: 30px;
   }
 }
 

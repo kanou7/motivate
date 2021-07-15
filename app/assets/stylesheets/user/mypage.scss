@@ -1,5 +1,5 @@
 .profiles {
-  padding-top: 70px;
+  padding-top: 120px;
 }
 
 .profile-top {
@@ -10,6 +10,11 @@
     height: 150px;
     width: 150px;
     border-radius: 1000px;
+
+    @media (max-width: 767px) {
+      height: 100px;
+      width: 100px;
+    }
   }
 
   .profile-camera {
@@ -19,6 +24,10 @@
     &:hover {
       opacity: 0.8;
     }
+
+    @media (max-width: 767px) {
+      font-size: 40px;
+    }
   }
 }
 
@@ -27,6 +36,11 @@
   width: 400px;
   margin: 30px auto 0;
   padding: 30px;
+
+  @media (max-width: 767px) {
+    width: 300px;
+    padding: 20px;
+  }
 }
 
 .profile-info {
@@ -36,6 +50,10 @@
   .profile-name {
     font-size: 24px;
     font-weight: bold;
+
+    @media (max-width: 767px) {
+      font-size: 20px;
+    }
   }
 
   .profile-edit {
@@ -48,27 +66,49 @@
       background-color: var(--main-color);
       color: #fff;
     }
+
+    @media (max-width: 767px) {
+      padding: 5px 5px;
+      font-size: 14px;
+    }
   }
 }
 
 .profile-job {
   font-size: 18px;
   margin-top: 20px;
+
+  @media (max-width: 767px) {
+    font-size: 14px;
+  }
 }
 
 .profile-status {
   font-size: 18px;
+
+  @media (max-width: 767px) {
+    font-size: 14px;
+  }
 }
 
 .profile-mainBottom {
   font-size: 16px;
   margin-top: 20px;
+
+  @media (max-width: 767px) {
+    font-size: 14px;
+    margin-top: 10px;
+  }
 }
 
 .profile-bottomTtl {
   display: flex;
   justify-content: center;
   margin: 50px 0;
+
+  @media (max-width: 767px) {
+    margin: 30px 0;
+  }
 }
 
 .profile-tweetsTtl, .profile-likesTtl {
@@ -82,6 +122,10 @@
   &:hover {
     background-color: var(--main-color);
     color: #fff;
+  }
+
+  @media (max-width: 767px) {
+    width: 130px;
   }
 }
 
@@ -101,6 +145,7 @@
 # edit
 ========================================================*/
 .edit-profiles {
+  padding-bottom: 700px;
 
   .profile-main {
     background-color: transparent;
@@ -155,6 +200,10 @@
 
 .follow-container {
   margin-top: 10px;
+
+  @media (max-width: 767px) {
+    margin-top: 20px;
+  }
 }
 
 .follow-indexBtn {
@@ -172,11 +221,17 @@
 
 .follow-index {
   text-align: center;
+  padding-top: 80px;
+  padding-bottom: 1200px;
 }
 
 .follow-ttl {
   font-size: 24px;
   margin-top: 50px;
+
+  @media (max-width: 767px) {
+    font-size: 20px;
+  }
 }
 
 .follow-list {

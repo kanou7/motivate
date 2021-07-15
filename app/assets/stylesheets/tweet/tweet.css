@@ -1,5 +1,12 @@
 .tweets-container {
+  padding-top: 10px;
   margin: 0 30px;
+}
+
+@media (max-width: 767px) {
+  .tweets-container {
+    margin: 0;
+  }
 }
 
 .main {
@@ -234,20 +241,20 @@
     bottom: 120px;
     right: 40px;
   }
-  .tweet-btn .fa-edit {
+  .tweet-btn .fa-pen {
     font-size: 30px;
   }
 }
 
 @media (max-width: 767px) {
   .tweet-btn {
-    height: 70px;
-    width: 70px;
-    bottom: 140px;
-    right: 20px;
+    height: 75px;
+    width: 75px;
+    bottom: 135px;
+    right: 18px;
   }
-  .tweet-btn .fa-edit {
-    font-size: 40px;
+  .tweet-btn .fa-pen {
+    font-size: 45px;
   }
 }
 
@@ -313,6 +320,20 @@
 }
 
 /*========================================================
+# new
+========================================================*/
+.tweet-newContainer {
+  padding-top: 70px;
+  padding-bottom: 400px;
+}
+
+@media (max-width: 767px) {
+  .tweet-newContainer {
+    width: 300px;
+  }
+}
+
+/*========================================================
 # show
 ========================================================*/
 .tweet-showIndex {
@@ -322,6 +343,17 @@
 /*========================================================
 # edit
 ========================================================*/
+.tweet-editContainer {
+  padding-top: 70px;
+  padding-bottom: 400px;
+}
+
+@media (max-width: 767px) {
+  .tweet-editContainer {
+    width: 300px;
+  }
+}
+
 .edit-btn {
   color: #262626;
   font-size: 16px;
@@ -586,7 +618,7 @@
 
 @media (max-width: 1024px) {
   .slider {
-    width: 80%;
+    width: 90%;
     padding-top: 20px;
   }
 }
@@ -965,7 +997,27 @@
 
 @media (max-width: 1024px) {
   .search-submit {
-    width: 10%;
+    width: 15%;
+  }
+}
+
+.search-resultSelect {
+  width: 300px;
+}
+
+@media (max-width: 767px) {
+  .search-resultSelect {
+    width: 70%;
+  }
+}
+
+.search-resultSubmit {
+  width: 50px;
+}
+
+@media (max-width: 767px) {
+  .search-resultSubmit {
+    width: 12%;
   }
 }
 
@@ -976,7 +1028,8 @@
 }
 
 .search-container {
-  margin-top: 50px;
+  padding-top: 100px;
+  padding-bottom: 800px;
 }
 
 .search-form {
@@ -1130,15 +1183,13 @@
   #close-btn {
     top: 5%;
     right: 5%;
-    font-size: 30px;
+    font-size: 50px;
   }
 }
 
 @media (max-width: 767px) {
   #close-btn {
-    top: 3px;
-    right: 3px;
-    font-size: 40px;
+    font-size: 30px;
   }
 }
 

@@ -8,8 +8,8 @@
 <div class="search-container">
 
     <%= form_with(url: search_tags_tweets_path, local: true, method: :get, class: "search-form") do |f| %>
-      <%= f.text_field :keyword, placeholder: "タグを検索する", class: "search-input" %>
-      <%= f.submit "検索", class: "search-submit" %>
+      <%= f.text_field :keyword, placeholder: "タグを検索する", class: "search-input search-resultSelect" %>
+      <%= f.submit "検索", class: "search-submit search-resultSubmit" %>
       <div id="search-result"></div>
     <% end %>
 

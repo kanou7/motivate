@@ -15,9 +15,6 @@
  *= require_self
  */
 /*===========================================
-mixin
-===========================================*/
-/*===========================================
 全体設定
 ===========================================*/
 :root {
@@ -101,6 +98,12 @@ a {
   outline: none;
 }
 
+@media (max-width: 767px) {
+  .field .motivate-field, .field .select-box {
+    width: 300px;
+  }
+}
+
 .field .motivate-camera {
   font-size: 100px;
   display: flex;
@@ -111,6 +114,12 @@ a {
   width: 100%;
   padding: 100px 0;
   border-radius: 5px;
+}
+
+@media (max-width: 767px) {
+  .field .motivate-camera {
+    width: 300px;
+  }
 }
 
 .field .motivate-camera:hover {

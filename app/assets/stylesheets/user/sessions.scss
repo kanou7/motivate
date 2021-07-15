@@ -1,3 +1,8 @@
+.registration-container {
+  padding-top: 70px;
+  padding-bottom: 900px;
+}
+
 .gest-submit {
   text-align: center;
   margin-top: 30px;
@@ -13,6 +18,10 @@
     &:hover {
       transition: 0.5s;
       opacity: 0.8;
+    }
+
+    @media (max-width: 767px) {
+      padding: 18px 10px;
     }
   }
 }
