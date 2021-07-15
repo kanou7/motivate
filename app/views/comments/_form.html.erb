@@ -6,7 +6,7 @@
 
   <div class="comment-form">
     <%= f.label :text, {class: 'hidden'} %>
-    <%= f.text_area :text, placeholder: "コメント", rows: "2", :class => 'comment-field' %>
+    <%= f.text_area :text, placeholder: "コメント", rows: "3", maxlength: "100", :class => 'comment-field' %>
     <%= f.submit "投稿", :class => 'comment-submit' %>
   </div>
 <% end %>
