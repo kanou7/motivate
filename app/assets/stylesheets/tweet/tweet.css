@@ -541,47 +541,39 @@
 
 .intro-content {
   position: absolute;
-  top: 35%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  color: #fff;
+  top: 260px;
+  left: 0;
+  right: 0;
+  bottom: 0;
   text-align: center;
-}
-
-@media (max-width: 1024px) {
-  .intro-content {
-    top: 20%;
-  }
+  color: #fff;
 }
 
 @media (max-width: 767px) {
   .intro-content {
-    top: 30%;
+    width: 80%;
+    margin: 0 auto;
   }
 }
 
 .intro-content .intro-mainTxt {
   font-size: 26px;
-  margin-bottom: 5px;
 }
 
 @media (max-width: 1024px) {
   .intro-content .intro-mainTxt {
-    font-size: 20px;
+    font-size: 22px;
   }
 }
 
 @media (max-width: 767px) {
   .intro-content .intro-mainTxt {
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 
 .intro-content .intro-txt {
   font-size: 14px;
-  margin-bottom: 5px;
 }
 
 @media (max-width: 1024px) {
@@ -623,7 +615,6 @@
 @media (max-width: 1024px) {
   .slider {
     width: 90%;
-    padding-top: 20px;
   }
 }
 
@@ -670,8 +661,10 @@
   }
 }
 
-.recoTweet-list:hover {
-  transform: scale(1.1);
+@media (min-width: 1025px) {
+  .recoTweet-list:hover {
+    transform: scale(1.1);
+  }
 }
 
 .recoTweet-img {
@@ -1312,7 +1305,7 @@
 @media (max-width: 1024px) {
   .footer {
     display: block;
-    padding: 0;
+    padding: 5px 0;
   }
 }
 
