@@ -541,7 +541,7 @@
 
 .intro-content {
   position: absolute;
-  top: 200px;
+  top: 250px;
   left: 0;
   right: 0;
   bottom: 0;
@@ -551,6 +551,7 @@
 
 @media (max-width: 767px) {
   .intro-content {
+    top: 200px;
     width: 80%;
     margin: 0 auto;
   }
