@@ -1,0 +1,26 @@
+<div class="index tweet-showIndex">
+
+  <ul class="tweet-lists">
+    <li class='tweet-list tweet-modalList'>
+
+      <%= render partial: "shared/tweet_modal",  locals: { tweet: @tweet } %>
+
+    </li>
+  </ul>
+
+  <div class="comment">
+    <h3 class="comment-ttl">コメント</h3>
+    <% if user_signed_in? %>
+      <%= render partial: 'comments/form', locals: { comment: @comment, tweet: @tweet } %>
+    <% else %>
+      <div class="error-comment">※※※ コメントの投稿には新規登録/ログインが必要です ※※※</div>
+    <% end %>
+    <div class="comment-lists">
+      <h4 class="comment-listsTtl">＜コメント一覧＞</h4>
+      <div id="comments_area">
+        <%= render partial: 'comments/index', locals: { comments: @comments } %>
+      </div>
+    </div>
+  </div>
+
+</div>
