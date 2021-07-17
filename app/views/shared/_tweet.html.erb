@@ -7,7 +7,7 @@
   <div class="tweet-ttl"><%= tweet.title %></div>
   <div class="tweet-message"><%= tweet.message %></div>
 
-  <%= link_to user_path(tweet.user), class: "user-info" do %>
+  <%= link_to user_path(tweet.user), method: :get, class: "user-info" do %>
     <% if tweet.user.image.attached? %>
       <%= image_tag tweet.user.image.variant(resize: '30x30'), class: "user-img" %>
     <% end %>
