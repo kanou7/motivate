@@ -6,7 +6,7 @@ RSpec.describe "Relationships", type: :system do
     @user2 = FactoryBot.create(:user)
   end
 
-  describe '#create,#destroy' do
+  context 'ログインしたユーザーはフォロー、フォロー解除することができる' do
     it 'ユーザーをフォローできる' do 
       # @user1としてログイン           
       sign_in(@user1)
@@ -23,7 +23,7 @@ RSpec.describe "Relationships", type: :system do
       # @user1としてログイン           
       sign_in(@user1)
 
-      # @user1としてユーザー一覧ページへ遷移する
+      # @user1としてユーザー2ページへ遷移する
       visit user_path(@user2)
 
       # @user2をフォローする
