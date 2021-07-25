@@ -21,7 +21,7 @@ Rails.application.routes.draw do
       get 'search_status'
       get 'search_job'
     end
-    resources :comments, only: [:create]
+    resources :comments, only: [:create, :destroy]
     resources :likes, only: [:create, :destroy] 
   end
 
