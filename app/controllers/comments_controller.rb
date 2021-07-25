@@ -7,8 +7,7 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @tweet = Tweet.find(params[:tweet_id])
-    @comment = current_user.comments.find_by(tweet_id: @tweet)
+    @comment = Comment.find_by(id: params[:id])
     @comment.destroy
     render :index
   end
