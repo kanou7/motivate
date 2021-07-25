@@ -10,10 +10,12 @@
   </div>
 
   <div class="field">   
-    <label for="tweet_image" class="motivate-label">
-      画像<br /><i class="fas fa-camera motivate-camera"></i>
+    画像<br />
+    <label for="tweet_image" class="motivate-label  motivate-img">
+      画像選択
     </label>
     <%= f.file_field :image, class:"hidden motivate-field", id:"tweet_image" %>
+    <div id="image-list"></div>
   </div>
 
   <div class="field">
