@@ -267,6 +267,42 @@
   z-index: 700;
 }
 
+/* preview
+--------------------------------------------------------*/
+.preview {
+  width: 100%;
+  height: 300px;
+  margin: 20px 0;
+}
+
+@media (max-width: 767px) {
+  .preview {
+    height: 37%;
+    width: 37%;
+  }
+}
+
+@media (max-width: 600px) {
+  .preview {
+    height: 45%;
+    width: 45%;
+  }
+}
+
+@media (max-width: 450px) {
+  .preview {
+    height: 65%;
+    width: 65%;
+  }
+}
+
+@media (max-width: 350px) {
+  .preview {
+    height: 80%;
+    width: 80%;
+  }
+}
+
 /* to-top
 --------------------------------------------------------*/
 .totop {

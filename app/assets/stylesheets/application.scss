@@ -106,19 +106,17 @@
   }
 }
 
-.field .motivate-camera {
-  font-size: 100px;
+.field .motivate-img {
   display: flex;
   justify-content: center;
-  margin-top: 30px;
-  margin-bottom: 30px;
   background-color: #fff;
-  width: 100%;
-  padding: 100px 0;
+  padding: 5px;
   border-radius: 5px;
+  border: 1px solid #DBDBDB;
+  margin-top: 20px;
 
   @media (max-width: 767px) {
-    width: 95%;
+    margin: 20px 32%;
   }
 }
 
