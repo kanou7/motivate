@@ -1145,9 +1145,9 @@
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 767px) {
   .rank-tagLink {
-    width: 80%;
+    width: 70%;
   }
 }
 
