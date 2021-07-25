@@ -6,7 +6,7 @@
     <%= link_to "#{comment.user.name}：", user_path(comment.user_id), class: "user-name" %>
     <%= comment.text %>
     <% if current_user.id == comment.user_id %>
-      <%= link_to tweet_comment_path(comment.tweet_id, comment.id), method: :delete, remote: true, class: "destroy-btn" do %>
+      <%= link_to tweet_comment_path(comment.tweet_id, comment.id), method: :delete, remote: true, class: "destroy-btn comment-destroy" do %>
         <i class="fas fa-trash"></i>
       <% end %>
     <% end %>
