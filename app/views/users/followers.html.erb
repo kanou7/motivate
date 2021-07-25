@@ -3,11 +3,13 @@
 <div class="follow-index">
   <div class="follow-ttl">あなたをフォローしているユーザー</div>
   <% @users.each do |user| %>
-    <div class="follow-list">
-      <% if user.image.attached? %>
-        <%= image_tag user.image.variant(resize: '30x30'), class: "follow-img" %>
-      <% end %>
-      <div class="follow-name"><%= user.name %></div>
-    </div>
+    <%= link_to user_path(user), method: :get, class: "follow-link" do %>
+      <div class="follow-list">
+        <% if user.image.attached? %>
+          <%= image_tag user.image.variant(resize: '30x30'), class: "follow-img" %>
+        <% end %>
+        <div class="follow-name"><%= user.name %></div>
+      </div>
+    <% end %>
   <% end %>
 </div>
