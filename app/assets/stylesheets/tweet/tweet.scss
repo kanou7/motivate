@@ -283,6 +283,7 @@
   right: 16px;
   width: 50px;
 	z-index: 900;
+  display: none;
 
   &:after {
     border-right: solid 3px #3e3e3e;
@@ -1135,6 +1136,10 @@
   z-index: 1000;
   font-size: 50px;
   color: var(--main-color);
+
+  &:hover {
+    cursor: pointer;
+  }
 
   @media (max-width: 1024px) {
     top: 5%;
