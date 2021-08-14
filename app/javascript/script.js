@@ -63,7 +63,7 @@ $( function() {
     $rank.toggleClass( 'add-active' );
   });
 
-  $( '#rank-closeBtn, #tweets-back' ).on( 'click', function(e) {
+  $( '#rank-closeBtn, #tweets-back, #rank-link' ).on( 'click', function(e) {
     e.preventDefault();
     $rank.removeClass( 'add-active' );
   });

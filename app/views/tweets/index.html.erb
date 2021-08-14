@@ -122,7 +122,7 @@
               <% @rank_tweets.each do |tweet| %>
                 <li class='rank-list ranking'>
                   <div class="rank-hover">
-                    <%= link_to tweet_path(tweet.id), remote: true, class: "show-link" do %>
+                    <%= link_to tweet_path(tweet.id), remote: true, class: "show-link", id: "rank-link" do %>
                       
                       <div class="rank-num">
                         <% j += 1 %>
