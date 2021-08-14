@@ -1137,6 +1137,10 @@
   font-size: 50px;
   color: var(--main-color);
 
+  &:hover {
+    cursor: pointer;
+  }
+
   @media (max-width: 1024px) {
     top: 5%;
     right: 5%;
