@@ -7,7 +7,7 @@
 
 <img src="public/images/app-top.png">
 
-サイトURL <a href="https://motivate-app.com/">Motivate</a>(ログイン画面からゲストログインボタンで簡単ログインができます)
+サイトURL <a href="https://motivate-app.com/">Motivate</a>(ログイン画面からゲストログインボタンで簡単ログインができます。)
 
 ## 使用技術一覧
 
