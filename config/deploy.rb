@@ -3,7 +3,7 @@ lock "~> 3.16.0"
 
 set :application, "motivate"
 set :repo_url, "git@github.com:kanou7/motivate.git"
-#set :deploy_to, '/var/www/projects/motivate'
+set :deploy_to, '/var/www/projects/motivate'
 set :rbenv_ruby, File.read('.ruby-version').strip
 set :branch, ENV['BRANCH'] || "master"
 
